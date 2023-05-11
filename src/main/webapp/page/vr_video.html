@@ -3,7 +3,10 @@
 
 <head>
     <title>测试视频</title>
-    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy"/>
+    <!-- 2. jQuery导入-->
+    <script src="../js/jquery-3.3.1.min.js"></script>
     <style>
         #example {
             position: absolute;
@@ -21,8 +24,6 @@
     <script src="../build/three.js"></script>
     <script src="../build/mxreality.js"></script>
     <script>
-
-
         window.onload = function () {
             init();
         }
@@ -44,30 +45,25 @@
             vr.init(function () {
 
             });
-
-            vr.play('http://rrjtoy5ol.hn-bkt.clouddn.com/test1.mp4?e=1681200982&token=6Is6dqNLykME-nZW0IllnAWljpBFJquJgcYHHIuY:iHdOxkQ8YXgol8TT7JPvdtm7ow4=', vr.resType.video);
-            vr.video.setAttribute("loop", "loop");
-           
-
-            vr.video.crossOrigin = "Anonymous";
-
-
-            vr.video.onended = function () {
-            }
-            startTrun(vr);
-
-        }
-
-
-    </script>
-    <script>
-        function startTrun(vr){
-            vr.controls.autoRotate=true
-            vr.controls.autoRotateSpeed=90
-            const intervalID = setInterval(myCallback,2000);  // setInterval() 的返回值为一个线程号，这个线程号可以用在清除定时器的函数中 clearInterval(线程号)
-            function myCallback(a,b){
-                vr.controls.autoRotate=false;
-            } 
+            $.ajax({
+                type : "post",
+                url : "../../resourcetotalsearchservlet",
+                data : {
+                    "resource_id":1
+                },
+                async : false,
+                success : function(data){
+                    // 跳转至视频播放错误界面
+                    if(data.resources.length == 0) location.href = "image.html";
+                    // 切换视频地址并播放
+                    vr.play(data.resources[0].resource_url, vr.resType.video);
+                    // vr.play("../Test/2.mp4", vr.resType.video);
+                    vr.video.setAttribute("loop", "loop");
+                    vr.video.crossOrigin = "Anonymous";
+                    vr.video.onended = function () {
+                    }
+                }
+            });
         }
     </script>
 </body>

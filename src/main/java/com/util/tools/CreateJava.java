@@ -49,7 +49,7 @@ public class CreateJava {
         // 初始化bean中的类
         List<String> beanList = getBeanList();
         for (String s : beanList) {
-//            if (s.equals("scenicSpot")){
+            if (s.equals("resource")){
                 createDao(s);
                 createDaoMapper(s);
                 createService(s);
@@ -59,7 +59,7 @@ public class CreateJava {
                 createAttributeSql(s);
                 createHtmlDoor(s);
                 createJSDoor(s);
-//            }
+            }
         }
 //        createTypeAliases();
     }
@@ -286,8 +286,7 @@ public class CreateJava {
                     for (int i = 0; i < FieldName.size(); i++) {
                         teststring += "        <if test=\"arg1."+FieldName.get(i)+" !=null";
                         switch(FieldType.get(i)){
-                            case "int":teststring += " and "+FieldName.get(i)+" != 0\">\n";break;
-                            case "long":teststring += " and "+FieldName.get(i)+" != 0\">\n";break;
+                            case "int":teststring += " and arg1."+FieldName.get(i)+" != ''\">\n";break;
                             case "double":teststring += " and arg1."+FieldName.get(i)+" != ''\">\n";break;
                             case "class java.lang.String":teststring += " and arg1."+FieldName.get(i)+" !=''\">\n";break;
                             case "class java.sql.Timestamp":teststring += "\">\n";break;
@@ -310,8 +309,7 @@ public class CreateJava {
                     for (int i = 0; i < FieldName.size(); i++) {
                         daoMappertext += "        <if test=\""+FieldName.get(i)+" !=null";
                         switch(FieldType.get(i)){
-                            case "int":daoMappertext += " and "+FieldName.get(i)+" != 0\">\n";break;
-                            case "long":daoMappertext += " and "+FieldName.get(i)+" != 0\">\n";break;
+                            case "int":daoMappertext += " and "+FieldName.get(i)+" != ''\">\n";break;
                             case "double":daoMappertext += " and "+FieldName.get(i)+" != ''\">\n";break;
                             case "class java.lang.String":daoMappertext += " and "+FieldName.get(i)+" !=''\">\n";break;
                             case "class java.sql.Timestamp":daoMappertext += "\">\n";break;
@@ -339,8 +337,7 @@ public class CreateJava {
                     for (int i = 0; i < FieldName.size(); i++) {
                         daoMappertext += "        <if test=\""+FieldName.get(i)+"!=null";
                         switch(FieldType.get(i)){
-                            case "int":daoMappertext += " and "+FieldName.get(i)+" != 0\">\n";break;
-                            case "long":daoMappertext += " and "+FieldName.get(i)+" != 0\">\n";break;
+                            case "int":daoMappertext += " and "+FieldName.get(i)+" != ''\">\n";break;
                             case "double":daoMappertext += " and "+FieldName.get(i)+" != ''\">\n";break;
                             case "class java.lang.String":daoMappertext += " and "+FieldName.get(i)+"!=''\">\n";break;
                             case "class java.sql.Timestamp":daoMappertext += "\">\n";break;
@@ -384,8 +381,7 @@ public class CreateJava {
                     for (int i = 0; i < FieldName.size(); i++) {
                         daoMappertext += "            <if test=\""+FieldName.get(i)+"!=null";
                         switch(FieldType.get(i)){
-                            case "int":daoMappertext += " and "+FieldName.get(i)+" != 0\">\n";break;
-                            case "long":daoMappertext += " and "+FieldName.get(i)+" != 0\">\n";break;
+                            case "int":daoMappertext += " and "+FieldName.get(i)+" != ''\">\n";break;
                             case "double":daoMappertext += " and "+FieldName.get(i)+" != ''\">\n";break;
                             case "class java.lang.String":daoMappertext += " and "+FieldName.get(i)+"!=''\">\n";break;
                             case "class java.sql.Timestamp":daoMappertext += "\">\n";break;

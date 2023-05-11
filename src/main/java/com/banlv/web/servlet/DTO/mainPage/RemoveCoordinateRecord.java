@@ -1,5 +1,6 @@
-package com.util.utils;
+package com.banlv.web.servlet.DTO.mainPage;
 
+import com.banlv.model.CoordinateRecord;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import javax.servlet.ServletException;
@@ -11,12 +12,28 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-@WebServlet("/template")
-public class Template extends HttpServlet {
+//代理商删除定位信息
+@WebServlet("/removecoordinaterecord")
+public class RemoveCoordinateRecord extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         response.setContentType("application/json;charset=utf-8");
         Map<String,Object> map = new HashMap<>();
+
+        int index = Integer.parseInt(request.getParameter("index"));
+        long agentId = Long.valueOf(request.getParameter("agent_id"));
+
+        if(agentId == 0) {
+            map.put("msg", false);
+        } else {
+            //删除元素
+
+            if(CoordinateRecord.getCoordinateRecordModel().removeRecord(index, agentId)) {
+                map.put("msg", true);
+            } else {
+                map.put("msg", false);
+            }
+        }
 
 
         ObjectMapper mapper = new ObjectMapper();

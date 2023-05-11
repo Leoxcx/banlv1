@@ -31,12 +31,6 @@ public interface IScenicZone_scenicSpotDao {
     List<ScenicZone_scenicSpot> searchAll(ScenicZone_scenicSpot scenicZone_scenicSpot);
 
     /**
-     * 查询
-     * @return
-     */
-    List<ScenicZone_scenicSpot> searchBySpotId(ScenicZone_scenicSpot scenicZone_scenicSpot);
-
-    /**
      * 查询总记录数
      * @return
      */

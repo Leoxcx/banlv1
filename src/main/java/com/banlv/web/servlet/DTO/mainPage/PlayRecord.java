@@ -1,9 +1,9 @@
-package com.banlv.web.servlet.DTO.userInfoPage;
+package com.banlv.web.servlet.DTO.mainPage;
 
 import com.banlv.bean.User;
-import com.banlv.bean.UserArrive;
+import com.banlv.bean.UserPlay;
 import com.banlv.service.UserService;
-import com.banlv.service.impl.UserArriveServiceImpl;
+import com.banlv.service.impl.UserPlayServiceImpl;
 import com.banlv.service.impl.UserServiceImpl;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.lang.StringUtils;
@@ -18,54 +18,56 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.util.bean.transTool.TransTool.openIdToUserInfo;
-
-//通过用户openid获取用户所有的打开信息（useArrive）表 获取用户打卡记录
-@WebServlet("/getuserarrive")
-public class GetUserArrive extends HttpServlet {
+//通过用户id  user_openid 获取播放记录
+@WebServlet("/playrecord")
+public class PlayRecord extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         response.setContentType("application/json;charset=utf-8");
+
         Map<String,Object> map = new HashMap<>();
 
-        //通过用户openid获取用户所有的打开信息（useArrive）表
+        //通过用户openid获取用户所有的播放记录信息（use_play）表
 
         //获取openId
         String openId = request.getParameter("user_openid");
 
         if(StringUtils.isEmpty(openId)) {
             map.put("msg", false);
-            map.put("userArrives", null);
+            map.put("userPlays", null);
         }else {
             //查询user_id
-            List<User> users = openIdToUserInfo(openId);
+            UserService userService = new UserServiceImpl();
+            User user = new User();
+            user.setUser_openid(openId);
+            List<User> users = userService.searchAll(user);
 
             if (users.isEmpty()) {
                 map.put("msg", false);
-                map.put("userArrives", null);
+                map.put("userPlays", null);
             } else {
                 //获取userId
                 long userId = users.get(0).getUser_id();
-                UserArrive userArrive = new UserArrive();
-                userArrive.setUser_id(userId);
 
-                UserArriveServiceImpl userArriveService = new UserArriveServiceImpl();
-                List<UserArrive> userArrives = userArriveService.searchAll(userArrive);
+                //获取播放记录
+                UserPlay userPlay = new UserPlay();
+                userPlay.setUser_id(userId);
 
-                if(userArrives.isEmpty()) {
+                UserPlayServiceImpl userPlayService = new UserPlayServiceImpl();
+
+                List<UserPlay> userPlays = userPlayService.searchAll(userPlay);
+
+                if(userPlays.isEmpty()) {
                     map.put("msg", false);
-                    map.put("userArrives", null);
+                    map.put("userPlays", null);
                 } else {
                     map.put("msg", true);
-                    map.put("userArrives", userArrives);
+                    map.put("userPlays", userPlays);
                 }
-
             }
         }
-
         ObjectMapper mapper = new ObjectMapper();
         mapper.writeValue(response.getWriter(),map);
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -29,11 +29,6 @@ public interface IScenicSpot_resourceDao {
      * @return
      */
     List<ScenicSpot_resource> searchAll(ScenicSpot_resource scenicSpot_resource);
-    /**
-     * 通过spotId查询
-     * @return
-     */
-    List<ScenicSpot_resource> searchBySpotId(ScenicSpot_resource scenicSpot_resource);
 
     /**
      * 查询总记录数

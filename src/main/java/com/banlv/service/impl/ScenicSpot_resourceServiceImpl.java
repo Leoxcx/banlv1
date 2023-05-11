@@ -66,11 +66,6 @@ public class ScenicSpot_resourceServiceImpl implements ScenicSpot_resourceServic
     }
 
     @Override
-    public List<ScenicSpot_resource> searchBySpotId(ScenicSpot_resource scenicSpot_resource) {
-        return mapper.searchBySpotId(scenicSpot_resource);
-    }
-
-    @Override
     public int addScenicSpot_resource(ScenicSpot_resource scenicSpot_resource) {
         int i = mapper.addScenicSpot_resource(scenicSpot_resource);
         cleanSqlSession();

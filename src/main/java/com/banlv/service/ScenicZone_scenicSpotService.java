@@ -37,11 +37,6 @@ public interface ScenicZone_scenicSpotService {
     List<ScenicZone_scenicSpot> searchAll(ScenicZone_scenicSpot scenicZone_scenicSpot);
 
     /**
-     * 通过spotId查询所有
-     * @return
-     */
-    List<ScenicZone_scenicSpot> searchBySpotId(ScenicZone_scenicSpot scenicZone_scenicSpot);
-    /**
      * 新增
      * @return
      */

@@ -1,4 +1,4 @@
-package com.banlv.web.servlet.DTO.footmarkPage;
+package com.banlv.web.servlet.DTO.mainPage;
 
 import com.banlv.bean.ScenicSpot;
 import com.banlv.bean.ScenicZone;
@@ -66,7 +66,7 @@ public class GetScenicZoneInfo extends HttpServlet {
                 }
             }
             map.put("msg", true);
-            map.put("scenicZoneInfoDtos", scenicZoneInfoDtos);
+            map.put("scenicZoneInfoDto", scenicZoneInfoDtos);
         }
 
         ObjectMapper mapper = new ObjectMapper();

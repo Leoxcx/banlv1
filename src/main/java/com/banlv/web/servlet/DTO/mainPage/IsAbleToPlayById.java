@@ -19,9 +19,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-//通过resource_id和用户的openid返回用户是否有权限播放
-@WebServlet("/isabletoplay")
-public class IsAbleToPlay extends HttpServlet {
+//通过resource_id和用户的id返回用户是否有权限播放
+@WebServlet("/isabletoplaybyid")
+public class IsAbleToPlayById extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         response.setContentType("application/json;charset=utf-8");
@@ -29,36 +29,25 @@ public class IsAbleToPlay extends HttpServlet {
 
         //获取resourceId 和 openId
         String resourceId = request.getParameter("resource_id");
-        String openId = request.getParameter("user_openid");
-        long userId;
+        String userId = request.getParameter("user_id");
 
-        if(StringUtils.isEmpty(resourceId) && StringUtils.isEmpty(openId)) {
+        if(StringUtils.isEmpty(resourceId) && StringUtils.isEmpty(userId)) {
             map.put("msg", false);
         }else {
-            //查询user_id
-            UserService userService = new UserServiceImpl();
-            User user = new User();
-            user.setUser_openid(openId);
-            List<User> users = userService.searchAll(user);
+            long resource_id = Long.parseLong(resourceId);
+            long user_id = Long.parseLong(userId);
 
-            if(users.isEmpty()) {
+            //查询user_resource表
+            User_resource user_resource = new User_resource();
+            user_resource.setUser_id(user_id);
+            user_resource.setResource_id(resource_id);
+            User_resourceService user_resourceService = new User_resourceServiceImpl();
+            List<User_resource> user_resources = user_resourceService.searchAll(user_resource);
+
+            if (user_resources.isEmpty()) {
                 map.put("msg", false);
-            }else {
-                //获取userId
-                userId = users.get(0).getUser_id();
-
-                //查询user_resource表
-                User_resource user_resource = new User_resource();
-                user_resource.setUser_id(userId);
-                user_resource.setResource_id(Long.parseLong(resourceId));
-                User_resourceService user_resourceService = new User_resourceServiceImpl();
-                List<User_resource> user_resources = user_resourceService.searchAll(user_resource);
-
-                if (user_resources.isEmpty()) {
-                    map.put("msg", false);
-                } else {
-                    map.put("msg",true);
-                }
+            } else {
+                map.put("msg",true);
             }
         }
 

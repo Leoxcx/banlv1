@@ -42,7 +42,7 @@ public class ScenicSpot_resource implements Serializable {
         this.resource_id = resource_id;
     }
 
-    public long getScenicSpot_resource_use() {
+    public int getScenicSpot_resource_use() {
         return scenicSpot_resource_use;
     }
 

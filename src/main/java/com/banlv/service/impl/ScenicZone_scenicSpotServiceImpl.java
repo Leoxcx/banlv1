@@ -66,11 +66,6 @@ public class ScenicZone_scenicSpotServiceImpl implements ScenicZone_scenicSpotSe
     }
 
     @Override
-    public List<ScenicZone_scenicSpot> searchBySpotId(ScenicZone_scenicSpot scenicZone_scenicSpot) {
-        return mapper.searchBySpotId(scenicZone_scenicSpot);
-    }
-
-    @Override
     public int addScenicZone_scenicSpot(ScenicZone_scenicSpot scenicZone_scenicSpot) {
         int i = mapper.addScenicZone_scenicSpot(scenicZone_scenicSpot);
         cleanSqlSession();

@@ -1,9 +1,8 @@
-package com.banlv.web.servlet.DTO.agentPage;
+package com.banlv.web.servlet.DTO.mainPage;
 
 import com.banlv.model.CoordinateRecord;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.util.bean.dto.CoordinateInfoDto;
-import org.apache.commons.lang.StringUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,25 +22,19 @@ public class AgentToCoordinateRecord extends HttpServlet {
         response.setContentType("application/json;charset=utf-8");
         Map<String,Object> map = new HashMap<>();
 
-        String agent_id = request.getParameter("agent_id");
-        if(StringUtils.isEmpty(agent_id)) {
+        long agentId = Long.parseLong(request.getParameter("agent_id"));
+
+        if(agentId == 0) {
             map.put("msg", false);
             map.put("coordinateInfoDtoList", null);
         }else {
-            long agentId = Long.parseLong(agent_id);
-
-            if (agentId == 0) {
+            List<CoordinateInfoDto> coordinateInfoDtoList = CoordinateRecord.getCoordinateRecordModel().getRecord(agentId);
+            if(coordinateInfoDtoList == null) {
                 map.put("msg", false);
                 map.put("coordinateInfoDtoList", null);
-            } else {
-                List<CoordinateInfoDto> coordinateInfoDtoList = CoordinateRecord.getCoordinateRecordModel().getRecord(agentId);
-                if (coordinateInfoDtoList == null) {
-                    map.put("msg", false);
-                    map.put("coordinateInfoDtoList", null);
-                } else {
-                    map.put("msg", true);
-                    map.put("coordinateInfoDtoList", coordinateInfoDtoList);
-                }
+            } else{
+                map.put("msg", true);
+                map.put("coordinateInfoDtoList", coordinateInfoDtoList);
             }
         }
 

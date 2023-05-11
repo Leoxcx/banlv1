@@ -28,12 +28,38 @@ public class GetScenicZonePlayRecord extends HttpServlet {
         Map<String,Object> map = new HashMap<>();
         int num = 0;
 
-        long scenicZoneId = Long.parseLong(request.getParameter("scenicZone_id"));
+        long resourceId = Long.parseLong(request.getParameter("resource_id"));
 
-        if(scenicZoneId != 0) {
-            //存资源对应景区播放记录
-            num = PlayNum.getPlayNumModel().getScenicZoneRecord(scenicZoneId);
+        //通过景点资源中间表，获取scenicSpotId景点id
+        ScenicSpot_resource scenicSpot_resource = new ScenicSpot_resource();
+        scenicSpot_resource.setResource_id(resourceId);
+        ScenicSpot_resourceService spotResource = new ScenicSpot_resourceServiceImpl();
+        List<ScenicSpot_resource> scenicSpot_resources = spotResource.searchAll(scenicSpot_resource);
+
+        if (scenicSpot_resources.isEmpty()) {
+            map.put("msg", false);
+        } else {
+            if (1 == scenicSpot_resources.get(0).getScenicSpot_resource_use()) {
+                long scenicSpotId = scenicSpot_resources.get(0).getScenicSpot_id();
+
+                //通过景区景点中间表，scenicZoneId景区id
+                ScenicZone_scenicSpot scenicZone_scenicSpot = new ScenicZone_scenicSpot();
+                scenicZone_scenicSpot.setScenicSpot_id(scenicSpotId);
+                ScenicZone_scenicSpotServiceImpl scenicZoneScenicSpot = new ScenicZone_scenicSpotServiceImpl();
+                List<ScenicZone_scenicSpot> scenicZone_scenicSpots = scenicZoneScenicSpot.searchAll(scenicZone_scenicSpot);
+
+                if (scenicZone_scenicSpots.isEmpty()) {
+                    map.put("msg", false);
+                } else {
+                    if (1 == scenicZone_scenicSpots.get(0).getScenicZone_scenicSpot_use()) {
+                        long scenicZoneId = scenicZone_scenicSpots.get(0).getScenicZone_id();
+                        //存资源对应景区播放记录
+                        num = PlayNum.getPlayNumModel().getScenicZoneRecord(scenicZoneId);
+                    }
+                }
+            }
         }
+
 
         if(num == 0){
             map.put("msg", false);

@@ -1,3 +1,5 @@
+
+
 function startLog(){
     // 加载完成
     vr.loadProgressManager.onLoad = function () {

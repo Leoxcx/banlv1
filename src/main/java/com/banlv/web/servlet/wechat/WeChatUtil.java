@@ -1,4 +1,4 @@
-package com.banlv.web.servlet.DTO.wechat;
+package com.banlv.web.servlet.wechat;
 
 import cn.hutool.core.codec.Base64;
 import cn.hutool.http.HttpUtil;
@@ -37,7 +37,6 @@ public class WeChatUtil {
         String result = HttpUtil.get(requestUrl, requestUrlParam);
         JSONObject jsonObject = JSONUtil.parseObj(result);
         String openid = jsonObject.get("openid", String.class);
-        System.out.println(openid);
         return openid;
     }
 

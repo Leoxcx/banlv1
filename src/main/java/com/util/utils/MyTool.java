@@ -61,6 +61,9 @@ public class MyTool<T> {
                             case "int arg0":
                                 method.invoke(t, Integer.parseInt(entry.getValue()[0]));
                                 break;
+                            case "long arg0":
+                                method.invoke(t, Long.parseLong(entry.getValue()[0]));
+                                break;
                             case "boolean arg0":
                                 if ("true".equals(entry.getValue()[0]) || "True".equals(entry.getValue()[0])) {
                                     method.invoke(t, true);

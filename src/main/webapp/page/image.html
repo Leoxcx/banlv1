@@ -23,24 +23,7 @@
     }
     function init() {
 
-        var vr = new VR({ 'id': 'example' });
 
-        if (!AVR.isCrossScreen()) {
-            vr.useGyroscope = false;
-        }
-        vr.loadProgressManager.onLoad = function () {
-            //vr.controls.enable=false;
-        }
-        vr.loadProgressManager.onProgress = function () {
-            console.log("onProgress")
-        }
-        vr.loadProgressManager.onError = function () {
-            console.log("onError")
-        }
-        vr.init(function () {
-
-        });
-        vr.play('../examples/textures/puydesancy.jpg');
     }
 
 

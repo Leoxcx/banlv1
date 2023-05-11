@@ -35,15 +35,51 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/banlv$banlv.ic" NAME="banlv Coverage Results" MODIFIED="1680509694796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="Class" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>./images/</find>
+      <find>T</find>
+      <find>slide</find>
+      <find>/&gt;\n&quot; +</find>
+      <find>./images</find>
+      <find>toolbar</find>
+      <find>com</find>
+      <find>mySwiper</find>
+      <find>resourceSwiper</find>
+      <find>.videoInfoPanel</find>
+      <find>moreBtn</find>
+      <find>mouseover</find>
+      <find>touchmove</find>
+      <find>sceniczoneswiper</find>
+      <find>i</find>
+      <find>resource_id</find>
+      <find>changeVideo</find>
+      <find>img</find>
+      <find>Content</find>
+      <find>00:00</find>
+      <find>playSvg</find>
+      <find>26</find>
+      <find>_toolBarBtn</find>
+      <find>videoImage</find>
+      <find>videoNameText</find>
+      <find>play</find>
+      <find>click</find>
+      <find>playButton</find>
+      <find>scenicSpotMenu</find>
+      <find>opengyroUnfreeze</find>
+    </findStrings>
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -52,66 +88,53 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectId" id="2O2tU22gb8zd6nevUqXiY6Evpzt" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectViewState">
-    <option name="abbreviatePackageNames" value="true" />
-    <option name="showLibraryContents" value="true" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1048" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1681123214079" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1683773130441" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Problems" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15100402" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+    <property name="settings.editor.selected.configurable" value="project.propDebugger" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.banlv" />
+      <recent name="com" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\xiangmu\huagongchang\server\banlv\src\main\webapp\build" />
+      <recent name="D:\xiangmu\huagongchang\server\banlv\src\main\java\com\util" />
+      <recent name="D:\xiangmu\huagongchang\server\banlv\src\main\java\com\sgz\util\bean" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.util.bean.dto" />
-      <recent name="com.util.utils" />
       <recent name="com.banlv.web.servlet.DTO.mainPage" />
+      <recent name="com.util.utils" />
+      <recent name="com.sgz.util.tools" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\L\banlv\src\main\webapp\page" />
+      <recent name="D:\xiangmu\huagongchang\server\banlv\src\main\java\com\util\dao" />
+      <recent name="D:\xiangmu\huagongchang\server\banlv\src\main\webapp\js\page\videoplay" />
+      <recent name="D:\xiangmu\huagongchang\server\banlv\banlv" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Unnamed">
+  <component name="RunManager" selected="Tomcat Server.banlv">
     <configuration name="CreateJava" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.util.tools.CreateJava" />
       <module name="banlv" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.util.tools.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Download" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.banlv.web.servlet.DTO.downLoad.Download" />
-      <module name="banlv" />
-      <option name="VM_PARAMETERS" value="-Dfile.encoding=UTF-8" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.banlv.web.servlet.DTO.downLoad.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="QiniuUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.util.utils.QiniuUtil" />
-      <module name="banlv" />
-      <extension name="coverage">
-        <pattern>
           <option name="PATTERN" value="com.util.utils.*" />
           <option name="ENABLED" value="true" />
         </pattern>
@@ -120,21 +143,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UploadFile" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.util.utils.UploadFile" />
-      <module name="banlv" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.util.utils.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Unnamed" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.63" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encoding=UTF-8" />
+    <configuration name="banlv" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="banlv Tomcat" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <deployment>
@@ -154,7 +164,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="64330" />
+        <option name="DEBUG_PORT" value="1025" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -209,18 +219,12 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.UploadFile" />
-      <item itemvalue="Application.QiniuUtil" />
       <item itemvalue="Application.CreateJava" />
-      <item itemvalue="Application.Download" />
-      <item itemvalue="Tomcat Server.Unnamed" />
+      <item itemvalue="Tomcat Server.banlv" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Download" />
         <item itemvalue="Application.CreateJava" />
-        <item itemvalue="Application.QiniuUtil" />
-        <item itemvalue="Application.UploadFile" />
       </list>
     </recent_temporary>
   </component>
@@ -229,233 +233,169 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4789afa5-2117-470d-96aa-0f6305956f8e" name="Default Changelist" comment="" />
-      <created>1680770204808</created>
+      <changelist id="846c43e4-76b8-467e-88cb-e9f7a7dde37e" name="Default Changelist" comment="" />
+      <created>1679995853286</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1680770204808</updated>
-      <workItem from="1680770205991" duration="259000" />
-      <workItem from="1680770521334" duration="4835000" />
-      <workItem from="1680829456391" duration="26134000" />
-      <workItem from="1681088648448" duration="28062000" />
-      <workItem from="1681175398309" duration="28000" />
-      <workItem from="1681206352833" duration="3707000" />
-      <workItem from="1681261536835" duration="17582000" />
-      <workItem from="1681347807448" duration="2052000" />
-      <workItem from="1681436080834" duration="14741000" />
-      <workItem from="1683773838577" duration="198000" />
-      <workItem from="1683774050394" duration="4697000" />
+      <updated>1679995853286</updated>
+      <workItem from="1679995857529" duration="260000" />
+      <workItem from="1679996257590" duration="2529000" />
+      <workItem from="1680053040751" duration="488000" />
+      <workItem from="1680053818419" duration="19873000" />
+      <workItem from="1680138362601" duration="477000" />
+      <workItem from="1680139359918" duration="9779000" />
+      <workItem from="1680484515304" duration="999000" />
+      <workItem from="1680485771860" duration="3423000" />
+      <workItem from="1680509793035" duration="234000" />
+      <workItem from="1680510417166" duration="2578000" />
+      <workItem from="1680569804293" duration="3638000" />
+      <workItem from="1680589634441" duration="5701000" />
+      <workItem from="1680829135948" duration="18469000" />
+      <workItem from="1681088194253" duration="22168000" />
+      <workItem from="1681119190716" duration="2504000" />
+      <workItem from="1681175010343" duration="8114000" />
+      <workItem from="1681263340436" duration="954000" />
+      <workItem from="1681265022891" duration="10276000" />
+      <workItem from="1681347260291" duration="8294000" />
+      <workItem from="1681434155544" duration="2295000" />
+      <workItem from="1681718050459" duration="16250000" />
+      <workItem from="1681867096369" duration="3383000" />
+      <workItem from="1681872670208" duration="7202000" />
+      <workItem from="1681892828421" duration="1189000" />
+      <workItem from="1682319039148" duration="840000" />
+      <workItem from="1683768929339" duration="3593000" />
     </task>
-    <task id="LOCAL-00001" summary="伴侣项目">
-      <created>1683775712344</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1683775712344</updated>
-    </task>
-    <task id="LOCAL-00002" summary="伴侣项目1">
-      <created>1683784360925</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1683784360925</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <option name="CHECK_NEW_TODO" value="false" />
-    <ignored-roots>
-      <path value="$PROJECT_DIR$" />
-      <path value="$PROJECT_DIR$/banlv" />
-    </ignored-roots>
-    <MESSAGE value="伴侣项目" />
-    <MESSAGE value="伴侣项目1" />
-    <option name="LAST_COMMIT_MESSAGE" value="伴侣项目1" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="552" y="178" key="#Deployment" timestamp="1683784301602">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="178" key="#Deployment/0.0.1920.1040@0.0.1920.1040" timestamp="1683784301602" />
-    <state x="842" y="381" key="#Notifications" timestamp="1683775854559">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="842" y="381" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1683775854559" />
-    <state x="369" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1681265747659">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="369" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1681265747659" />
-    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser" timestamp="1681277732691">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1681277732691" />
-    <state x="637" y="163" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable" timestamp="1681207548639">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="637" y="163" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable/0.0.1920.1040@0.0.1920.1040" timestamp="1681207548639" />
-    <state x="480" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1681280730229">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="480" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1681280730229" />
-    <state x="690" y="266" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1681442957055">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="690" y="266" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1681442957055" />
-    <state x="715" y="221" key="#xdebugger.evaluate" timestamp="1680852761239">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="715" y="221" key="#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040" timestamp="1680852761239" />
-    <state x="558" y="86" key="CommitChangelistDialog2" timestamp="1683784355932">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="558" y="86" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1683784355932" />
-    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1683777533158">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1683777533158" />
-    <state x="695" y="266" key="FileChooserDialogImpl" timestamp="1681206685273">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="695" y="266" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1681206685273" />
-    <state x="832" y="417" key="Github.ShareDialog" timestamp="1683783995458">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="832" y="417" key="Github.ShareDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1683783995458" />
-    <state width="1691" height="347" key="GridCell.Tab.0.bottom" timestamp="1681469101453">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1691" height="347" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1681469101453" />
-    <state width="1691" height="347" key="GridCell.Tab.0.center" timestamp="1681469101453">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1691" height="347" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1681469101453" />
-    <state width="1691" height="347" key="GridCell.Tab.0.left" timestamp="1681469101453">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1691" height="347" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1681469101453" />
-    <state width="1691" height="347" key="GridCell.Tab.0.right" timestamp="1681469101453">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1691" height="347" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1681469101453" />
-    <state width="1691" height="347" key="GridCell.Tab.1.bottom" timestamp="1681469101454">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1691" height="347" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1681469101454" />
-    <state width="1691" height="347" key="GridCell.Tab.1.center" timestamp="1681469101453">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1691" height="347" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1681469101453" />
-    <state width="1691" height="347" key="GridCell.Tab.1.left" timestamp="1681469101453">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1691" height="347" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1681469101453" />
-    <state width="1691" height="347" key="GridCell.Tab.1.right" timestamp="1681469101454">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1691" height="347" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1681469101454" />
-    <state width="1691" height="347" key="GridCell.Tab.2.bottom" timestamp="1681469101455">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1691" height="347" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1681469101455" />
-    <state width="1691" height="347" key="GridCell.Tab.2.center" timestamp="1681469101455">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1691" height="347" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1681469101455" />
-    <state width="1691" height="347" key="GridCell.Tab.2.left" timestamp="1681469101455">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1691" height="347" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1681469101455" />
-    <state width="1691" height="347" key="GridCell.Tab.2.right" timestamp="1681469101455">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1691" height="347" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1681469101455" />
-    <state width="1691" height="347" key="GridCell.Tab.3.bottom" timestamp="1681469101455">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1691" height="347" key="GridCell.Tab.3.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1681469101455" />
-    <state width="1691" height="347" key="GridCell.Tab.3.center" timestamp="1681469101455">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1691" height="347" key="GridCell.Tab.3.center/0.0.1920.1040@0.0.1920.1040" timestamp="1681469101455" />
-    <state width="1691" height="347" key="GridCell.Tab.3.left" timestamp="1681469101455">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1691" height="347" key="GridCell.Tab.3.left/0.0.1920.1040@0.0.1920.1040" timestamp="1681469101455" />
-    <state width="1691" height="347" key="GridCell.Tab.3.right" timestamp="1681469101455">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1691" height="347" key="GridCell.Tab.3.right/0.0.1920.1040@0.0.1920.1040" timestamp="1681469101455" />
-    <state x="490" y="174" key="Maven.ArtifactSearchDialog" timestamp="1681263744351">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="490" y="174" key="Maven.ArtifactSearchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1681263744351" />
-    <state x="57" y="97" key="SettingsEditor" timestamp="1683783938229">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="57" y="97" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1683783938229" />
-    <state x="552" y="239" key="Vcs.Push.Dialog.v2" timestamp="1683775747370">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="239" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1683775747370" />
-    <state x="71" y="101" width="1736" height="856" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1681202266230">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="71" y="101" width="1736" height="856" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1681202266230" />
-    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1681202266230">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1681202266230" />
-    <state x="838" y="253" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1683774092465">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="838" y="253" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1683774092465" />
-    <state x="662" y="121" width="637" height="798" key="find.popup" timestamp="1681208078918">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="662" y="121" width="637" height="798" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1681208078918" />
-    <state x="661" y="275" key="refactoring.ChangeSignatureDialog" timestamp="1680839815930">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="661" y="275" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1680839815930" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1680833971093">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1680833971093" />
-    <state x="623" y="92" width="672" height="676" key="search.everywhere.popup" timestamp="1681208045675">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="623" y="92" width="672" height="676" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1681208045675" />
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$MAVEN_REPOSITORY$/com/qiniu/qiniu-java-sdk/7.13.0/qiniu-java-sdk-7.13.0.jar!/com/qiniu/util/Auth.class</url>
-          <line>231</line>
-          <option name="timeStamp" value="2" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/SaveCoordinateRecord.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/SaveCoordinateRecord.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/SaveCoordinateRecord.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/GetResourcesByResourceId.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
-        <watch expression="scenicZoneInfoDtos" language="JAVA" />
-      </configuration>
-    </watches-manager>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>banlv:war</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Web (banlv)|Web</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>banlv</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: aopalliance:aopalliance:1.0</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

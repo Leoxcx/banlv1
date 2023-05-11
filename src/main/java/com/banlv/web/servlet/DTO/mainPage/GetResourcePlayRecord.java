@@ -2,7 +2,6 @@ package com.banlv.web.servlet.DTO.mainPage;
 
 import com.banlv.model.PlayNum;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.apache.commons.lang.StringUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,23 +21,18 @@ public class GetResourcePlayRecord extends HttpServlet {
         Map<String,Object> map = new HashMap<>();
         int num = 0;
 
-        String resource_id = request.getParameter("resource_id");
-        if(StringUtils.isEmpty(resource_id)) {
+        long resourceId = Long.parseLong(request.getParameter("resource_id"));
+
+        num = PlayNum.getPlayNumModel().getResourceRecord(resourceId);
+
+        if(num == 0){
             map.put("msg", false);
-            map.put("coordinateInfoDtoList", null);
-        }else {
-            long resourceId = Long.parseLong(resource_id);
-
-            num = PlayNum.getPlayNumModel().getResourceRecord(resourceId);
-
-            if (num == 0) {
-                map.put("msg", false);
-                map.put("num", null);
-            } else {
-                map.put("msg", true);
-                map.put("num", num);
-            }
+            map.put("num", null);
+        } else {
+            map.put("msg", true);
+            map.put("num", num);
         }
+
         ObjectMapper mapper = new ObjectMapper();
         mapper.writeValue(response.getWriter(),map);
 

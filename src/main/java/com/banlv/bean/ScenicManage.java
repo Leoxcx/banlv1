@@ -4,14 +4,14 @@ import java.io.Serializable;
 
 public class ScenicManage implements Serializable {
     private long scenicManage_id;
-    private String scenicManage_name;
-    private String scenicManage_password;
-    private String scenicManage_phone;
+    private long scenicManage_name;
+    private long scenicManage_password;
+    private long scenicManage_phone;
 
     public ScenicManage() {
     }
 
-    public ScenicManage(long scenicManage_id, String scenicManage_name, String scenicManage_password, String scenicManage_phone) {
+    public ScenicManage(long scenicManage_id, long scenicManage_name, long scenicManage_password, long scenicManage_phone) {
         this.scenicManage_id = scenicManage_id;
         this.scenicManage_name = scenicManage_name;
         this.scenicManage_password = scenicManage_password;
@@ -26,27 +26,27 @@ public class ScenicManage implements Serializable {
         this.scenicManage_id = scenicManage_id;
     }
 
-    public String getScenicManage_name() {
+    public long getScenicManage_name() {
         return scenicManage_name;
     }
 
-    public void setScenicManage_name(String scenicManage_name) {
+    public void setScenicManage_name(long scenicManage_name) {
         this.scenicManage_name = scenicManage_name;
     }
 
-    public String getScenicManage_password() {
+    public long getScenicManage_password() {
         return scenicManage_password;
     }
 
-    public void setScenicManage_password(String scenicManage_password) {
+    public void setScenicManage_password(long scenicManage_password) {
         this.scenicManage_password = scenicManage_password;
     }
 
-    public String getScenicManage_phone() {
+    public long getScenicManage_phone() {
         return scenicManage_phone;
     }
 
-    public void setScenicManage_phone(String scenicManage_phone) {
+    public void setScenicManage_phone(long scenicManage_phone) {
         this.scenicManage_phone = scenicManage_phone;
     }
 
@@ -54,9 +54,9 @@ public class ScenicManage implements Serializable {
     public String toString() {
         return "ScenicManage{" +
                 "scenicManage_id=" + scenicManage_id +
-                ", scenicManage_name='" + scenicManage_name + '\'' +
-                ", scenicManage_password='" + scenicManage_password + '\'' +
-                ", scenicManage_phone='" + scenicManage_phone + '\'' +
+                ", scenicManage_name=" + scenicManage_name +
+                ", scenicManage_password=" + scenicManage_password +
+                ", scenicManage_phone=" + scenicManage_phone +
                 '}';
     }
 }

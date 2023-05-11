@@ -1,4 +1,4 @@
-package com.banlv.web.servlet.DTO.footmarkPage;
+package com.banlv.web.servlet.DTO.mainPage;
 
 import com.banlv.bean.Resource;
 import com.banlv.bean.ScenicSpot;
@@ -19,8 +19,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.util.bean.transTool.TransTool.spotToResource;
-
 //查看所有景点信息，以及景点内的资源
 @WebServlet("/getscenicspotinfo")
 public class GetScenicSpotInfo extends HttpServlet {
@@ -37,8 +35,7 @@ public class GetScenicSpotInfo extends HttpServlet {
             map.put("scenicZoneInfoDto", null);
         } else {
             for (ScenicSpot sp: scenicSpots) {
-                List<Resource> resources = spotToResource(sp.getScenicSpot_id());
-//                        ScenicSpotRecommendServlet.spotToResource(sp.getScenicSpot_id());
+                List<Resource> resources = ScenicSpotRecommendServlet.spotToResource(sp.getScenicSpot_id());
                 if(resources.isEmpty()) {
                     map.put("msg", false);
                     map.put("scenicZoneInfoDto", null);
@@ -50,7 +47,6 @@ public class GetScenicSpotInfo extends HttpServlet {
                 scenicSpotInfoDto.setScenicSpot_longitude(sp.getScenicSpot_longitude());
                 scenicSpotInfoDto.setScenicSpot_range(sp.getScenicSpot_range());
                 scenicSpotInfoDto.setResources(resources);
-
                 scenicSpotInfoDtos.add(scenicSpotInfoDto);
             }
             map.put("msg", true);
