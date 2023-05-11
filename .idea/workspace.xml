@@ -29,9 +29,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4789afa5-2117-470d-96aa-0f6305956f8e" name="Default Changelist" comment="伴侣项目1">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-    </list>
+    <list default="true" id="4789afa5-2117-470d-96aa-0f6305956f8e" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -246,7 +244,7 @@
       <workItem from="1681347807448" duration="2052000" />
       <workItem from="1681436080834" duration="14741000" />
       <workItem from="1683773838577" duration="198000" />
-      <workItem from="1683774050394" duration="4341000" />
+      <workItem from="1683774050394" duration="4697000" />
     </task>
     <task id="LOCAL-00001" summary="伴侣项目">
       <created>1683775712344</created>
@@ -255,7 +253,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683775712344</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="伴侣项目1">
+      <created>1683784360925</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1683784360925</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,10 +289,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="伴侣项目1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="178" key="#Deployment" timestamp="1683777549229">
+    <state x="552" y="178" key="#Deployment" timestamp="1683784301602">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="178" key="#Deployment/0.0.1920.1040@0.0.1920.1040" timestamp="1683777549229" />
+    <state x="552" y="178" key="#Deployment/0.0.1920.1040@0.0.1920.1040" timestamp="1683784301602" />
     <state x="842" y="381" key="#Notifications" timestamp="1683775854559">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -316,10 +321,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="715" y="221" key="#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040" timestamp="1680852761239" />
-    <state x="558" y="86" key="CommitChangelistDialog2" timestamp="1683777571630">
+    <state x="558" y="86" key="CommitChangelistDialog2" timestamp="1683784355932">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="558" y="86" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1683777571630" />
+    <state x="558" y="86" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1683784355932" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1683777533158">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
