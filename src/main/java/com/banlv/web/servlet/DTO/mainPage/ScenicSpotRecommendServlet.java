@@ -19,6 +19,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import static com.util.bean.transTool.TransTool.spotToResource;
+
 //景点scenicSpot_id获取资源（前十个）
 @WebServlet("/spotrecommendservlet")
 public class ScenicSpotRecommendServlet extends HttpServlet {
@@ -38,6 +41,7 @@ public class ScenicSpotRecommendServlet extends HttpServlet {
             map.put("msg", false);
             map.put("resources", null);
         }else {
+
             List<Resource> resources = spotToResource(Long.parseLong(spotId));
             if (resources.isEmpty()) {
                 map.put("msg", false);
@@ -54,28 +58,5 @@ public class ScenicSpotRecommendServlet extends HttpServlet {
         this.doPost(request, response);
     }
 
-    public static List<Resource> spotToResource(long spotId) {
-        //景点资源中间表
-        ScenicSpot_resource scenicSpot_resource = new ScenicSpot_resource();
-        scenicSpot_resource.setScenicSpot_id(spotId);
-        scenicSpot_resource.setScenicSpot_resource_use(1);
 
-        List<Resource> resources = new ArrayList<>();
-
-        ScenicSpot_resourceService spotResource = new ScenicSpot_resourceServiceImpl();
-        List<ScenicSpot_resource> scenicSpot_resources = spotResource.searchAll(scenicSpot_resource);
-
-        if (!scenicSpot_resources.isEmpty()) {
-
-            Resource resource = new Resource();
-            ResourceService resourceService = new ResourceServiceImpl();
-
-            for (ScenicSpot_resource i : scenicSpot_resources) {
-                resource.setResource_id(i.getResource_id());
-                List<Resource> res = resourceService.searchAll(resource);
-                resources.add(res.get(0));
-            }
-        }
-        return  resources;
-    }
 }

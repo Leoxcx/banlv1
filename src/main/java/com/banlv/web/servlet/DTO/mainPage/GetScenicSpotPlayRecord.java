@@ -25,21 +25,13 @@ public class GetScenicSpotPlayRecord extends HttpServlet {
         Map<String,Object> map = new HashMap<>();
         int num = 0;
 
-        long resourceId = Long.parseLong(request.getParameter("resource_id"));
+        long scenicSpotId = Long.parseLong(request.getParameter("scenicSpot_id"));
 
-        //通过景点资源中间表，获取scenicSpotId景点id
-        ScenicSpot_resource scenicSpot_resource = new ScenicSpot_resource();
-        scenicSpot_resource.setResource_id(resourceId);
-        ScenicSpot_resourceService spotResource = new ScenicSpot_resourceServiceImpl();
-        List<ScenicSpot_resource> scenicSpot_resources = spotResource.searchAll(scenicSpot_resource);
-
-        if (!scenicSpot_resources.isEmpty()) {
-            if (1 == scenicSpot_resources.get(0).getScenicSpot_resource_use()) {
-                long scenicSpotId = scenicSpot_resources.get(0).getScenicSpot_id();
-                //获取资源对应景点播放记录
-                num = PlayNum.getPlayNumModel().getScenicSpotRecord(scenicSpotId);
-            }
+        if(scenicSpotId != 0) {
+            //获取资源对应景点播放记录
+            num = PlayNum.getPlayNumModel().getScenicSpotRecord(scenicSpotId);
         }
+
 
         if(num == 0){
             map.put("msg", false);

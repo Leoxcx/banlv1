@@ -19,7 +19,7 @@
     <select id="searchAllByPage" resultType="agent">
         select * from agent
         where 1 = 1
-        <if test="arg1.agent_id !=null and agent_id != 0">
+        <if test="arg1.agent_id !=null">
             and agent_id=#{arg1.agent_id}
         </if>
         <if test="arg1.agent_name !=null and arg1.agent_name !=''">
@@ -38,7 +38,7 @@
     <select id="searchAll" resultType="agent">
         select * from agent
         where 1 = 1
-        <if test="agent_id !=null and agent_id != 0">
+        <if test="agent_id !=null">
             and agent_id=#{agent_id}
         </if>
         <if test="agent_name !=null and agent_name !=''">
@@ -61,7 +61,7 @@
     <select id="findSearchTotalCount" parameterType="agent" resultType="int">
         select count(*) from agent
         where 1 = 1
-        <if test="agent_id!=null and agent_id != 0">
+        <if test="agent_id!=null">
             and agent_id=#{agent_id}
         </if>
         <if test="agent_name!=null and agent_name!=''">
@@ -89,7 +89,7 @@
     <update id="updateAgent" parameterType="agent">
         update agent
         <set>
-            <if test="agent_id!=null and agent_id != 0">
+            <if test="agent_id!=null">
                 agent_id=#{agent_id},
             </if>
             <if test="agent_name!=null and agent_name!=''">

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--mapper约束-->
+<mapper namespace="com.banlv.dao.ICityDao">
+
+    <!--配置查询所有-->
+    <select id="findAll" resultType="city">
+        select * from city;
+    </select>
+
+    <!--配置通过页面查询所有-->
+    <select id="findAllByPage" parameterType="map" resultType="city">
+        select * from city limit #{start},#{rows};
+    </select>
+
+    <!--通过页面和查询条件查询所有-->
+    <select id="searchAllByPage" resultType="city">
+        select * from city
+        where 1 = 1
+        <if test="arg1.city_id !=null">
+            and city_id=#{arg1.city_id}
+        </if>
+        <if test="arg1.city_name !=null and arg1.city_name !=''">
+            and city_name=#{arg1.city_name}
+        </if>
+        <if test="arg1.city_introduce !=null and arg1.city_introduce !=''">
+            and city_introduce=#{arg1.city_introduce}
+        </if>
+        <if test="arg1.city_weather !=null and arg1.city_weather !=''">
+            and city_weather=#{arg1.city_weather}
+        </if>
+        <if test="arg1.city_temperature !=null">
+            and city_temperature=#{arg1.city_temperature}
+        </if>
+        <if test="arg1.city_bg !=null and arg1.city_bg !=''">
+            and city_bg=#{arg1.city_bg}
+        </if>
+        limit #{arg0.start},#{arg0.rows};
+    </select>
+
+    <!--通过查询条件查询所有-->
+    <select id="searchAll" resultType="city">
+        select * from city
+        where 1 = 1
+        <if test="city_id !=null">
+            and city_id=#{city_id}
+        </if>
+        <if test="city_name !=null and city_name !=''">
+            and city_name=#{city_name}
+        </if>
+        <if test="city_introduce !=null and city_introduce !=''">
+            and city_introduce=#{city_introduce}
+        </if>
+        <if test="city_weather !=null and city_weather !=''">
+            and city_weather=#{city_weather}
+        </if>
+        <if test="city_temperature !=null">
+            and city_temperature=#{city_temperature}
+        </if>
+        <if test="city_bg !=null and city_bg !=''">
+            and city_bg=#{city_bg}
+        </if>
+	;    </select>
+
+    <!--查询总记录数-->
+    <select id="findTotalCount" resultType="int">
+        select count(*) from city;
+    </select>
+
+    <!--查询高级查询记录数-->
+    <select id="findSearchTotalCount" parameterType="city" resultType="int">
+        select count(*) from city
+        where 1 = 1
+        <if test="city_id!=null">
+            and city_id=#{city_id}
+        </if>
+        <if test="city_name!=null and city_name!=''">
+            and city_name=#{city_name}
+        </if>
+        <if test="city_introduce!=null and city_introduce!=''">
+            and city_introduce=#{city_introduce}
+        </if>
+        <if test="city_weather!=null and city_weather!=''">
+            and city_weather=#{city_weather}
+        </if>
+        <if test="city_temperature!=null">
+            and city_temperature=#{city_temperature}
+        </if>
+        <if test="city_bg!=null and city_bg!=''">
+            and city_bg=#{city_bg}
+        </if>
+	;    </select>
+
+    <!--新增-->
+    <insert id="addCity" parameterType="city">
+        insert into city values (null,#{city_name},#{city_introduce},#{city_weather},#{city_temperature},#{city_bg});
+    </insert>
+
+    <!--删除-->
+    <delete id="deleteByCityId">
+        delete from city where city_id = #{city_id};
+    </delete>
+
+    <!--更新-->
+    <update id="updateCity" parameterType="city">
+        update city
+        <set>
+            <if test="city_id!=null">
+                city_id=#{city_id},
+            </if>
+            <if test="city_name!=null and city_name!=''">
+                city_name=#{city_name},
+            </if>
+            <if test="city_introduce!=null and city_introduce!=''">
+                city_introduce=#{city_introduce},
+            </if>
+            <if test="city_weather!=null and city_weather!=''">
+                city_weather=#{city_weather},
+            </if>
+            <if test="city_temperature!=null">
+                city_temperature=#{city_temperature},
+            </if>
+            <if test="city_bg!=null and city_bg!=''">
+                city_bg=#{city_bg},
+            </if>
+        </set>
+        where city_id=#{city_id};
+    </update>
+</mapper>

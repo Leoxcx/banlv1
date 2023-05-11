@@ -19,13 +19,13 @@
     <select id="searchAllByPage" resultType="user_resource">
         select * from user_resource
         where 1 = 1
-        <if test="arg1.user_resource_id !=null and user_resource_id != 0">
+        <if test="arg1.user_resource_id !=null">
             and user_resource_id=#{arg1.user_resource_id}
         </if>
-        <if test="arg1.user_id !=null and user_id != 0">
+        <if test="arg1.user_id !=null">
             and user_id=#{arg1.user_id}
         </if>
-        <if test="arg1.resource_id !=null and resource_id != 0">
+        <if test="arg1.resource_id !=null">
             and resource_id=#{arg1.resource_id}
         </if>
         limit #{arg0.start},#{arg0.rows};
@@ -35,13 +35,13 @@
     <select id="searchAll" resultType="user_resource">
         select * from user_resource
         where 1 = 1
-        <if test="user_resource_id !=null and user_resource_id != 0">
+        <if test="user_resource_id !=null">
             and user_resource_id=#{user_resource_id}
         </if>
-        <if test="user_id !=null and user_id != 0">
+        <if test="user_id !=null">
             and user_id=#{user_id}
         </if>
-        <if test="resource_id !=null and resource_id != 0">
+        <if test="resource_id !=null">
             and resource_id=#{resource_id}
         </if>
 	;    </select>
@@ -55,13 +55,13 @@
     <select id="findSearchTotalCount" parameterType="user_resource" resultType="int">
         select count(*) from user_resource
         where 1 = 1
-        <if test="user_resource_id!=null and user_resource_id != 0">
+        <if test="user_resource_id!=null">
             and user_resource_id=#{user_resource_id}
         </if>
-        <if test="user_id!=null and user_id != 0">
+        <if test="user_id!=null">
             and user_id=#{user_id}
         </if>
-        <if test="resource_id!=null and resource_id != 0">
+        <if test="resource_id!=null">
             and resource_id=#{resource_id}
         </if>
 	;    </select>
@@ -80,13 +80,13 @@
     <update id="updateUser_resource" parameterType="user_resource">
         update user_resource
         <set>
-            <if test="user_resource_id!=null and user_resource_id != 0">
+            <if test="user_resource_id!=null">
                 user_resource_id=#{user_resource_id},
             </if>
-            <if test="user_id!=null and user_id != 0">
+            <if test="user_id!=null">
                 user_id=#{user_id},
             </if>
-            <if test="resource_id!=null and resource_id != 0">
+            <if test="resource_id!=null">
                 resource_id=#{resource_id},
             </if>
         </set>

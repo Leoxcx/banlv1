@@ -29,7 +29,40 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4789afa5-2117-470d-96aa-0f6305956f8e" name="Default Changelist" comment="" />
+    <list default="true" id="4789afa5-2117-470d-96aa-0f6305956f8e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/banlv/bean/City.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/banlv/bean/ScenicZoneType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/banlv/bean/ScenicZone_scenicZoneEntry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/agentPage/RemoveCoordinateRecord.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/agentPage/SaveCoordinateRecord.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/downLoad/Download.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/footmarkPage/GetScenicSpotInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/footmarkPage/GetScenicSpotInfoByZoneId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/footmarkPage/GetScenicZoneInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/GetCurrentScenicSpotResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/upload/QiniuCloudUpload.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/upload/Upload.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/userInfoPage/GetUserArrive.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/userInfoPage/PlayRecord.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/wechat/WeChatUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/wechat/WechatGetUserId.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banlv/bean/ScenicZone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banlv/bean/ScenicZone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/AgentToCoordinateRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/agentPage/AgentToCoordinateRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/util/tools/CreateJava.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/util/tools/CreateJava.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/SqlMapconfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/SqlMapconfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/banlv/dao/IAgentDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/banlv/dao/IAgentDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/banlv/dao/IResourceDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/banlv/dao/IResourceDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/banlv/dao/IScenicManageDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/banlv/dao/IScenicManageDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/banlv/dao/IScenicSpotDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/banlv/dao/IScenicSpotDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/banlv/dao/IScenicSpot_resourceDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/banlv/dao/IScenicSpot_resourceDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/banlv/dao/IScenicZoneDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/banlv/dao/IScenicZoneDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/banlv/dao/IScenicZone_scenicSpotDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/banlv/dao/IScenicZone_scenicSpotDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/banlv/dao/IUserArriveDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/banlv/dao/IUserArriveDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/banlv/dao/IUserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/banlv/dao/IUserDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/banlv/dao/IUserPlayDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/banlv/dao/IUserPlayDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/banlv/dao/IUser_resourceDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/banlv/dao/IUser_resourceDao.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,8 +75,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="Class" />
         <option value="JavaScript File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -81,6 +114,9 @@
       <find>opengyroUnfreeze</find>
     </findStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -88,18 +124,22 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1048" />
+  <component name="ProjectId" id="2PdZIMHRmjG70tHtelxvG4tHkTb" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="abbreviatePackageNames" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1683773130441" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -108,14 +148,15 @@
     <property name="settings.editor.selected.configurable" value="project.propDebugger" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\L\banlv\src\main\java\com\util\bean" />
+      <recent name="D:\xiangmu\huagongchang\server\banlv\src\main\java\com\util\dao" />
+      <recent name="D:\xiangmu\huagongchang\server\banlv\src\main\webapp\js\page\videoplay" />
+      <recent name="D:\xiangmu\huagongchang\server\banlv\banlv" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.banlv" />
       <recent name="com" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\xiangmu\huagongchang\server\banlv\src\main\webapp\build" />
-      <recent name="D:\xiangmu\huagongchang\server\banlv\src\main\java\com\util" />
-      <recent name="D:\xiangmu\huagongchang\server\banlv\src\main\java\com\sgz\util\bean" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.util.bean.dto" />
@@ -123,13 +164,14 @@
       <recent name="com.util.utils" />
       <recent name="com.sgz.util.tools" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\xiangmu\huagongchang\server\banlv\src\main\java\com\util\dao" />
-      <recent name="D:\xiangmu\huagongchang\server\banlv\src\main\webapp\js\page\videoplay" />
-      <recent name="D:\xiangmu\huagongchang\server\banlv\banlv" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\L\banlv\src\main\java\com\banlv\web\servlet\DTO" />
+      <recent name="D:\xiangmu\huagongchang\server\banlv\src\main\webapp\build" />
+      <recent name="D:\xiangmu\huagongchang\server\banlv\src\main\java\com\util" />
+      <recent name="D:\xiangmu\huagongchang\server\banlv\src\main\java\com\sgz\util\bean" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.banlv">
+  <component name="RunManager" selected="Application.CreateJava">
     <configuration name="CreateJava" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.util.tools.CreateJava" />
       <module name="banlv" />
@@ -233,7 +275,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="846c43e4-76b8-467e-88cb-e9f7a7dde37e" name="Default Changelist" comment="" />
+      <changelist id="4789afa5-2117-470d-96aa-0f6305956f8e" name="Default Changelist" comment="" />
       <created>1679995853286</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -264,7 +306,16 @@
       <workItem from="1681892828421" duration="1189000" />
       <workItem from="1682319039148" duration="840000" />
       <workItem from="1683768929339" duration="3593000" />
+      <workItem from="1683788842340" duration="5559000" />
     </task>
+    <task id="LOCAL-00001" summary="新版">
+      <created>1683789209552</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1683789209552</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView">
@@ -277,10 +328,48 @@
     </todo-panel>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="新版" />
+    <option name="LAST_COMMIT_MESSAGE" value="新版" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="699" y="320" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1683789228155">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="699" y="320" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1683789228155" />
+    <state x="1198" y="324" key="#com.intellij.ide.util.MemberChooser" timestamp="1683797319808">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1198" y="324" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1683797319808" />
+    <state x="558" y="86" key="CommitChangelistDialog2" timestamp="1683789207060">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="558" y="86" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1683789207060" />
+    <state width="1877" height="833" key="GridCell.Tab.0.bottom" timestamp="1683797629844">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="833" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1683797629844" />
+    <state width="1877" height="833" key="GridCell.Tab.0.center" timestamp="1683797629844">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="833" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1683797629844" />
+    <state width="1877" height="833" key="GridCell.Tab.0.left" timestamp="1683797629844">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="833" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1683797629844" />
+    <state width="1877" height="833" key="GridCell.Tab.0.right" timestamp="1683797629844">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="833" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1683797629844" />
+    <state x="616" y="173" width="670" height="676" key="search.everywhere.popup" timestamp="1683798264989">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="173" width="670" height="676" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1683798264989" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

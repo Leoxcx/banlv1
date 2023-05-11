@@ -1,7 +1,9 @@
-package com.banlv.web.servlet.DTO.mainPage;
+package com.banlv.web.servlet.scenicZoneType;
 
-import com.banlv.model.CoordinateRecord;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.banlv.bean.ScenicZoneType;
+import com.banlv.service.ScenicZoneTypeService;
+import com.banlv.service.impl.ScenicZoneTypeServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,35 +12,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
-//代理商删除定位信息
-@WebServlet("/removecoordinaterecord")
-public class RemoveCoordinateRecord extends HttpServlet {
+@WebServlet("/scenicZoneTypetotallistservlet")
+public class ScenicZoneTypeTotalListServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         response.setContentType("application/json;charset=utf-8");
+
+        ScenicZoneTypeService scenicZoneTypeService = new ScenicZoneTypeServiceImpl();
+        List<ScenicZoneType> scenicZoneTypes = scenicZoneTypeService.findAll();
+
         Map<String,Object> map = new HashMap<>();
-
-        int index = Integer.parseInt(request.getParameter("index"));
-        long agentId = Long.valueOf(request.getParameter("agent_id"));
-
-        if(agentId == 0) {
-            map.put("msg", false);
-        } else {
-            //删除元素
-
-            if(CoordinateRecord.getCoordinateRecordModel().removeRecord(index, agentId)) {
-                map.put("msg", true);
-            } else {
-                map.put("msg", false);
-            }
-        }
-
+        map.put("scenicZoneTypes",scenicZoneTypes);
 
         ObjectMapper mapper = new ObjectMapper();
         mapper.writeValue(response.getWriter(),map);
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

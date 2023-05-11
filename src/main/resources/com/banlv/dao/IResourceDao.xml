@@ -19,10 +19,10 @@
     <select id="searchAllByPage" resultType="resource">
         select * from resource
         where 1 = 1
-        <if test="arg1.resource_id !=null and resource_id != 0">
+        <if test="arg1.resource_id !=null">
             and resource_id=#{arg1.resource_id}
         </if>
-        <if test="arg1.agent_id !=null and agent_id != 0">
+        <if test="arg1.agent_id !=null">
             and agent_id=#{arg1.agent_id}
         </if>
         <if test="arg1.resource_name !=null and arg1.resource_name !=''">
@@ -34,7 +34,7 @@
         <if test="arg1.resource_thumbnail !=null and arg1.resource_thumbnail !=''">
             and resource_thumbnail=#{arg1.resource_thumbnail}
         </if>
-        <if test="arg1.resource_points !=null and resource_points != 0">
+        <if test="arg1.resource_points !=null and arg1.resource_points != ''">
             and resource_points=#{arg1.resource_points}
         </if>
         limit #{arg0.start},#{arg0.rows};
@@ -44,10 +44,10 @@
     <select id="searchAll" resultType="resource">
         select * from resource
         where 1 = 1
-        <if test="resource_id !=null and resource_id != 0">
+        <if test="resource_id !=null">
             and resource_id=#{resource_id}
         </if>
-        <if test="agent_id !=null and agent_id != 0">
+        <if test="agent_id !=null">
             and agent_id=#{agent_id}
         </if>
         <if test="resource_name !=null and resource_name !=''">
@@ -59,7 +59,7 @@
         <if test="resource_thumbnail !=null and resource_thumbnail !=''">
             and resource_thumbnail=#{resource_thumbnail}
         </if>
-        <if test="resource_points !=null and resource_points != 0">
+        <if test="resource_points !=null and resource_points != ''">
             and resource_points=#{resource_points}
         </if>
 	;    </select>
@@ -73,10 +73,10 @@
     <select id="findSearchTotalCount" parameterType="resource" resultType="int">
         select count(*) from resource
         where 1 = 1
-        <if test="resource_id!=null and resource_id != 0">
+        <if test="resource_id!=null">
             and resource_id=#{resource_id}
         </if>
-        <if test="agent_id!=null and agent_id != 0">
+        <if test="agent_id!=null">
             and agent_id=#{agent_id}
         </if>
         <if test="resource_name!=null and resource_name!=''">
@@ -88,7 +88,7 @@
         <if test="resource_thumbnail!=null and resource_thumbnail!=''">
             and resource_thumbnail=#{resource_thumbnail}
         </if>
-        <if test="resource_points!=null and resource_points != 0">
+        <if test="resource_points!=null and resource_points != ''">
             and resource_points=#{resource_points}
         </if>
 	;    </select>
@@ -107,10 +107,10 @@
     <update id="updateResource" parameterType="resource">
         update resource
         <set>
-            <if test="resource_id!=null and resource_id != 0">
+            <if test="resource_id!=null">
                 resource_id=#{resource_id},
             </if>
-            <if test="agent_id!=null and agent_id != 0">
+            <if test="agent_id!=null">
                 agent_id=#{agent_id},
             </if>
             <if test="resource_name!=null and resource_name!=''">
@@ -122,7 +122,7 @@
             <if test="resource_thumbnail!=null and resource_thumbnail!=''">
                 resource_thumbnail=#{resource_thumbnail},
             </if>
-            <if test="resource_points!=null and resource_points != 0">
+            <if test="resource_points!=null and resource_points != ''">
                 resource_points=#{resource_points},
             </if>
         </set>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--mapper约束-->
+<mapper namespace="com.banlv.dao.IScenicZoneTypeDao">
+
+    <!--配置查询所有-->
+    <select id="findAll" resultType="scenicZoneType">
+        select * from scenicZoneType;
+    </select>
+
+    <!--配置通过页面查询所有-->
+    <select id="findAllByPage" parameterType="map" resultType="scenicZoneType">
+        select * from scenicZoneType limit #{start},#{rows};
+    </select>
+
+    <!--通过页面和查询条件查询所有-->
+    <select id="searchAllByPage" resultType="scenicZoneType">
+        select * from scenicZoneType
+        where 1 = 1
+        <if test="arg1.scenicZoneEntry_id !=null">
+            and scenicZoneEntry_id=#{arg1.scenicZoneEntry_id}
+        </if>
+        <if test="arg1.scenicZoneEntry_name !=null and arg1.scenicZoneEntry_name !=''">
+            and scenicZoneEntry_name=#{arg1.scenicZoneEntry_name}
+        </if>
+        limit #{arg0.start},#{arg0.rows};
+    </select>
+
+    <!--通过查询条件查询所有-->
+    <select id="searchAll" resultType="scenicZoneType">
+        select * from scenicZoneType
+        where 1 = 1
+        <if test="scenicZoneEntry_id !=null">
+            and scenicZoneEntry_id=#{scenicZoneEntry_id}
+        </if>
+        <if test="scenicZoneEntry_name !=null and scenicZoneEntry_name !=''">
+            and scenicZoneEntry_name=#{scenicZoneEntry_name}
+        </if>
+	;    </select>
+
+    <!--查询总记录数-->
+    <select id="findTotalCount" resultType="int">
+        select count(*) from scenicZoneType;
+    </select>
+
+    <!--查询高级查询记录数-->
+    <select id="findSearchTotalCount" parameterType="scenicZoneType" resultType="int">
+        select count(*) from scenicZoneType
+        where 1 = 1
+        <if test="scenicZoneEntry_id!=null">
+            and scenicZoneEntry_id=#{scenicZoneEntry_id}
+        </if>
+        <if test="scenicZoneEntry_name!=null and scenicZoneEntry_name!=''">
+            and scenicZoneEntry_name=#{scenicZoneEntry_name}
+        </if>
+	;    </select>
+
+    <!--新增-->
+    <insert id="addScenicZoneType" parameterType="scenicZoneType">
+        insert into scenicZoneType values (null,#{scenicZoneEntry_id},#{scenicZoneEntry_name});
+    </insert>
+
+    <!--删除-->
+    <delete id="deleteByScenicZoneTypeId">
+        delete from scenicZoneType where scenicZoneType_id = #{scenicZoneType_id};
+    </delete>
+
+    <!--更新-->
+    <update id="updateScenicZoneType" parameterType="scenicZoneType">
+        update scenicZoneType
+        <set>
+            <if test="scenicZoneEntry_id!=null">
+                scenicZoneEntry_id=#{scenicZoneEntry_id},
+            </if>
+            <if test="scenicZoneEntry_name!=null and scenicZoneEntry_name!=''">
+                scenicZoneEntry_name=#{scenicZoneEntry_name},
+            </if>
+        </set>
+        where scenicZoneType_id=#{scenicZoneType_id};
+    </update>
+</mapper>

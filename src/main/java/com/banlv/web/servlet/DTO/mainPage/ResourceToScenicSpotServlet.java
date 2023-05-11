@@ -17,6 +17,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static com.util.bean.transTool.TransTool.resourceToScenicSpot;
+
 //资源resource_id获取景点信息
 @WebServlet("/resourcetoscenicspotservlet")
 public class ResourceToScenicSpotServlet extends HttpServlet {
@@ -32,31 +34,22 @@ public class ResourceToScenicSpotServlet extends HttpServlet {
 
 
         //景点资源中间表
-        if(StringUtils.isEmpty(resourceId)) {
+
+        if (StringUtils.isEmpty(resourceId)) {
             map.put("msg", false);
-            map.put("scenicSpot_resources", null);
-        }else {
-            ScenicSpot_resource scenicSpot_resource = new ScenicSpot_resource();
-            scenicSpot_resource.setScenicSpot_id(Long.parseLong(resourceId));
-            System.out.println(scenicSpot_resource.getResource_id());
+            map.put("scenicSpot", null);
+        } else {
+            List<ScenicSpot> scenicSpots = resourceToScenicSpot(Long.parseLong(resourceId));
 
-            ScenicSpot_resourceService spotResource = new ScenicSpot_resourceServiceImpl();
-            List<ScenicSpot_resource> scenicSpot_resources = spotResource.searchAll(scenicSpot_resource);
-
-            if (scenicSpot_resources.isEmpty()) {
+            if (scenicSpots.isEmpty()) {
                 map.put("msg", false);
-                map.put("scenicSpot_resources", null);
+                map.put("scenicSpot", null);
             } else {
-                if (1 == scenicSpot_resources.get(0).getScenicSpot_resource_use()) {
-                    long scenicSpot_id = scenicSpot_resources.get(0).getScenicSpot_id();
-                    scenicSpot_resource = new ScenicSpot_resource();
-                    scenicSpot_resource.setScenicSpot_id(scenicSpot_id);
-                    List<ScenicSpot_resource> scenicSpot = spotResource.searchAll(scenicSpot_resource);
-                    map.put("msg", true);
-                    map.put("scenicSpot", scenicSpot);
-                }
+                map.put("msg", true);
+                map.put("scenicSpot", scenicSpots);
             }
         }
+
         ObjectMapper mapper = new ObjectMapper();
         mapper.writeValue(response.getWriter(),map);
     }

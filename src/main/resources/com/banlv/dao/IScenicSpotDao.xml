@@ -19,19 +19,19 @@
     <select id="searchAllByPage" resultType="scenicSpot">
         select * from scenicSpot
         where 1 = 1
-        <if test="arg1.scenicSpot_id !=null and scenicSpot_id != 0">
+        <if test="arg1.scenicSpot_id !=null">
             and scenicSpot_id=#{arg1.scenicSpot_id}
         </if>
         <if test="arg1.scenicSpot_name !=null and arg1.scenicSpot_name !=''">
             and scenicSpot_name=#{arg1.scenicSpot_name}
         </if>
-        <if test="arg1.scenicSpot_longitude !=null and arg1.scenicSpot_longitude != ''">
+        <if test="arg1.scenicSpot_longitude !=null">
             and scenicSpot_longitude=#{arg1.scenicSpot_longitude}
         </if>
-        <if test="arg1.scenicSpot_latitude !=null and arg1.scenicSpot_latitude != ''">
+        <if test="arg1.scenicSpot_latitude !=null">
             and scenicSpot_latitude=#{arg1.scenicSpot_latitude}
         </if>
-        <if test="arg1.scenicSpot_range !=null and arg1.scenicSpot_range != ''">
+        <if test="arg1.scenicSpot_range !=null">
             and scenicSpot_range=#{arg1.scenicSpot_range}
         </if>
         limit #{arg0.start},#{arg0.rows};
@@ -41,19 +41,19 @@
     <select id="searchAll" resultType="scenicSpot">
         select * from scenicSpot
         where 1 = 1
-        <if test="scenicSpot_id !=null and scenicSpot_id != 0">
+        <if test="scenicSpot_id !=null">
             and scenicSpot_id=#{scenicSpot_id}
         </if>
         <if test="scenicSpot_name !=null and scenicSpot_name !=''">
             and scenicSpot_name=#{scenicSpot_name}
         </if>
-        <if test="scenicSpot_longitude !=null and scenicSpot_longitude != ''">
+        <if test="scenicSpot_longitude !=null">
             and scenicSpot_longitude=#{scenicSpot_longitude}
         </if>
-        <if test="scenicSpot_latitude !=null and scenicSpot_latitude != ''">
+        <if test="scenicSpot_latitude !=null">
             and scenicSpot_latitude=#{scenicSpot_latitude}
         </if>
-        <if test="scenicSpot_range !=null and scenicSpot_range != ''">
+        <if test="scenicSpot_range !=null">
             and scenicSpot_range=#{scenicSpot_range}
         </if>
 	;    </select>
@@ -67,19 +67,19 @@
     <select id="findSearchTotalCount" parameterType="scenicSpot" resultType="int">
         select count(*) from scenicSpot
         where 1 = 1
-        <if test="scenicSpot_id!=null and scenicSpot_id != 0">
+        <if test="scenicSpot_id!=null">
             and scenicSpot_id=#{scenicSpot_id}
         </if>
         <if test="scenicSpot_name!=null and scenicSpot_name!=''">
             and scenicSpot_name=#{scenicSpot_name}
         </if>
-        <if test="scenicSpot_longitude!=null and scenicSpot_longitude != ''">
+        <if test="scenicSpot_longitude!=null">
             and scenicSpot_longitude=#{scenicSpot_longitude}
         </if>
-        <if test="scenicSpot_latitude!=null and scenicSpot_latitude != ''">
+        <if test="scenicSpot_latitude!=null">
             and scenicSpot_latitude=#{scenicSpot_latitude}
         </if>
-        <if test="scenicSpot_range!=null and scenicSpot_range != ''">
+        <if test="scenicSpot_range!=null">
             and scenicSpot_range=#{scenicSpot_range}
         </if>
 	;    </select>
@@ -98,19 +98,19 @@
     <update id="updateScenicSpot" parameterType="scenicSpot">
         update scenicSpot
         <set>
-            <if test="scenicSpot_id!=null and scenicSpot_id != 0">
+            <if test="scenicSpot_id!=null">
                 scenicSpot_id=#{scenicSpot_id},
             </if>
             <if test="scenicSpot_name!=null and scenicSpot_name!=''">
                 scenicSpot_name=#{scenicSpot_name},
             </if>
-            <if test="scenicSpot_longitude!=null and scenicSpot_longitude != ''">
+            <if test="scenicSpot_longitude!=null">
                 scenicSpot_longitude=#{scenicSpot_longitude},
             </if>
-            <if test="scenicSpot_latitude!=null and scenicSpot_latitude != ''">
+            <if test="scenicSpot_latitude!=null">
                 scenicSpot_latitude=#{scenicSpot_latitude},
             </if>
-            <if test="scenicSpot_range!=null and scenicSpot_range != ''">
+            <if test="scenicSpot_range!=null">
                 scenicSpot_range=#{scenicSpot_range},
             </if>
         </set>

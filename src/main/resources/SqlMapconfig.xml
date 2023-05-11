@@ -13,14 +13,16 @@
     <!--使用typeAliases配置别名-->
     <typeAliases>
         <!--type:全限定类名 alias:别名（不区分大小写）-->
-        <typeAlias type="com.util.bean.Attribute" alias="attribute"></typeAlias>
         <typeAlias type="com.banlv.bean.Agent" alias="agent"></typeAlias>
+        <typeAlias type="com.banlv.bean.City" alias="city"></typeAlias>
         <typeAlias type="com.banlv.bean.Resource" alias="resource"></typeAlias>
         <typeAlias type="com.banlv.bean.ScenicManage" alias="scenicManage"></typeAlias>
         <typeAlias type="com.banlv.bean.ScenicSpot" alias="scenicSpot"></typeAlias>
         <typeAlias type="com.banlv.bean.ScenicSpot_resource" alias="scenicSpot_resource"></typeAlias>
         <typeAlias type="com.banlv.bean.ScenicZone" alias="scenicZone"></typeAlias>
+        <typeAlias type="com.banlv.bean.ScenicZoneType" alias="scenicZoneType"></typeAlias>
         <typeAlias type="com.banlv.bean.ScenicZone_scenicSpot" alias="scenicZone_scenicSpot"></typeAlias>
+        <typeAlias type="com.banlv.bean.ScenicZone_scenicZoneEntry" alias="scenicZone_scenicZoneEntry"></typeAlias>
         <typeAlias type="com.banlv.bean.User" alias="user"></typeAlias>
         <typeAlias type="com.banlv.bean.UserArrive" alias="userArrive"></typeAlias>
         <typeAlias type="com.banlv.bean.UserPlay" alias="userPlay"></typeAlias>

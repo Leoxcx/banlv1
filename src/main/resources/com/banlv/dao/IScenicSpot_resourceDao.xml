@@ -19,16 +19,16 @@
     <select id="searchAllByPage" resultType="scenicSpot_resource">
         select * from scenicSpot_resource
         where 1 = 1
-        <if test="arg1.scenicSpot_resource_id !=null and scenicSpot_resource_id != 0">
+        <if test="arg1.scenicSpot_resource_id !=null">
             and scenicSpot_resource_id=#{arg1.scenicSpot_resource_id}
         </if>
-        <if test="arg1.scenicSpot_id !=null and scenicSpot_id != 0">
+        <if test="arg1.scenicSpot_id !=null">
             and scenicSpot_id=#{arg1.scenicSpot_id}
         </if>
-        <if test="arg1.resource_id !=null and resource_id != 0">
+        <if test="arg1.resource_id !=null">
             and resource_id=#{arg1.resource_id}
         </if>
-        <if test="arg1.scenicSpot_resource_use !=null and scenicSpot_resource_use != 0">
+        <if test="arg1.scenicSpot_resource_use !=null and arg1.scenicSpot_resource_use != ''">
             and scenicSpot_resource_use=#{arg1.scenicSpot_resource_use}
         </if>
         limit #{arg0.start},#{arg0.rows};
@@ -38,16 +38,16 @@
     <select id="searchAll" resultType="scenicSpot_resource">
         select * from scenicSpot_resource
         where 1 = 1
-        <if test="scenicSpot_resource_id !=null and scenicSpot_resource_id != 0">
+        <if test="scenicSpot_resource_id !=null">
             and scenicSpot_resource_id=#{scenicSpot_resource_id}
         </if>
-        <if test="scenicSpot_id !=null and scenicSpot_id != 0">
+        <if test="scenicSpot_id !=null">
             and scenicSpot_id=#{scenicSpot_id}
         </if>
-        <if test="resource_id !=null and resource_id != 0">
+        <if test="resource_id !=null">
             and resource_id=#{resource_id}
         </if>
-        <if test="scenicSpot_resource_use !=null and scenicSpot_resource_use != 0">
+        <if test="scenicSpot_resource_use !=null and scenicSpot_resource_use != ''">
             and scenicSpot_resource_use=#{scenicSpot_resource_use}
         </if>
 	;    </select>
@@ -61,16 +61,16 @@
     <select id="findSearchTotalCount" parameterType="scenicSpot_resource" resultType="int">
         select count(*) from scenicSpot_resource
         where 1 = 1
-        <if test="scenicSpot_resource_id!=null and scenicSpot_resource_id != 0">
+        <if test="scenicSpot_resource_id!=null">
             and scenicSpot_resource_id=#{scenicSpot_resource_id}
         </if>
-        <if test="scenicSpot_id!=null and scenicSpot_id != 0">
+        <if test="scenicSpot_id!=null">
             and scenicSpot_id=#{scenicSpot_id}
         </if>
-        <if test="resource_id!=null and resource_id != 0">
+        <if test="resource_id!=null">
             and resource_id=#{resource_id}
         </if>
-        <if test="scenicSpot_resource_use!=null and scenicSpot_resource_use != 0">
+        <if test="scenicSpot_resource_use!=null and scenicSpot_resource_use != ''">
             and scenicSpot_resource_use=#{scenicSpot_resource_use}
         </if>
 	;    </select>
@@ -89,16 +89,16 @@
     <update id="updateScenicSpot_resource" parameterType="scenicSpot_resource">
         update scenicSpot_resource
         <set>
-            <if test="scenicSpot_resource_id!=null and scenicSpot_resource_id != 0">
+            <if test="scenicSpot_resource_id!=null">
                 scenicSpot_resource_id=#{scenicSpot_resource_id},
             </if>
-            <if test="scenicSpot_id!=null and scenicSpot_id != 0">
+            <if test="scenicSpot_id!=null">
                 scenicSpot_id=#{scenicSpot_id},
             </if>
-            <if test="resource_id!=null and resource_id != 0">
+            <if test="resource_id!=null">
                 resource_id=#{resource_id},
             </if>
-            <if test="scenicSpot_resource_use!=null and scenicSpot_resource_use != 0">
+            <if test="scenicSpot_resource_use!=null and scenicSpot_resource_use != ''">
                 scenicSpot_resource_use=#{scenicSpot_resource_use},
             </if>
         </set>

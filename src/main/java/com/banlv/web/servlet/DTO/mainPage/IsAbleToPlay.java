@@ -19,6 +19,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static com.util.bean.transTool.TransTool.openIdToUserInfo;
+
 //通过resource_id和用户的openid返回用户是否有权限播放
 @WebServlet("/isabletoplay")
 public class IsAbleToPlay extends HttpServlet {
@@ -36,10 +38,7 @@ public class IsAbleToPlay extends HttpServlet {
             map.put("msg", false);
         }else {
             //查询user_id
-            UserService userService = new UserServiceImpl();
-            User user = new User();
-            user.setUser_openid(openId);
-            List<User> users = userService.searchAll(user);
+            List<User> users = openIdToUserInfo(openId);
 
             if(users.isEmpty()) {
                 map.put("msg", false);
