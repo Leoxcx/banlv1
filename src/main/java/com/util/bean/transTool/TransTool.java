@@ -174,4 +174,14 @@ public class TransTool {
         }
         return scenicSpot;
     }
+
+    //通过city_name查城市信息
+    public static List<City> cityNameToCityInfo(String cityName) {
+        City city = new City();
+        city.setCity_name(cityName);
+
+        CityServiceImpl cityService = new CityServiceImpl();
+
+        return cityService.searchAll(city);
+    }
 }
