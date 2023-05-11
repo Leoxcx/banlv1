@@ -1,0 +1,80 @@
+html,
+body {
+    position: relative;
+    height: 100%;
+}
+
+body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+.videoInfoPanel{
+    user-select: none;
+    position: absolute;
+    background: rgba(0, 0, 0, 0);
+    width: 100%;
+    top: -95rem;
+    bottom: -5rem;
+    display: block;
+}
+
+.swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+}
+.videoChangeCube{
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.videoImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px #000000 solid;
+}
+
+.videoNameText {
+    width: 300px;
+    height: 50px;
+    position: absolute;
+    top: 250px;
+    left: 0;
+    font-size: 30px;
+    font-family: 宋体;
+    text-align:center;
+}
+
+.hideEyeImage {
+    position: relative;
+    top: -100px;
+    left: 0;
+    border: 1px red solid;
+}
+
+.starImage {
+    height: 100px;
+    position: relative;
+    top: 0px;
+    left: 200px;
+    border-radius: 50px;
+}

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--mapper约束-->
+<mapper namespace="com.banlv.dao.IUserDao">
+
+    <!--配置查询所有-->
+    <select id="findAll" resultType="user">
+        select * from user;
+    </select>
+
+    <!--配置通过页面查询所有-->
+    <select id="findAllByPage" parameterType="map" resultType="user">
+        select * from user limit #{start},#{rows};
+    </select>
+
+    <!--通过页面和查询条件查询所有-->
+    <select id="searchAllByPage" resultType="user">
+        select * from user
+        where 1 = 1
+        <if test="arg1.user_id !=null and user_id != 0">
+            and user_id=#{arg1.user_id}
+        </if>
+        <if test="arg1.user_openid !=null and arg1.user_openid !=''">
+            and user_openid=#{arg1.user_openid}
+        </if>
+        <if test="arg1.user_name !=null and arg1.user_name !=''">
+            and user_name=#{arg1.user_name}
+        </if>
+        <if test="arg1.user_points !=null and user_points != 0">
+            and user_points=#{arg1.user_points}
+        </if>
+        <if test="arg1.user_vip !=null and user_vip != 0">
+            and user_vip=#{arg1.user_vip}
+        </if>
+        limit #{arg0.start},#{arg0.rows};
+    </select>
+
+    <!--通过查询条件查询所有-->
+    <select id="searchAll" resultType="user">
+        select * from user
+        where 1 = 1
+        <if test="user_id !=null and user_id != 0">
+            and user_id=#{user_id}
+        </if>
+        <if test="user_openid !=null and user_openid !=''">
+            and user_openid=#{user_openid}
+        </if>
+        <if test="user_name !=null and user_name !=''">
+            and user_name=#{user_name}
+        </if>
+        <if test="user_points !=null and user_points != 0">
+            and user_points=#{user_points}
+        </if>
+        <if test="user_vip !=null and user_vip != 0">
+            and user_vip=#{user_vip}
+        </if>
+	;    </select>
+
+    <!--查询总记录数-->
+    <select id="findTotalCount" resultType="int">
+        select count(*) from user;
+    </select>
+
+    <!--查询高级查询记录数-->
+    <select id="findSearchTotalCount" parameterType="user" resultType="int">
+        select count(*) from user
+        where 1 = 1
+        <if test="user_id!=null and user_id != 0">
+            and user_id=#{user_id}
+        </if>
+        <if test="user_openid!=null and user_openid!=''">
+            and user_openid=#{user_openid}
+        </if>
+        <if test="user_name!=null and user_name!=''">
+            and user_name=#{user_name}
+        </if>
+        <if test="user_points!=null and user_points != 0">
+            and user_points=#{user_points}
+        </if>
+        <if test="user_vip!=null and user_vip != 0">
+            and user_vip=#{user_vip}
+        </if>
+	;    </select>
+
+    <!--新增-->
+    <insert id="addUser" parameterType="user">
+        insert into user values (null,#{user_openid},#{user_name},#{user_points},#{user_vip});
+    </insert>
+
+    <!--删除-->
+    <delete id="deleteByUserId">
+        delete from user where user_id = #{user_id};
+    </delete>
+
+    <!--更新-->
+    <update id="updateUser" parameterType="user">
+        update user
+        <set>
+            <if test="user_id!=null and user_id != 0">
+                user_id=#{user_id},
+            </if>
+            <if test="user_openid!=null and user_openid!=''">
+                user_openid=#{user_openid},
+            </if>
+            <if test="user_name!=null and user_name!=''">
+                user_name=#{user_name},
+            </if>
+            <if test="user_points!=null and user_points != 0">
+                user_points=#{user_points},
+            </if>
+            <if test="user_vip!=null and user_vip != 0">
+                user_vip=#{user_vip},
+            </if>
+        </set>
+        where user_id=#{user_id};
+    </update>
+</mapper>

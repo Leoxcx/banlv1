@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!-- 网页使用的语言 -->
+<html lang="zh-CN">
+<head>
+    <!-- 指定字符集 -->
+    <meta charset="utf-8">
+    <!-- 使用Edge最新的浏览器的渲染方式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--
+        viewport视口：网页可以根据设置的宽度自动进行适配，在浏览器的内部虚拟一个容器，容器的宽度与设备的宽度相同。
+        width: 默认宽度与设备的宽度相同
+        initial-scale: 初始的缩放比，为1:1 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title></title>
+    <!-- 1. 导入CSS的全局样式 -->
+    <link href="../../css/bootstrap.css" rel="stylesheet">
+    <!-- 2. jQuery导入-->
+    <script src="../../js/jquery-3.3.1.min.js"></script>
+    <!-- 3. 导入bootstrap的js文件 -->
+    <script src="../../js/bootstrap.js"></script>
+    <!-- js -->
+    <script src="../../js/banlv_agent/add.js"></script>
+    <script src="../../js/tool.js"></script>
+    <!-- css -->
+    <link href="../../css/list/main.css" rel="stylesheet">
+
+    <style type="text/css">
+        td, th {
+            text-align: center;
+        }
+        label{
+            margin: 10px;
+        }
+    </style>
+    <script>
+        $(function (){
+            // 初始化
+            init();
+        })
+    </script>
+</head>
+<body>
+<div>
+    <button class="btn btn-primary" onclick="returnList()">返回列表</button>
+</div><div class="container" id="mainContainer">
+    <table id = "table" border="1" class="table table-bordered table-hover">
+        <tr class="success" id="tableTr">
+            <th>字段</th>
+            <th>值</th>
+        </tr>
+    </table>
+    <div id="buttondiv" align=center style=""></div>
+</div>
+</body>
+</html>

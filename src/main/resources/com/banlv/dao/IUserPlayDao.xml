@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--mapper约束-->
+<mapper namespace="com.banlv.dao.IUserPlayDao">
+
+    <!--配置查询所有-->
+    <select id="findAll" resultType="userPlay">
+        select * from userPlay;
+    </select>
+
+    <!--配置通过页面查询所有-->
+    <select id="findAllByPage" parameterType="map" resultType="userPlay">
+        select * from userPlay limit #{start},#{rows};
+    </select>
+
+    <!--通过页面和查询条件查询所有-->
+    <select id="searchAllByPage" resultType="userPlay">
+        select * from userPlay
+        where 1 = 1
+        <if test="arg1.userPlay_id !=null and userPlay_id != 0">
+            and userPlay_id=#{arg1.userPlay_id}
+        </if>
+        <if test="arg1.user_id !=null and user_id != 0">
+            and user_id=#{arg1.user_id}
+        </if>
+        <if test="arg1.resource_id !=null and resource_id != 0">
+            and resource_id=#{arg1.resource_id}
+        </if>
+        <if test="arg1.userPlay_time !=null">
+            and userPlay_time=#{arg1.userPlay_time}
+        </if>
+        <if test="arg1.userPlay_to !=null">
+            and userPlay_to=#{arg1.userPlay_to}
+        </if>
+        limit #{arg0.start},#{arg0.rows};
+    </select>
+
+    <!--通过查询条件查询所有-->
+    <select id="searchAll" resultType="userPlay">
+        select * from userPlay
+        where 1 = 1
+        <if test="userPlay_id !=null and userPlay_id != 0">
+            and userPlay_id=#{userPlay_id}
+        </if>
+        <if test="user_id !=null and user_id != 0">
+            and user_id=#{user_id}
+        </if>
+        <if test="resource_id !=null and resource_id != 0">
+            and resource_id=#{resource_id}
+        </if>
+        <if test="userPlay_time !=null">
+            and userPlay_time=#{userPlay_time}
+        </if>
+        <if test="userPlay_to !=null">
+            and userPlay_to=#{userPlay_to}
+        </if>
+	;    </select>
+
+    <!--查询总记录数-->
+    <select id="findTotalCount" resultType="int">
+        select count(*) from userPlay;
+    </select>
+
+    <!--查询高级查询记录数-->
+    <select id="findSearchTotalCount" parameterType="userPlay" resultType="int">
+        select count(*) from userPlay
+        where 1 = 1
+        <if test="userPlay_id!=null and userPlay_id != 0">
+            and userPlay_id=#{userPlay_id}
+        </if>
+        <if test="user_id!=null and user_id != 0">
+            and user_id=#{user_id}
+        </if>
+        <if test="resource_id!=null and resource_id != 0">
+            and resource_id=#{resource_id}
+        </if>
+        <if test="userPlay_time!=null">
+            and userPlay_time=#{userPlay_time}
+        </if>
+        <if test="userPlay_to!=null">
+            and userPlay_to=#{userPlay_to}
+        </if>
+	;    </select>
+
+    <!--新增-->
+    <insert id="addUserPlay" parameterType="userPlay">
+        insert into userPlay values (null,#{user_id},#{resource_id},#{userPlay_time},#{userPlay_to});
+    </insert>
+
+    <!--删除-->
+    <delete id="deleteByUserPlayId">
+        delete from userPlay where userPlay_id = #{userPlay_id};
+    </delete>
+
+    <!--更新-->
+    <update id="updateUserPlay" parameterType="userPlay">
+        update userPlay
+        <set>
+            <if test="userPlay_id!=null and userPlay_id != 0">
+                userPlay_id=#{userPlay_id},
+            </if>
+            <if test="user_id!=null and user_id != 0">
+                user_id=#{user_id},
+            </if>
+            <if test="resource_id!=null and resource_id != 0">
+                resource_id=#{resource_id},
+            </if>
+            <if test="userPlay_time!=null">
+                userPlay_time=#{userPlay_time},
+            </if>
+            <if test="userPlay_to!=null">
+                userPlay_to=#{userPlay_to},
+            </if>
+        </set>
+        where userPlay_id=#{userPlay_id};
+    </update>
+</mapper>

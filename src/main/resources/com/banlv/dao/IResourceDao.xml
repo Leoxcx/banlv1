@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--mapper约束-->
+<mapper namespace="com.banlv.dao.IResourceDao">
+
+    <!--配置查询所有-->
+    <select id="findAll" resultType="resource">
+        select * from resource;
+    </select>
+
+    <!--配置通过页面查询所有-->
+    <select id="findAllByPage" parameterType="map" resultType="resource">
+        select * from resource limit #{start},#{rows};
+    </select>
+
+    <!--通过页面和查询条件查询所有-->
+    <select id="searchAllByPage" resultType="resource">
+        select * from resource
+        where 1 = 1
+        <if test="arg1.resource_id !=null and resource_id != 0">
+            and resource_id=#{arg1.resource_id}
+        </if>
+        <if test="arg1.agent_id !=null and agent_id != 0">
+            and agent_id=#{arg1.agent_id}
+        </if>
+        <if test="arg1.resource_name !=null and arg1.resource_name !=''">
+            and resource_name=#{arg1.resource_name}
+        </if>
+        <if test="arg1.resource_url !=null and arg1.resource_url !=''">
+            and resource_url=#{arg1.resource_url}
+        </if>
+        <if test="arg1.resource_thumbnail !=null and arg1.resource_thumbnail !=''">
+            and resource_thumbnail=#{arg1.resource_thumbnail}
+        </if>
+        <if test="arg1.resource_points !=null and resource_points != 0">
+            and resource_points=#{arg1.resource_points}
+        </if>
+        limit #{arg0.start},#{arg0.rows};
+    </select>
+
+    <!--通过查询条件查询所有-->
+    <select id="searchAll" resultType="resource">
+        select * from resource
+        where 1 = 1
+        <if test="resource_id !=null and resource_id != 0">
+            and resource_id=#{resource_id}
+        </if>
+        <if test="agent_id !=null and agent_id != 0">
+            and agent_id=#{agent_id}
+        </if>
+        <if test="resource_name !=null and resource_name !=''">
+            and resource_name=#{resource_name}
+        </if>
+        <if test="resource_url !=null and resource_url !=''">
+            and resource_url=#{resource_url}
+        </if>
+        <if test="resource_thumbnail !=null and resource_thumbnail !=''">
+            and resource_thumbnail=#{resource_thumbnail}
+        </if>
+        <if test="resource_points !=null and resource_points != 0">
+            and resource_points=#{resource_points}
+        </if>
+	;    </select>
+
+    <!--查询总记录数-->
+    <select id="findTotalCount" resultType="int">
+        select count(*) from resource;
+    </select>
+
+    <!--查询高级查询记录数-->
+    <select id="findSearchTotalCount" parameterType="resource" resultType="int">
+        select count(*) from resource
+        where 1 = 1
+        <if test="resource_id!=null and resource_id != 0">
+            and resource_id=#{resource_id}
+        </if>
+        <if test="agent_id!=null and agent_id != 0">
+            and agent_id=#{agent_id}
+        </if>
+        <if test="resource_name!=null and resource_name!=''">
+            and resource_name=#{resource_name}
+        </if>
+        <if test="resource_url!=null and resource_url!=''">
+            and resource_url=#{resource_url}
+        </if>
+        <if test="resource_thumbnail!=null and resource_thumbnail!=''">
+            and resource_thumbnail=#{resource_thumbnail}
+        </if>
+        <if test="resource_points!=null and resource_points != 0">
+            and resource_points=#{resource_points}
+        </if>
+	;    </select>
+
+    <!--新增-->
+    <insert id="addResource" parameterType="resource">
+        insert into resource values (null,#{agent_id},#{resource_name},#{resource_url},#{resource_thumbnail},#{resource_points});
+    </insert>
+
+    <!--删除-->
+    <delete id="deleteByResourceId">
+        delete from resource where resource_id = #{resource_id};
+    </delete>
+
+    <!--更新-->
+    <update id="updateResource" parameterType="resource">
+        update resource
+        <set>
+            <if test="resource_id!=null and resource_id != 0">
+                resource_id=#{resource_id},
+            </if>
+            <if test="agent_id!=null and agent_id != 0">
+                agent_id=#{agent_id},
+            </if>
+            <if test="resource_name!=null and resource_name!=''">
+                resource_name=#{resource_name},
+            </if>
+            <if test="resource_url!=null and resource_url!=''">
+                resource_url=#{resource_url},
+            </if>
+            <if test="resource_thumbnail!=null and resource_thumbnail!=''">
+                resource_thumbnail=#{resource_thumbnail},
+            </if>
+            <if test="resource_points!=null and resource_points != 0">
+                resource_points=#{resource_points},
+            </if>
+        </set>
+        where resource_id=#{resource_id};
+    </update>
+</mapper>

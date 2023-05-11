@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--mapper约束-->
+<mapper namespace="com.banlv.dao.IAgentDao">
+
+    <!--配置查询所有-->
+    <select id="findAll" resultType="agent">
+        select * from agent;
+    </select>
+
+    <!--配置通过页面查询所有-->
+    <select id="findAllByPage" parameterType="map" resultType="agent">
+        select * from agent limit #{start},#{rows};
+    </select>
+
+    <!--通过页面和查询条件查询所有-->
+    <select id="searchAllByPage" resultType="agent">
+        select * from agent
+        where 1 = 1
+        <if test="arg1.agent_id !=null and agent_id != 0">
+            and agent_id=#{arg1.agent_id}
+        </if>
+        <if test="arg1.agent_name !=null and arg1.agent_name !=''">
+            and agent_name=#{arg1.agent_name}
+        </if>
+        <if test="arg1.agent_password !=null and arg1.agent_password !=''">
+            and agent_password=#{arg1.agent_password}
+        </if>
+        <if test="arg1.agent_phone !=null and arg1.agent_phone !=''">
+            and agent_phone=#{arg1.agent_phone}
+        </if>
+        limit #{arg0.start},#{arg0.rows};
+    </select>
+
+    <!--通过查询条件查询所有-->
+    <select id="searchAll" resultType="agent">
+        select * from agent
+        where 1 = 1
+        <if test="agent_id !=null and agent_id != 0">
+            and agent_id=#{agent_id}
+        </if>
+        <if test="agent_name !=null and agent_name !=''">
+            and agent_name=#{agent_name}
+        </if>
+        <if test="agent_password !=null and agent_password !=''">
+            and agent_password=#{agent_password}
+        </if>
+        <if test="agent_phone !=null and agent_phone !=''">
+            and agent_phone=#{agent_phone}
+        </if>
+	;    </select>
+
+    <!--查询总记录数-->
+    <select id="findTotalCount" resultType="int">
+        select count(*) from agent;
+    </select>
+
+    <!--查询高级查询记录数-->
+    <select id="findSearchTotalCount" parameterType="agent" resultType="int">
+        select count(*) from agent
+        where 1 = 1
+        <if test="agent_id!=null and agent_id != 0">
+            and agent_id=#{agent_id}
+        </if>
+        <if test="agent_name!=null and agent_name!=''">
+            and agent_name=#{agent_name}
+        </if>
+        <if test="agent_password!=null and agent_password!=''">
+            and agent_password=#{agent_password}
+        </if>
+        <if test="agent_phone!=null and agent_phone!=''">
+            and agent_phone=#{agent_phone}
+        </if>
+	;    </select>
+
+    <!--新增-->
+    <insert id="addAgent" parameterType="agent">
+        insert into agent values (null,#{agent_name},#{agent_password},#{agent_phone});
+    </insert>
+
+    <!--删除-->
+    <delete id="deleteByAgentId">
+        delete from agent where agent_id = #{agent_id};
+    </delete>
+
+    <!--更新-->
+    <update id="updateAgent" parameterType="agent">
+        update agent
+        <set>
+            <if test="agent_id!=null and agent_id != 0">
+                agent_id=#{agent_id},
+            </if>
+            <if test="agent_name!=null and agent_name!=''">
+                agent_name=#{agent_name},
+            </if>
+            <if test="agent_password!=null and agent_password!=''">
+                agent_password=#{agent_password},
+            </if>
+            <if test="agent_phone!=null and agent_phone!=''">
+                agent_phone=#{agent_phone},
+            </if>
+        </set>
+        where agent_id=#{agent_id};
+    </update>
+</mapper>

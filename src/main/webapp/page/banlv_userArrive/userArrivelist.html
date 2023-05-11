@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!-- 网页使用的语言 -->
+<html lang="zh-CN">
+    <head>
+        <!-- 指定字符集 -->
+        <meta charset="utf-8">
+        <!-- 使用Edge最新的浏览器的渲染方式 -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!--
+            viewport视口：网页可以根据设置的宽度自动进行适配，在浏览器的内部虚拟一个容器，容器的宽度与设备的宽度相同。
+            width: 默认宽度与设备的宽度相同
+            initial-scale: 初始的缩放比，为1:1 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+        <title></title>
+        <!-- 1. 导入CSS的全局样式 -->
+        <link href="../../css/bootstrap.css" rel="stylesheet">
+        <!-- 2. jQuery导入-->
+        <script src="../../js/jquery-3.3.1.min.js"></script>
+        <!-- 3. 导入bootstrap的js文件 -->
+        <script src="../../js/bootstrap.js"></script>
+        <!-- js -->
+        <script src="../../js/banlv_userArrive/list.js"></script>
+        <script src="../../js/tool.js"></script>
+        <!-- css -->
+        <link href="../../css/list/main.css" rel="stylesheet">
+
+
+        <script>
+            $(function (){
+                // 初始化
+                init();
+            })
+        </script>
+    </head>
+    <body>
+        <div id="mainContainer" class="container border" style="margin-top: 50px">
+            <div class="row border" style="background-color: rgba(0, 147, 221, 0.5);padding-top: 10px;padding-bottom: 10px;">
+                <div class="col-md-6">
+                    <!-- 高级搜索 -->
+                    <div id='searchform' class="row">
+                    </div>
+                </div>
+                <div id="searchbutton" class="col-md-6">
+                    <div class="col-md-2"></div>
+                    <button id = "search_button" class="btn btn-success col-md-2" onclick="button_search()">查询</button>
+                    <div class="col-md-4"></div>
+                    <button type="reset" id = "reset_button" class="btn btn-warning col-md-2" onclick="search_reset()">复原</button>
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+
+            <div class="row border" style="background-color: rgba(0, 147, 221, 0.5);">
+                <span id="page_text" style="font-size: 25px;margin-left: 5px;text-align: center;">
+                    共<text id = "totalCount"></text>条记录
+                    每页<text id = "rows"></text>条记录
+                    共<text id = "totalPage"></text>页
+                    当前第<text id = "currentPage"></text>页
+                </span>
+                <nav id="turningnav" aria-label="...">
+                    <ul class="pager">
+                        <li id="previous_button" class="previous"><a href=""><span aria-hidden="true">&larr;</span> 前一页</a></li>
+                        <li id="next_button" class="next"><a href=""> <span aria-hidden="true">&rarr;</span>后一页</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="row border" style="background-color: rgba(0,147,221,0.2);">
+                <div class="col-md-12">
+                    <table id = "table" border="1" class="table table-bordered table-hover">
+                        <tr></tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row  border" style="background-color: rgba(0, 147, 221, 0.5);">
+                <!-- 操作按钮 -->
+                <div id="buttondiv">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

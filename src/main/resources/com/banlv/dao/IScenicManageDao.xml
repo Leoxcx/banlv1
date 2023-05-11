@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--mapper约束-->
+<mapper namespace="com.banlv.dao.IScenicManageDao">
+
+    <!--配置查询所有-->
+    <select id="findAll" resultType="scenicManage">
+        select * from scenicManage;
+    </select>
+
+    <!--配置通过页面查询所有-->
+    <select id="findAllByPage" parameterType="map" resultType="scenicManage">
+        select * from scenicManage limit #{start},#{rows};
+    </select>
+
+    <!--通过页面和查询条件查询所有-->
+    <select id="searchAllByPage" resultType="scenicManage">
+        select * from scenicManage
+        where 1 = 1
+        <if test="arg1.scenicManage_id !=null and scenicManage_id != 0">
+            and scenicManage_id=#{arg1.scenicManage_id}
+        </if>
+        <if test="arg1.scenicManage_name !=null and arg1.scenicManage_name !=''">
+            and scenicManage_name=#{arg1.scenicManage_name}
+        </if>
+        <if test="arg1.scenicManage_password !=null and arg1.scenicManage_password !=''">
+            and scenicManage_password=#{arg1.scenicManage_password}
+        </if>
+        <if test="arg1.scenicManage_phone !=null and arg1.scenicManage_phone !=''">
+            and scenicManage_phone=#{arg1.scenicManage_phone}
+        </if>
+        limit #{arg0.start},#{arg0.rows};
+    </select>
+
+    <!--通过查询条件查询所有-->
+    <select id="searchAll" resultType="scenicManage">
+        select * from scenicManage
+        where 1 = 1
+        <if test="scenicManage_id !=null and scenicManage_id != 0">
+            and scenicManage_id=#{scenicManage_id}
+        </if>
+        <if test="scenicManage_name !=null and scenicManage_name !=''">
+            and scenicManage_name=#{scenicManage_name}
+        </if>
+        <if test="scenicManage_password !=null and scenicManage_password !=''">
+            and scenicManage_password=#{scenicManage_password}
+        </if>
+        <if test="scenicManage_phone !=null and scenicManage_phone !=''">
+            and scenicManage_phone=#{scenicManage_phone}
+        </if>
+	;    </select>
+
+    <!--查询总记录数-->
+    <select id="findTotalCount" resultType="int">
+        select count(*) from scenicManage;
+    </select>
+
+    <!--查询高级查询记录数-->
+    <select id="findSearchTotalCount" parameterType="scenicManage" resultType="int">
+        select count(*) from scenicManage
+        where 1 = 1
+        <if test="scenicManage_id!=null and scenicManage_id != 0">
+            and scenicManage_id=#{scenicManage_id}
+        </if>
+        <if test="scenicManage_name!=null and scenicManage_name!=''">
+            and scenicManage_name=#{scenicManage_name}
+        </if>
+        <if test="scenicManage_password!=null and scenicManage_password!=''">
+            and scenicManage_password=#{scenicManage_password}
+        </if>
+        <if test="scenicManage_phone!=null and scenicManage_phone!=''">
+            and scenicManage_phone=#{scenicManage_phone}
+        </if>
+	;    </select>
+
+    <!--新增-->
+    <insert id="addScenicManage" parameterType="scenicManage">
+        insert into scenicManage values (null,#{scenicManage_name},#{scenicManage_password},#{scenicManage_phone});
+    </insert>
+
+    <!--删除-->
+    <delete id="deleteByScenicManageId">
+        delete from scenicManage where scenicManage_id = #{scenicManage_id};
+    </delete>
+
+    <!--更新-->
+    <update id="updateScenicManage" parameterType="scenicManage">
+        update scenicManage
+        <set>
+            <if test="scenicManage_id!=null and scenicManage_id != 0">
+                scenicManage_id=#{scenicManage_id},
+            </if>
+            <if test="scenicManage_name!=null and scenicManage_name!=''">
+                scenicManage_name=#{scenicManage_name},
+            </if>
+            <if test="scenicManage_password!=null and scenicManage_password!=''">
+                scenicManage_password=#{scenicManage_password},
+            </if>
+            <if test="scenicManage_phone!=null and scenicManage_phone!=''">
+                scenicManage_phone=#{scenicManage_phone},
+            </if>
+        </set>
+        where scenicManage_id=#{scenicManage_id};
+    </update>
+</mapper>

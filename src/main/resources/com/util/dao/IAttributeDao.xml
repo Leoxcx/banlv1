@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--mapper约束-->
+<mapper namespace="com.util.dao.IAttributeDao">
+
+    <!--配置查询所有-->
+    <select id="findAll" resultType="attribute">
+        select * from attribute;
+    </select>
+
+    <!--配置通过页面查询所有-->
+    <select id="findAllByPage" parameterType="map" resultType="attribute">
+        select * from attribute limit #{start},#{rows};
+    </select>
+
+    <!--通过页面和查询条件查询所有-->
+    <select id="searchAllByPage" resultType="attribute">
+        select * from attribute
+        where 1 = 1
+        <if test="arg1.attrId!=null and arg1.attrId!=0">
+            and attrId=#{arg1.attrId}
+        </if>
+        <if test="arg1.attrTable!=null and arg1.attrTable!=''">
+            and attrTable=#{arg1.attrTable}
+        </if>
+        <if test="arg1.attrValue!=null and arg1.attrValue!=''">
+            and attrValue=#{arg1.attrValue}
+        </if>
+        <if test="arg1.attrName!=null and arg1.attrName!=''">
+            and attrName=#{arg1.attrName}
+        </if>
+        <if test="arg1.attrShow!=null and arg1.attrShow!=''">
+            and attrShow=#{arg1.attrShow}
+        </if>
+         limit #{arg0.start},#{arg0.rows};
+    </select>
+
+    <!--查询总记录数-->
+    <select id="findTotalCount" resultType="int">
+        select count(*) from attribute;
+    </select>
+
+    <!--查询高级查询记录数-->
+    <select id="findSearchTotalCount" parameterType="attribute" resultType="int">
+        select count(*) from attribute
+        where 1 = 1
+        <if test="attrId!=null and attrId!=''">
+            and attrId=#{attrId}
+        </if>
+        <if test="attrTable!=null and attrTable!=''">
+            and attrTable=#{attrTable}
+        </if>
+        <if test="attrValue!=null and attrValue!=''">
+            and attrValue=#{attrValue}
+        </if>
+        <if test="attrName!=null and attrName!=''">
+            and attrName=#{attrName}
+        </if>
+        <if test="attrShow!=null and attrShow!=''">
+            and attrShow=#{attrShow}
+        </if>;
+    </select>
+
+    <!--通过表名查询-->
+    <select id="findByAttrTable" resultType="attribute">
+        select * from attribute where attrTable = #{attrTable};
+    </select>
+
+    <!--新增-->
+    <insert id="addAttribute" parameterType="attribute">
+        insert into attribute values (null,#{attrTable},#{attrValue},#{attrName},#{attrShow});
+    </insert>
+
+    <!--删除-->
+    <delete id="deleteByAttrId">
+        delete from attribute where attrId = #{attrId}
+    </delete>
+
+    <!--更新-->
+    <update id="updateAttribute" parameterType="attribute">
+        update attribute
+        <set>
+            <if test="attrTable!=null and attrTable!=''">
+                attrTable=#{attrTable},
+            </if>
+            <if test="attrValue!=null and attrValue!=''">
+                attrValue=#{attrValue},
+            </if>
+            <if test="attrName!=null and attrName!=''">
+                attrName=#{attrName},
+            </if>
+            <if test="attrShow!=null">
+                attrShow=#{attrShow},
+            </if>
+        </set>
+        where attrId=#{attrId};
+    </update>
+</mapper>

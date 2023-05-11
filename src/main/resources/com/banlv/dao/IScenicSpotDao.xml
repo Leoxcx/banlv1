@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--mapper约束-->
+<mapper namespace="com.banlv.dao.IScenicSpotDao">
+
+    <!--配置查询所有-->
+    <select id="findAll" resultType="scenicSpot">
+        select * from scenicSpot;
+    </select>
+
+    <!--配置通过页面查询所有-->
+    <select id="findAllByPage" parameterType="map" resultType="scenicSpot">
+        select * from scenicSpot limit #{start},#{rows};
+    </select>
+
+    <!--通过页面和查询条件查询所有-->
+    <select id="searchAllByPage" resultType="scenicSpot">
+        select * from scenicSpot
+        where 1 = 1
+        <if test="arg1.scenicSpot_id !=null and scenicSpot_id != 0">
+            and scenicSpot_id=#{arg1.scenicSpot_id}
+        </if>
+        <if test="arg1.scenicSpot_name !=null and arg1.scenicSpot_name !=''">
+            and scenicSpot_name=#{arg1.scenicSpot_name}
+        </if>
+        <if test="arg1.scenicSpot_longitude !=null and arg1.scenicSpot_longitude != ''">
+            and scenicSpot_longitude=#{arg1.scenicSpot_longitude}
+        </if>
+        <if test="arg1.scenicSpot_latitude !=null and arg1.scenicSpot_latitude != ''">
+            and scenicSpot_latitude=#{arg1.scenicSpot_latitude}
+        </if>
+        <if test="arg1.scenicSpot_range !=null and arg1.scenicSpot_range != ''">
+            and scenicSpot_range=#{arg1.scenicSpot_range}
+        </if>
+        limit #{arg0.start},#{arg0.rows};
+    </select>
+
+    <!--通过查询条件查询所有-->
+    <select id="searchAll" resultType="scenicSpot">
+        select * from scenicSpot
+        where 1 = 1
+        <if test="scenicSpot_id !=null and scenicSpot_id != 0">
+            and scenicSpot_id=#{scenicSpot_id}
+        </if>
+        <if test="scenicSpot_name !=null and scenicSpot_name !=''">
+            and scenicSpot_name=#{scenicSpot_name}
+        </if>
+        <if test="scenicSpot_longitude !=null and scenicSpot_longitude != ''">
+            and scenicSpot_longitude=#{scenicSpot_longitude}
+        </if>
+        <if test="scenicSpot_latitude !=null and scenicSpot_latitude != ''">
+            and scenicSpot_latitude=#{scenicSpot_latitude}
+        </if>
+        <if test="scenicSpot_range !=null and scenicSpot_range != ''">
+            and scenicSpot_range=#{scenicSpot_range}
+        </if>
+	;    </select>
+
+    <!--查询总记录数-->
+    <select id="findTotalCount" resultType="int">
+        select count(*) from scenicSpot;
+    </select>
+
+    <!--查询高级查询记录数-->
+    <select id="findSearchTotalCount" parameterType="scenicSpot" resultType="int">
+        select count(*) from scenicSpot
+        where 1 = 1
+        <if test="scenicSpot_id!=null and scenicSpot_id != 0">
+            and scenicSpot_id=#{scenicSpot_id}
+        </if>
+        <if test="scenicSpot_name!=null and scenicSpot_name!=''">
+            and scenicSpot_name=#{scenicSpot_name}
+        </if>
+        <if test="scenicSpot_longitude!=null and scenicSpot_longitude != ''">
+            and scenicSpot_longitude=#{scenicSpot_longitude}
+        </if>
+        <if test="scenicSpot_latitude!=null and scenicSpot_latitude != ''">
+            and scenicSpot_latitude=#{scenicSpot_latitude}
+        </if>
+        <if test="scenicSpot_range!=null and scenicSpot_range != ''">
+            and scenicSpot_range=#{scenicSpot_range}
+        </if>
+	;    </select>
+
+    <!--新增-->
+    <insert id="addScenicSpot" parameterType="scenicSpot">
+        insert into scenicSpot values (null,#{scenicSpot_name},#{scenicSpot_longitude},#{scenicSpot_latitude},#{scenicSpot_range});
+    </insert>
+
+    <!--删除-->
+    <delete id="deleteByScenicSpotId">
+        delete from scenicSpot where scenicSpot_id = #{scenicSpot_id};
+    </delete>
+
+    <!--更新-->
+    <update id="updateScenicSpot" parameterType="scenicSpot">
+        update scenicSpot
+        <set>
+            <if test="scenicSpot_id!=null and scenicSpot_id != 0">
+                scenicSpot_id=#{scenicSpot_id},
+            </if>
+            <if test="scenicSpot_name!=null and scenicSpot_name!=''">
+                scenicSpot_name=#{scenicSpot_name},
+            </if>
+            <if test="scenicSpot_longitude!=null and scenicSpot_longitude != ''">
+                scenicSpot_longitude=#{scenicSpot_longitude},
+            </if>
+            <if test="scenicSpot_latitude!=null and scenicSpot_latitude != ''">
+                scenicSpot_latitude=#{scenicSpot_latitude},
+            </if>
+            <if test="scenicSpot_range!=null and scenicSpot_range != ''">
+                scenicSpot_range=#{scenicSpot_range},
+            </if>
+        </set>
+        where scenicSpot_id=#{scenicSpot_id};
+    </update>
+</mapper>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--mapper约束-->
+<mapper namespace="com.banlv.dao.IUserArriveDao">
+
+    <!--配置查询所有-->
+    <select id="findAll" resultType="userArrive">
+        select * from userArrive;
+    </select>
+
+    <!--配置通过页面查询所有-->
+    <select id="findAllByPage" parameterType="map" resultType="userArrive">
+        select * from userArrive limit #{start},#{rows};
+    </select>
+
+    <!--通过页面和查询条件查询所有-->
+    <select id="searchAllByPage" resultType="userArrive">
+        select * from userArrive
+        where 1 = 1
+        <if test="arg1.userArrive_id !=null and userArrive_id != 0">
+            and userArrive_id=#{arg1.userArrive_id}
+        </if>
+        <if test="arg1.user_id !=null and user_id != 0">
+            and user_id=#{arg1.user_id}
+        </if>
+        <if test="arg1.scenicSpot_id !=null and scenicSpot_id != 0">
+            and scenicSpot_id=#{arg1.scenicSpot_id}
+        </if>
+        <if test="arg1.userArrive_time !=null">
+            and userArrive_time=#{arg1.userArrive_time}
+        </if>
+        limit #{arg0.start},#{arg0.rows};
+    </select>
+
+    <!--通过查询条件查询所有-->
+    <select id="searchAll" resultType="userArrive">
+        select * from userArrive
+        where 1 = 1
+        <if test="userArrive_id !=null and userArrive_id != 0">
+            and userArrive_id=#{userArrive_id}
+        </if>
+        <if test="user_id !=null and user_id != 0">
+            and user_id=#{user_id}
+        </if>
+        <if test="scenicSpot_id !=null and scenicSpot_id != 0">
+            and scenicSpot_id=#{scenicSpot_id}
+        </if>
+        <if test="userArrive_time !=null">
+            and userArrive_time=#{userArrive_time}
+        </if>
+	;    </select>
+
+    <!--查询总记录数-->
+    <select id="findTotalCount" resultType="int">
+        select count(*) from userArrive;
+    </select>
+
+    <!--查询高级查询记录数-->
+    <select id="findSearchTotalCount" parameterType="userArrive" resultType="int">
+        select count(*) from userArrive
+        where 1 = 1
+        <if test="userArrive_id!=null and userArrive_id != 0">
+            and userArrive_id=#{userArrive_id}
+        </if>
+        <if test="user_id!=null and user_id != 0">
+            and user_id=#{user_id}
+        </if>
+        <if test="scenicSpot_id!=null and scenicSpot_id != 0">
+            and scenicSpot_id=#{scenicSpot_id}
+        </if>
+        <if test="userArrive_time!=null">
+            and userArrive_time=#{userArrive_time}
+        </if>
+	;    </select>
+
+    <!--新增-->
+    <insert id="addUserArrive" parameterType="userArrive">
+        insert into userArrive values (null,#{user_id},#{scenicSpot_id},#{userArrive_time});
+    </insert>
+
+    <!--删除-->
+    <delete id="deleteByUserArriveId">
+        delete from userArrive where userArrive_id = #{userArrive_id};
+    </delete>
+
+    <!--更新-->
+    <update id="updateUserArrive" parameterType="userArrive">
+        update userArrive
+        <set>
+            <if test="userArrive_id!=null and userArrive_id != 0">
+                userArrive_id=#{userArrive_id},
+            </if>
+            <if test="user_id!=null and user_id != 0">
+                user_id=#{user_id},
+            </if>
+            <if test="scenicSpot_id!=null and scenicSpot_id != 0">
+                scenicSpot_id=#{scenicSpot_id},
+            </if>
+            <if test="userArrive_time!=null">
+                userArrive_time=#{userArrive_time},
+            </if>
+        </set>
+        where userArrive_id=#{userArrive_id};
+    </update>
+</mapper>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--mapper约束-->
+<mapper namespace="com.banlv.dao.IScenicZoneDao">
+
+    <!--配置查询所有-->
+    <select id="findAll" resultType="scenicZone">
+        select * from scenicZone;
+    </select>
+
+    <!--配置通过页面查询所有-->
+    <select id="findAllByPage" parameterType="map" resultType="scenicZone">
+        select * from scenicZone limit #{start},#{rows};
+    </select>
+
+    <!--通过页面和查询条件查询所有-->
+    <select id="searchAllByPage" resultType="scenicZone">
+        select * from scenicZone
+        where 1 = 1
+        <if test="arg1.scenicZone_id !=null and scenicZone_id != 0">
+            and scenicZone_id=#{arg1.scenicZone_id}
+        </if>
+        <if test="arg1.scenicManage_id !=null and scenicManage_id != 0">
+            and scenicManage_id=#{arg1.scenicManage_id}
+        </if>
+        <if test="arg1.scenicZone_name !=null and arg1.scenicZone_name !=''">
+            and scenicZone_name=#{arg1.scenicZone_name}
+        </if>
+        limit #{arg0.start},#{arg0.rows};
+    </select>
+
+    <!--通过查询条件查询所有-->
+    <select id="searchAll" resultType="scenicZone">
+        select * from scenicZone
+        where 1 = 1
+        <if test="scenicZone_id !=null and scenicZone_id != 0">
+            and scenicZone_id=#{scenicZone_id}
+        </if>
+        <if test="scenicManage_id !=null and scenicManage_id != 0">
+            and scenicManage_id=#{scenicManage_id}
+        </if>
+        <if test="scenicZone_name !=null and scenicZone_name !=''">
+            and scenicZone_name=#{scenicZone_name}
+        </if>
+	;    </select>
+
+    <!--查询总记录数-->
+    <select id="findTotalCount" resultType="int">
+        select count(*) from scenicZone;
+    </select>
+
+    <!--查询高级查询记录数-->
+    <select id="findSearchTotalCount" parameterType="scenicZone" resultType="int">
+        select count(*) from scenicZone
+        where 1 = 1
+        <if test="scenicZone_id!=null and scenicZone_id != 0">
+            and scenicZone_id=#{scenicZone_id}
+        </if>
+        <if test="scenicManage_id!=null and scenicManage_id != 0">
+            and scenicManage_id=#{scenicManage_id}
+        </if>
+        <if test="scenicZone_name!=null and scenicZone_name!=''">
+            and scenicZone_name=#{scenicZone_name}
+        </if>
+	;    </select>
+
+    <!--新增-->
+    <insert id="addScenicZone" parameterType="scenicZone">
+        insert into scenicZone values (null,#{scenicManage_id},#{scenicZone_name});
+    </insert>
+
+    <!--删除-->
+    <delete id="deleteByScenicZoneId">
+        delete from scenicZone where scenicZone_id = #{scenicZone_id};
+    </delete>
+
+    <!--更新-->
+    <update id="updateScenicZone" parameterType="scenicZone">
+        update scenicZone
+        <set>
+            <if test="scenicZone_id!=null and scenicZone_id != 0">
+                scenicZone_id=#{scenicZone_id},
+            </if>
+            <if test="scenicManage_id!=null and scenicManage_id != 0">
+                scenicManage_id=#{scenicManage_id},
+            </if>
+            <if test="scenicZone_name!=null and scenicZone_name!=''">
+                scenicZone_name=#{scenicZone_name},
+            </if>
+        </set>
+        where scenicZone_id=#{scenicZone_id};
+    </update>
+</mapper>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--mapper约束-->
+<mapper namespace="com.banlv.dao.IScenicSpot_resourceDao">
+
+    <!--配置查询所有-->
+    <select id="findAll" resultType="scenicSpot_resource">
+        select * from scenicSpot_resource;
+    </select>
+
+    <!--配置通过页面查询所有-->
+    <select id="findAllByPage" parameterType="map" resultType="scenicSpot_resource">
+        select * from scenicSpot_resource limit #{start},#{rows};
+    </select>
+
+    <!--通过页面和查询条件查询所有-->
+    <select id="searchAllByPage" resultType="scenicSpot_resource">
+        select * from scenicSpot_resource
+        where 1 = 1
+        <if test="arg1.scenicSpot_resource_id !=null and scenicSpot_resource_id != 0">
+            and scenicSpot_resource_id=#{arg1.scenicSpot_resource_id}
+        </if>
+        <if test="arg1.scenicSpot_id !=null and scenicSpot_id != 0">
+            and scenicSpot_id=#{arg1.scenicSpot_id}
+        </if>
+        <if test="arg1.resource_id !=null and resource_id != 0">
+            and resource_id=#{arg1.resource_id}
+        </if>
+        <if test="arg1.scenicSpot_resource_use !=null and scenicSpot_resource_use != 0">
+            and scenicSpot_resource_use=#{arg1.scenicSpot_resource_use}
+        </if>
+        limit #{arg0.start},#{arg0.rows};
+    </select>
+
+    <!--通过查询条件查询所有-->
+    <select id="searchAll" resultType="scenicSpot_resource">
+        select * from scenicSpot_resource
+        where 1 = 1
+        <if test="scenicSpot_resource_id !=null and scenicSpot_resource_id != 0">
+            and scenicSpot_resource_id=#{scenicSpot_resource_id}
+        </if>
+        <if test="scenicSpot_id !=null and scenicSpot_id != 0">
+            and scenicSpot_id=#{scenicSpot_id}
+        </if>
+        <if test="resource_id !=null and resource_id != 0">
+            and resource_id=#{resource_id}
+        </if>
+        <if test="scenicSpot_resource_use !=null and scenicSpot_resource_use != 0">
+            and scenicSpot_resource_use=#{scenicSpot_resource_use}
+        </if>
+	;    </select>
+
+    <!--查询总记录数-->
+    <select id="findTotalCount" resultType="int">
+        select count(*) from scenicSpot_resource;
+    </select>
+
+    <!--查询高级查询记录数-->
+    <select id="findSearchTotalCount" parameterType="scenicSpot_resource" resultType="int">
+        select count(*) from scenicSpot_resource
+        where 1 = 1
+        <if test="scenicSpot_resource_id!=null and scenicSpot_resource_id != 0">
+            and scenicSpot_resource_id=#{scenicSpot_resource_id}
+        </if>
+        <if test="scenicSpot_id!=null and scenicSpot_id != 0">
+            and scenicSpot_id=#{scenicSpot_id}
+        </if>
+        <if test="resource_id!=null and resource_id != 0">
+            and resource_id=#{resource_id}
+        </if>
+        <if test="scenicSpot_resource_use!=null and scenicSpot_resource_use != 0">
+            and scenicSpot_resource_use=#{scenicSpot_resource_use}
+        </if>
+	;    </select>
+
+    <!--新增-->
+    <insert id="addScenicSpot_resource" parameterType="scenicSpot_resource">
+        insert into scenicSpot_resource values (null,#{scenicSpot_id},#{resource_id},#{scenicSpot_resource_use});
+    </insert>
+
+    <!--删除-->
+    <delete id="deleteByScenicSpot_resourceId">
+        delete from scenicSpot_resource where scenicSpot_resource_id = #{scenicSpot_resource_id};
+    </delete>
+
+    <!--更新-->
+    <update id="updateScenicSpot_resource" parameterType="scenicSpot_resource">
+        update scenicSpot_resource
+        <set>
+            <if test="scenicSpot_resource_id!=null and scenicSpot_resource_id != 0">
+                scenicSpot_resource_id=#{scenicSpot_resource_id},
+            </if>
+            <if test="scenicSpot_id!=null and scenicSpot_id != 0">
+                scenicSpot_id=#{scenicSpot_id},
+            </if>
+            <if test="resource_id!=null and resource_id != 0">
+                resource_id=#{resource_id},
+            </if>
+            <if test="scenicSpot_resource_use!=null and scenicSpot_resource_use != 0">
+                scenicSpot_resource_use=#{scenicSpot_resource_use},
+            </if>
+        </set>
+        where scenicSpot_resource_id=#{scenicSpot_resource_id};
+    </update>
+</mapper>

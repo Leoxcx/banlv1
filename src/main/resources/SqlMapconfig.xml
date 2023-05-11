@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--mybatis主配置文件-->
+<configuration>
+    <!--配置properties 连接外部配置文件-->
+    <properties resource="jdbcConfig.properties"></properties>
+    <settings>
+        <setting name="cacheEnabled" value="false"/>
+        <setting name="localCacheScope" value="STATEMENT"/>
+    </settings>
+    <!--使用typeAliases配置别名-->
+    <typeAliases>
+        <!--type:全限定类名 alias:别名（不区分大小写）-->
+        <typeAlias type="com.util.bean.Attribute" alias="attribute"></typeAlias>
+        <typeAlias type="com.banlv.bean.Agent" alias="agent"></typeAlias>
+        <typeAlias type="com.banlv.bean.Resource" alias="resource"></typeAlias>
+        <typeAlias type="com.banlv.bean.ScenicManage" alias="scenicManage"></typeAlias>
+        <typeAlias type="com.banlv.bean.ScenicSpot" alias="scenicSpot"></typeAlias>
+        <typeAlias type="com.banlv.bean.ScenicSpot_resource" alias="scenicSpot_resource"></typeAlias>
+        <typeAlias type="com.banlv.bean.ScenicZone" alias="scenicZone"></typeAlias>
+        <typeAlias type="com.banlv.bean.ScenicZone_scenicSpot" alias="scenicZone_scenicSpot"></typeAlias>
+        <typeAlias type="com.banlv.bean.User" alias="user"></typeAlias>
+        <typeAlias type="com.banlv.bean.UserArrive" alias="userArrive"></typeAlias>
+        <typeAlias type="com.banlv.bean.UserPlay" alias="userPlay"></typeAlias>
+        <typeAlias type="com.banlv.bean.User_resource" alias="user_resource"></typeAlias>
+    </typeAliases>
+    <!--配置环境-->
+    <environments default="mysql">
+        <!--配置mysql环境-->
+        <environment id="mysql">
+            <!--配置事务类型-->
+            <transactionManager type="JDBC"></transactionManager>
+            <!--配置数据源（连接池）-->
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}"></property>
+                <property name="url" value="${jdbc.url}"></property>
+                <property name="username" value="${jdbc.username}"></property>
+                <property name="password" value="${jdbc.password}"></property>
+            </dataSource>
+        </environment>
+    </environments>
+    <!--指定映射配置文件的位置，映射配置文件指的是每个dao独立的配置文件-->
+    <mappers>
+        <package name="com.util.dao"></package>
+        <package name="com.banlv.dao"></package>
+    </mappers>
+</configuration>
