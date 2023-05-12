@@ -1,7 +1,10 @@
 package com.banlv.web.servlet.DTO.mainPage;
 
 import com.banlv.bean.City;
+import com.banlv.bean.ScenicZone;
+import com.banlv.service.impl.ScenicZoneServiceImpl;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.util.bean.PageBean;
 import org.apache.commons.lang.StringUtils;
 
 import javax.servlet.ServletException;
@@ -14,10 +17,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.util.bean.transTool.TransTool.*;
-
-@WebServlet("/getcityinfo")
-public class GetCityInfo extends HttpServlet {
+//获取热门景区信息
+@WebServlet("/getpopularsceniczone")
+public class GetPopularScenicZone extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         response.setContentType("application/json;charset=utf-8");
@@ -26,19 +28,20 @@ public class GetCityInfo extends HttpServlet {
         map.put("msg", false);
         map.put("cities", null);
 
-        String city_name = request.getParameter("city_name");
+        int city_id = Integer.parseInt(request.getParameter("city_id"));
+        int currentPage = Integer.parseInt(request.getParameter("currentPage"));
 
+        if(city_id != 0) {
+            ScenicZone scenicZone = new ScenicZone();
+            scenicZone.setCity_id(city_id);
 
+            ScenicZoneServiceImpl scenicZoneService = new ScenicZoneServiceImpl();
+            PageBean<ScenicZone> scenicZonePageBean = scenicZoneService.searchAllByPage(currentPage, 10, scenicZone);
 
-        if(StringUtils.isNotEmpty(city_name)) {
-
-            City city = new City();
-            city.setCity_name(city_name);
-
-            List<City> cities = cityNameToCityInfo(city);
-            if(!cities.isEmpty()) {
+            List<ScenicZone> ScenicZoneList = scenicZonePageBean.getList();
+            if(!ScenicZoneList.isEmpty()) {
                 map.put("msg", true);
-                map.put("cities", cities);
+                map.put("ScenicZoneList", ScenicZoneList);
             }
         }
 

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--mapper约束-->
+<mapper namespace="com.banlv.independent.myDao.MyScenicZoneDao">
+
+    <!--查询高级查询记录数-->
+    <select id="SearchTotalCountByCityId" resultType="int">
+        select count(*) from scenicZone
+        where 1 = 1
+
+        <if test="city_id!=null">
+            and city_id=#{city_id}
+        </if>
+
+        ;    </select>
+
+    <!--模糊查询景区  限制查询10个-->
+    <select id="fuzzySearchByScenicZoneName" parameterType="scenicZone" resultType="scenicZone">
+        select * from scenicZone
+        where 1 = 1
+        <if test="city_id!=null">
+            and city_id=#{city_id}
+        </if>
+        <if test="scenicZone_name!=null and scenicZone_name!=''">
+            and scenicZone_name like %#{scenicZone_name}%
+        </if>
+            limit 10;
+        </select>
+
+
+</mapper>

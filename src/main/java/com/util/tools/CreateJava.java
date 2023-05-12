@@ -49,19 +49,19 @@ public class CreateJava {
         // 初始化bean中的类
         List<String> beanList = getBeanList();
         for (String s : beanList) {
-//            if (s.equals("resource")){
-//                createDao(s);
-//                createDaoMapper(s);
-//                createService(s);
-//                createWebServlet(s);
+            if (s.equals("city")){
+                createDao(s);
+                createDaoMapper(s);
+                createService(s);
+                createWebServlet(s);
 //                createHtml(s);
 //                createJs(s);
                 createAttributeSql(s);
 //                createHtmlDoor(s);
 //                createJSDoor(s);
-//            }
+            }
         }
-        createTypeAliases();
+//        createTypeAliases();
     }
 
     /**

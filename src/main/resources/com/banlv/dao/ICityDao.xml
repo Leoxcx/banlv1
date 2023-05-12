@@ -37,6 +37,9 @@
         <if test="arg1.city_bg !=null and arg1.city_bg !=''">
             and city_bg=#{arg1.city_bg}
         </if>
+        <if test="arg1.city_province !=null and arg1.city_province !=''">
+            and city_province=#{arg1.city_province}
+        </if>
         limit #{arg0.start},#{arg0.rows};
     </select>
 
@@ -61,6 +64,9 @@
         </if>
         <if test="city_bg !=null and city_bg !=''">
             and city_bg=#{city_bg}
+        </if>
+        <if test="city_province !=null and city_province !=''">
+            and city_province=#{city_province}
         </if>
 	;    </select>
 
@@ -91,11 +97,14 @@
         <if test="city_bg!=null and city_bg!=''">
             and city_bg=#{city_bg}
         </if>
+        <if test="city_province!=null and city_province!=''">
+            and city_province=#{city_province}
+        </if>
 	;    </select>
 
     <!--新增-->
     <insert id="addCity" parameterType="city">
-        insert into city values (null,#{city_name},#{city_introduce},#{city_weather},#{city_temperature},#{city_bg});
+        insert into city values (null,#{city_name},#{city_introduce},#{city_weather},#{city_temperature},#{city_bg},#{city_province});
     </insert>
 
     <!--删除-->
@@ -124,6 +133,9 @@
             </if>
             <if test="city_bg!=null and city_bg!=''">
                 city_bg=#{city_bg},
+            </if>
+            <if test="city_province!=null and city_province!=''">
+                city_province=#{city_province},
             </if>
         </set>
         where city_id=#{city_id};

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--mapper约束-->
+<mapper namespace="com.banlv.independent.myDao.MyCityDao">
+
+    <!--配置查询所有-->
+    <select id="findAll" resultType="city">
+        select * from city;
+    </select>
+
+    <!--通过页面和查询条件查询所有-->
+    <select id="searchAllByCityName" resultType="city">
+        select * from city
+        where 1 = 1
+
+        <if test="city_name !=null and city_name !=''">
+            and city_name like %#{city_name}%
+        </if>
+        ;
+    </select>
+
+    <!--查询总记录数-->
+    <select id="findTotalCount" resultType="int">
+        select count(*) from city;
+    </select>
+
+</mapper>

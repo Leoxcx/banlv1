@@ -3,30 +3,32 @@ package com.banlv.bean;
 import java.io.Serializable;
 
 public class City implements Serializable {
-    private Long city_id;
+    private Integer city_id;
     private String city_name;
     private String city_introduce;
     private String city_weather;
     private Float city_temperature;
     private String city_bg;
+    private String city_province;
 
     public City() {
     }
 
-    public City(Long city_id, String city_name, String city_introduce, String city_weather, Float city_temperature, String city_bg) {
+    public City(Integer city_id, String city_name, String city_introduce, String city_weather, Float city_temperature, String city_bg, String city_province) {
         this.city_id = city_id;
         this.city_name = city_name;
         this.city_introduce = city_introduce;
         this.city_weather = city_weather;
         this.city_temperature = city_temperature;
         this.city_bg = city_bg;
+        this.city_province = city_province;
     }
 
-    public Long getCity_id() {
+    public Integer getCity_id() {
         return city_id;
     }
 
-    public void setCity_id(Long city_id) {
+    public void setCity_id(Integer city_id) {
         this.city_id = city_id;
     }
 
@@ -70,6 +72,14 @@ public class City implements Serializable {
         this.city_bg = city_bg;
     }
 
+    public String getCity_province() {
+        return city_province;
+    }
+
+    public void setCity_province(String city_province) {
+        this.city_province = city_province;
+    }
+
     @Override
     public String toString() {
         return "City{" +
@@ -79,6 +89,7 @@ public class City implements Serializable {
                 ", city_weather='" + city_weather + '\'' +
                 ", city_temperature=" + city_temperature +
                 ", city_bg='" + city_bg + '\'' +
+                ", city_province='" + city_province + '\'' +
                 '}';
     }
 }

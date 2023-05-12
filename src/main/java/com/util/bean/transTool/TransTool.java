@@ -2,6 +2,7 @@ package com.util.bean.transTool;
 
 import com.banlv.bean.*;
 import com.banlv.model.PlayNum;
+import com.banlv.service.CityService;
 import com.banlv.service.ResourceService;
 import com.banlv.service.ScenicSpot_resourceService;
 import com.banlv.service.UserService;
@@ -175,13 +176,13 @@ public class TransTool {
         return scenicSpot;
     }
 
-    //通过city_name查城市信息
-    public static List<City> cityNameToCityInfo(String cityName) {
-        City city = new City();
-        city.setCity_name(cityName);
+    //通过city查城市信息
+    public static List<City> cityNameToCityInfo(City city) {
 
-        CityServiceImpl cityService = new CityServiceImpl();
-
-        return cityService.searchAll(city);
+        CityService cityService = new CityServiceImpl();
+        List<City> cities = cityService.searchAll(city);
+        return cities;
     }
+
+
 }

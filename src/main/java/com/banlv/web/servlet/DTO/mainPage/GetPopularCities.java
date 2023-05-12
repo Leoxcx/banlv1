@@ -1,7 +1,9 @@
 package com.banlv.web.servlet.DTO.mainPage;
 
 import com.banlv.bean.City;
+import com.banlv.service.impl.CityServiceImpl;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.util.bean.PageBean;
 import org.apache.commons.lang.StringUtils;
 
 import javax.servlet.ServletException;
@@ -14,10 +16,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.util.bean.transTool.TransTool.*;
+import static com.util.bean.transTool.TransTool.cityNameToCityInfo;
 
-@WebServlet("/getcityinfo")
-public class GetCityInfo extends HttpServlet {
+
+//获取热门城市信息
+@WebServlet("/getpopularcities")
+public class GetPopularCities extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         response.setContentType("application/json;charset=utf-8");
@@ -26,20 +30,12 @@ public class GetCityInfo extends HttpServlet {
         map.put("msg", false);
         map.put("cities", null);
 
-        String city_name = request.getParameter("city_name");
-
-
-
-        if(StringUtils.isNotEmpty(city_name)) {
-
-            City city = new City();
-            city.setCity_name(city_name);
-
-            List<City> cities = cityNameToCityInfo(city);
-            if(!cities.isEmpty()) {
-                map.put("msg", true);
-                map.put("cities", cities);
-            }
+        CityServiceImpl cityService = new CityServiceImpl();
+        PageBean<City> allByPage = cityService.findAllByPage(1,5);
+        List<City> cities = allByPage.getList();
+        if(!cities.isEmpty()) {
+            map.put("msg", true);
+            map.put("cities", cities);
         }
 
 
