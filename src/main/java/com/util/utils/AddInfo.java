@@ -1,12 +1,14 @@
 package com.util.utils;
 
 import com.banlv.bean.Agent;
+import com.banlv.bean.City;
 import com.banlv.bean.Resource;
 import com.banlv.bean.User;
 import com.banlv.service.AgentService;
 import com.banlv.service.ResourceService;
 import com.banlv.service.UserService;
 import com.banlv.service.impl.AgentServiceImpl;
+import com.banlv.service.impl.CityServiceImpl;
 import com.banlv.service.impl.ResourceServiceImpl;
 import com.banlv.service.impl.UserServiceImpl;
 
@@ -55,6 +57,18 @@ public class AddInfo {
             resource.setResource_url("1");
             resourceService.addResource(resource);
         }
+    }
+
+    public static void addCity(String cityName, String cityProvince, String city_id){
+        CityServiceImpl cityService = new CityServiceImpl();
+        City city = new City();
+
+        city.setCity_id(Integer.parseInt(city_id));
+        city.setCity_name(cityName);
+        city.setCity_introduce( cityProvince + "的" + cityName + "历史悠久，风景秀丽");
+        city.setCity_province(cityProvince);
+        cityService.addCity(city);
+
     }
 
 }

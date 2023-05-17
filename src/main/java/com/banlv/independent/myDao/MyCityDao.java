@@ -1,6 +1,7 @@
 package com.banlv.independent.myDao;
 
 import com.banlv.bean.City;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -18,5 +19,5 @@ public interface MyCityDao {
      */
     int findTotalCount();
 
-    City searchAllByCityName( String city_name );
+    City searchAllByCityName(@Param(value="cityName")  String cityName);
 }

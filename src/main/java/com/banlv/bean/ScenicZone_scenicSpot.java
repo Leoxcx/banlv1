@@ -6,12 +6,12 @@ public class ScenicZone_scenicSpot implements Serializable {
     private long scenicZone_scenicSpot_id;
     private long scenicZone_id;
     private long scenicSpot_id;
-    private long scenicZone_scenicSpot_use;
+    private boolean scenicZone_scenicSpot_use;
 
     public ScenicZone_scenicSpot() {
     }
 
-    public ScenicZone_scenicSpot(long scenicZone_scenicSpot_id, long scenicZone_id, long scenicSpot_id, long scenicZone_scenicSpot_use) {
+    public ScenicZone_scenicSpot(long scenicZone_scenicSpot_id, long scenicZone_id, long scenicSpot_id, boolean scenicZone_scenicSpot_use) {
         this.scenicZone_scenicSpot_id = scenicZone_scenicSpot_id;
         this.scenicZone_id = scenicZone_id;
         this.scenicSpot_id = scenicSpot_id;
@@ -42,11 +42,11 @@ public class ScenicZone_scenicSpot implements Serializable {
         this.scenicSpot_id = scenicSpot_id;
     }
 
-    public long getScenicZone_scenicSpot_use() {
+    public boolean isScenicZone_scenicSpot_use() {
         return scenicZone_scenicSpot_use;
     }
 
-    public void setScenicZone_scenicSpot_use(long scenicZone_scenicSpot_use) {
+    public void setScenicZone_scenicSpot_use(boolean scenicZone_scenicSpot_use) {
         this.scenicZone_scenicSpot_use = scenicZone_scenicSpot_use;
     }
 

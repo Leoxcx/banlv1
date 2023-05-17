@@ -19,19 +19,19 @@
     <select id="searchAllByPage" resultType="scenicSpot">
         select * from scenicSpot
         where 1 = 1
-        <if test="arg1.scenicSpot_id !=null">
+        <if test="arg1.scenicSpot_id !=null and arg1.scenicSpot_id != 0">
             and scenicSpot_id=#{arg1.scenicSpot_id}
         </if>
         <if test="arg1.scenicSpot_name !=null and arg1.scenicSpot_name !=''">
             and scenicSpot_name=#{arg1.scenicSpot_name}
         </if>
-        <if test="arg1.scenicSpot_longitude !=null">
+        <if test="arg1.scenicSpot_longitude !=null and arg1.scenicSpot_longitude != ''">
             and scenicSpot_longitude=#{arg1.scenicSpot_longitude}
         </if>
-        <if test="arg1.scenicSpot_latitude !=null">
+        <if test="arg1.scenicSpot_latitude !=null and arg1.scenicSpot_latitude != ''">
             and scenicSpot_latitude=#{arg1.scenicSpot_latitude}
         </if>
-        <if test="arg1.scenicSpot_range !=null">
+        <if test="arg1.scenicSpot_range !=null and arg1.scenicSpot_range != ''">
             and scenicSpot_range=#{arg1.scenicSpot_range}
         </if>
         limit #{arg0.start},#{arg0.rows};
@@ -41,19 +41,19 @@
     <select id="searchAll" resultType="scenicSpot">
         select * from scenicSpot
         where 1 = 1
-        <if test="scenicSpot_id !=null">
+        <if test="scenicSpot_id !=null and scenicSpot_id != 0">
             and scenicSpot_id=#{scenicSpot_id}
         </if>
         <if test="scenicSpot_name !=null and scenicSpot_name !=''">
             and scenicSpot_name=#{scenicSpot_name}
         </if>
-        <if test="scenicSpot_longitude !=null">
+        <if test="scenicSpot_longitude !=null and scenicSpot_longitude != ''">
             and scenicSpot_longitude=#{scenicSpot_longitude}
         </if>
-        <if test="scenicSpot_latitude !=null">
+        <if test="scenicSpot_latitude !=null and scenicSpot_latitude != ''">
             and scenicSpot_latitude=#{scenicSpot_latitude}
         </if>
-        <if test="scenicSpot_range !=null">
+        <if test="scenicSpot_range !=null and scenicSpot_range != ''">
             and scenicSpot_range=#{scenicSpot_range}
         </if>
 	;    </select>
@@ -67,19 +67,19 @@
     <select id="findSearchTotalCount" parameterType="scenicSpot" resultType="int">
         select count(*) from scenicSpot
         where 1 = 1
-        <if test="scenicSpot_id!=null">
+        <if test="scenicSpot_id!=null and scenicSpot_id != 0">
             and scenicSpot_id=#{scenicSpot_id}
         </if>
-        <if test="scenicSpot_name!=null and scenicSpot_name!=''">
+        <if test="scenicSpot_name!=null and scenicSpot_name !=''">
             and scenicSpot_name=#{scenicSpot_name}
         </if>
-        <if test="scenicSpot_longitude!=null">
+        <if test="scenicSpot_longitude!=null and scenicSpot_longitude != ''">
             and scenicSpot_longitude=#{scenicSpot_longitude}
         </if>
-        <if test="scenicSpot_latitude!=null">
+        <if test="scenicSpot_latitude!=null and scenicSpot_latitude != ''">
             and scenicSpot_latitude=#{scenicSpot_latitude}
         </if>
-        <if test="scenicSpot_range!=null">
+        <if test="scenicSpot_range!=null and scenicSpot_range != ''">
             and scenicSpot_range=#{scenicSpot_range}
         </if>
 	;    </select>

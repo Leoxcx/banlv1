@@ -3,22 +3,22 @@ package com.banlv.bean;
 import java.io.Serializable;
 
 public class ScenicZoneType implements Serializable {
-    private Integer scenicZoneEntry_id;
+    private int scenicZoneEntry_id;
     private String scenicZoneEntry_name;
 
     public ScenicZoneType() {
     }
 
-    public ScenicZoneType(Integer scenicZoneEntry_id, String scenicZoneEntry_name) {
+    public ScenicZoneType(int scenicZoneEntry_id, String scenicZoneEntry_name) {
         this.scenicZoneEntry_id = scenicZoneEntry_id;
         this.scenicZoneEntry_name = scenicZoneEntry_name;
     }
 
-    public Integer getScenicZoneEntry_id() {
+    public int getScenicZoneEntry_id() {
         return scenicZoneEntry_id;
     }
 
-    public void setScenicZoneEntry_id(Integer scenicZoneEntry_id) {
+    public void setScenicZoneEntry_id(int scenicZoneEntry_id) {
         this.scenicZoneEntry_id = scenicZoneEntry_id;
     }
 

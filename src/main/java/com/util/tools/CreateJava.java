@@ -49,7 +49,7 @@ public class CreateJava {
         // 初始化bean中的类
         List<String> beanList = getBeanList();
         for (String s : beanList) {
-            if (s.equals("city")){
+//            if (s.equals("city")){
                 createDao(s);
                 createDaoMapper(s);
                 createService(s);
@@ -59,7 +59,7 @@ public class CreateJava {
                 createAttributeSql(s);
 //                createHtmlDoor(s);
 //                createJSDoor(s);
-            }
+//            }
         }
 //        createTypeAliases();
     }
@@ -262,32 +262,48 @@ public class CreateJava {
                     String beanId = beanName + "_id";
 
                     String daoMappertext = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
-                    "<!DOCTYPE mapper\n" +
-                    "        PUBLIC \"-//mybatis.org//DTD Mapper 3.0//EN\"\n" +
-                    "        \"http://mybatis.org/dtd/mybatis-3-mapper.dtd\">\n" +
-                    "<!--mapper约束-->\n" +
-                    "<mapper namespace=\"com."+packageName+".dao.I"+upperBeanName+"Dao\">\n" +
-                    "\n" +
-                    "    <!--配置查询所有-->\n" +
-                    "    <select id=\"findAll\" resultType=\""+beanName+"\">\n" +
-                    "        select * from "+tableName+";\n" +
-                    "    </select>\n" +
-                    "\n" +
-                    "    <!--配置通过页面查询所有-->\n" +
-                    "    <select id=\"findAllByPage\" parameterType=\"map\" resultType=\""+beanName+"\">\n" +
-                    "        select * from "+tableName+" limit #{start},#{rows};\n" +
-                    "    </select>\n" +
-                    "\n" +
-                    "    <!--通过页面和查询条件查询所有-->\n" +
-                    "    <select id=\"searchAllByPage\" resultType=\""+beanName+"\">\n" +
-                    "        select * from "+tableName+"\n" +
-                    "        where 1 = 1\n";
+                            "<!DOCTYPE mapper\n" +
+                            "        PUBLIC \"-//mybatis.org//DTD Mapper 3.0//EN\"\n" +
+                            "        \"http://mybatis.org/dtd/mybatis-3-mapper.dtd\">\n" +
+                            "<!--mapper约束-->\n" +
+                            "<mapper namespace=\"com."+packageName+".dao.I"+upperBeanName+"Dao\">\n" +
+                            "\n" +
+                            "    <!--配置查询所有-->\n" +
+                            "    <select id=\"findAll\" resultType=\""+beanName+"\">\n" +
+                            "        select * from "+tableName+";\n" +
+                            "    </select>\n" +
+                            "\n" +
+                            "    <!--配置通过页面查询所有-->\n" +
+                            "    <select id=\"findAllByPage\" parameterType=\"map\" resultType=\""+beanName+"\">\n" +
+                            "        select * from "+tableName+" limit #{start},#{rows};\n" +
+                            "    </select>\n" +
+                            "\n" +
+                            "    <!--通过页面和查询条件查询所有-->\n" +
+                            "    <select id=\"searchAllByPage\" resultType=\""+beanName+"\">\n" +
+                            "        select * from "+tableName+"\n" +
+                            "        where 1 = 1\n";
                     String teststring = "";
                     for (int i = 0; i < FieldName.size(); i++) {
                         teststring += "        <if test=\"arg1."+FieldName.get(i)+" !=null";
                         switch(FieldType.get(i)){
-                            case "int":teststring += " and arg1."+FieldName.get(i)+" != ''\">\n";break;
+                            case "int":
+                                // 判断是否为主外键
+                                if("id".equals(FieldName.get(i).substring(FieldName.get(i).lastIndexOf("_") + 1))){
+                                    teststring += " and arg1."+FieldName.get(i)+" != 0\">\n";
+                                }else {
+                                    teststring += " and arg1."+FieldName.get(i)+" != ''\">\n";
+                                }
+                                break;
+                            case "long":
+                                // 判断是否为主外键
+                                if("id".equals(FieldName.get(i).substring(FieldName.get(i).lastIndexOf("_") + 1))){
+                                    teststring += " and arg1."+FieldName.get(i)+" != 0\">\n";
+                                }else {
+                                    teststring += " and arg1."+FieldName.get(i)+" != ''\">\n";
+                                }
+                                break;
                             case "double":teststring += " and arg1."+FieldName.get(i)+" != ''\">\n";break;
+                            case "float":teststring += " and arg1."+FieldName.get(i)+" != ''\">\n";break;
                             case "class java.lang.String":teststring += " and arg1."+FieldName.get(i)+" !=''\">\n";break;
                             case "class java.sql.Timestamp":teststring += "\">\n";break;
                             case "boolean":teststring += "\">\n";break;
@@ -298,19 +314,35 @@ public class CreateJava {
                     }
                     daoMappertext += teststring;
                     daoMappertext +=
-                    "        limit #{arg0.start},#{arg0.rows};\n" +
-                    "    </select>\n" +
-                    "\n";
+                            "        limit #{arg0.start},#{arg0.rows};\n" +
+                                    "    </select>\n" +
+                                    "\n";
                     daoMappertext +=
-                    "    <!--通过查询条件查询所有-->\n" +
-                            "    <select id=\"searchAll\" resultType=\""+beanName+"\">\n" +
-                            "        select * from "+tableName+"\n" +
-                            "        where 1 = 1\n";
+                            "    <!--通过查询条件查询所有-->\n" +
+                                    "    <select id=\"searchAll\" resultType=\""+beanName+"\">\n" +
+                                    "        select * from "+tableName+"\n" +
+                                    "        where 1 = 1\n";
                     for (int i = 0; i < FieldName.size(); i++) {
                         daoMappertext += "        <if test=\""+FieldName.get(i)+" !=null";
                         switch(FieldType.get(i)){
-                            case "int":daoMappertext += " and "+FieldName.get(i)+" != ''\">\n";break;
+                            case "int":
+                                // 判断是否为主外键
+                                if("id".equals(FieldName.get(i).substring(FieldName.get(i).lastIndexOf("_") + 1))){
+                                    daoMappertext += " and "+FieldName.get(i)+" != 0\">\n";
+                                }else {
+                                    daoMappertext += " and "+FieldName.get(i)+" != ''\">\n";
+                                }
+                                break;
+                            case "long":
+                                // 判断是否为主外键
+                                if("id".equals(FieldName.get(i).substring(FieldName.get(i).lastIndexOf("_") + 1))){
+                                    daoMappertext += " and "+FieldName.get(i)+" != 0\">\n";
+                                }else {
+                                    daoMappertext += " and "+FieldName.get(i)+" != ''\">\n";
+                                }
+                                break;
                             case "double":daoMappertext += " and "+FieldName.get(i)+" != ''\">\n";break;
+                            case "float":daoMappertext += " and "+FieldName.get(i)+" != ''\">\n";break;
                             case "class java.lang.String":daoMappertext += " and "+FieldName.get(i)+" !=''\">\n";break;
                             case "class java.sql.Timestamp":daoMappertext += "\">\n";break;
                             case "boolean":daoMappertext += "\">\n";break;
@@ -321,25 +353,41 @@ public class CreateJava {
                     }
                     daoMappertext += "\t;";
                     daoMappertext +=
-                                    "    </select>\n" +
+                            "    </select>\n" +
                                     "\n";
                     daoMappertext +=
-                    "    <!--查询总记录数-->\n" +
-                    "    <select id=\"findTotalCount\" resultType=\"int\">\n" +
-                    "        select count(*) from "+tableName+";\n" +
-                    "    </select>\n" +
-                    "\n" +
-                    "    <!--查询高级查询记录数-->\n" +
-                    "    <select id=\"findSearchTotalCount\" parameterType=\""+beanName+"\" resultType=\"int\">\n" +
-                    "        select count(*) from "+tableName+"\n" +
-                    "        where 1 = 1\n";
+                            "    <!--查询总记录数-->\n" +
+                                    "    <select id=\"findTotalCount\" resultType=\"int\">\n" +
+                                    "        select count(*) from "+tableName+";\n" +
+                                    "    </select>\n" +
+                                    "\n" +
+                                    "    <!--查询高级查询记录数-->\n" +
+                                    "    <select id=\"findSearchTotalCount\" parameterType=\""+beanName+"\" resultType=\"int\">\n" +
+                                    "        select count(*) from "+tableName+"\n" +
+                                    "        where 1 = 1\n";
 
                     for (int i = 0; i < FieldName.size(); i++) {
                         daoMappertext += "        <if test=\""+FieldName.get(i)+"!=null";
                         switch(FieldType.get(i)){
-                            case "int":daoMappertext += " and "+FieldName.get(i)+" != ''\">\n";break;
+                            case "int":
+                                // 判断是否为主外键
+                                if("id".equals(FieldName.get(i).substring(FieldName.get(i).lastIndexOf("_") + 1))){
+                                    daoMappertext += " and "+FieldName.get(i)+" != 0\">\n";
+                                }else {
+                                    daoMappertext += " and "+FieldName.get(i)+" != ''\">\n";
+                                }
+                                break;
+                            case "long":
+                                // 判断是否为主外键
+                                if("id".equals(FieldName.get(i).substring(FieldName.get(i).lastIndexOf("_") + 1))){
+                                    daoMappertext += " and "+FieldName.get(i)+" != 0\">\n";
+                                }else {
+                                    daoMappertext += " and "+FieldName.get(i)+" != ''\">\n";
+                                }
+                                break;
                             case "double":daoMappertext += " and "+FieldName.get(i)+" != ''\">\n";break;
-                            case "class java.lang.String":daoMappertext += " and "+FieldName.get(i)+"!=''\">\n";break;
+                            case "float":daoMappertext += " and "+FieldName.get(i)+" != ''\">\n";break;
+                            case "class java.lang.String":daoMappertext += " and "+FieldName.get(i)+" !=''\">\n";break;
                             case "class java.sql.Timestamp":daoMappertext += "\">\n";break;
                             case "boolean":daoMappertext += "\">\n";break;
                             default:daoMappertext += "\">\n";break;
@@ -351,11 +399,11 @@ public class CreateJava {
                     daoMappertext += "\t;";
 
                     daoMappertext +=
-                    "    </select>\n" +
-                    "\n" +
-                    "    <!--新增-->\n" +
-                    "    <insert id=\"add"+upperBeanName+"\" parameterType=\""+beanName+"\">\n" +
-                    "        insert into "+tableName+" values (null" ;
+                            "    </select>\n" +
+                                    "\n" +
+                                    "    <!--新增-->\n" +
+                                    "    <insert id=\"add"+upperBeanName+"\" parameterType=\""+beanName+"\">\n" +
+                                    "        insert into "+tableName+" values (null" ;
 
                     for (int i = 0; i < FieldName.size(); i++) {
                         if (!FieldName.get(i).equals(beanId)){
@@ -366,17 +414,17 @@ public class CreateJava {
                     daoMappertext += ");\n";
 
                     daoMappertext +=
-                    "    </insert>\n" +
-                    "\n" +
-                    "    <!--删除-->\n" +
-                    "    <delete id=\"deleteBy"+upperBeanName+"Id\">\n" +
-                    "        delete from "+tableName+" where "+beanName+"_id = #{"+beanName+"_id};\n" +
-                    "    </delete>\n" +
-                    "\n" +
-                    "    <!--更新-->\n" +
-                    "    <update id=\"update"+upperBeanName+"\" parameterType=\""+beanName+"\">\n" +
-                    "        update "+tableName+"\n" +
-                    "        <set>\n";
+                            "    </insert>\n" +
+                                    "\n" +
+                                    "    <!--删除-->\n" +
+                                    "    <delete id=\"deleteBy"+upperBeanName+"Id\">\n" +
+                                    "        delete from "+tableName+" where "+beanName+"_id = #{"+beanName+"_id};\n" +
+                                    "    </delete>\n" +
+                                    "\n" +
+                                    "    <!--更新-->\n" +
+                                    "    <update id=\"update"+upperBeanName+"\" parameterType=\""+beanName+"\">\n" +
+                                    "        update "+tableName+"\n" +
+                                    "        <set>\n";
 
                     for (int i = 0; i < FieldName.size(); i++) {
                         daoMappertext += "            <if test=\""+FieldName.get(i)+"!=null";
@@ -394,9 +442,9 @@ public class CreateJava {
 
                     daoMappertext +=
                             "        </set>\n" +
-                            "        where "+beanName+"_id=#{"+beanName+"_id};\n" +
-                            "    </update>\n" +
-                            "</mapper>\n";
+                                    "        where "+beanName+"_id=#{"+beanName+"_id};\n" +
+                                    "    </update>\n" +
+                                    "</mapper>\n";
                     bufferedWriter.write(daoMappertext);
                     bufferedWriter.close();
                 }

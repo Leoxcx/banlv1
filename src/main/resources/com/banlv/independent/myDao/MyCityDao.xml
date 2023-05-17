@@ -11,13 +11,14 @@
     </select>
 
     <!--通过页面和查询条件查询所有-->
-    <select id="searchAllByCityName" resultType="city">
+    <select id="searchAllByCityName" parameterType="String" resultType="city">
         select * from city
         where 1 = 1
 
-        <if test="city_name !=null and city_name !=''">
-            and city_name like %#{city_name}%
+        <if test="cityName !=null and cityName !=''">
+            and city_name like CONCAT('%',#{cityName},'%')
         </if>
+        limit 1
         ;
     </select>
 

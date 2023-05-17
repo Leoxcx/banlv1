@@ -19,7 +19,7 @@
     <select id="searchAllByPage" resultType="user">
         select * from user
         where 1 = 1
-        <if test="arg1.user_id !=null">
+        <if test="arg1.user_id !=null and arg1.user_id != 0">
             and user_id=#{arg1.user_id}
         </if>
         <if test="arg1.user_openid !=null and arg1.user_openid !=''">
@@ -41,7 +41,7 @@
     <select id="searchAll" resultType="user">
         select * from user
         where 1 = 1
-        <if test="user_id !=null">
+        <if test="user_id !=null and user_id != 0">
             and user_id=#{user_id}
         </if>
         <if test="user_openid !=null and user_openid !=''">
@@ -67,13 +67,13 @@
     <select id="findSearchTotalCount" parameterType="user" resultType="int">
         select count(*) from user
         where 1 = 1
-        <if test="user_id!=null">
+        <if test="user_id!=null and user_id != 0">
             and user_id=#{user_id}
         </if>
-        <if test="user_openid!=null and user_openid!=''">
+        <if test="user_openid!=null and user_openid !=''">
             and user_openid=#{user_openid}
         </if>
-        <if test="user_name!=null and user_name!=''">
+        <if test="user_name!=null and user_name !=''">
             and user_name=#{user_name}
         </if>
         <if test="user_points!=null and user_points != ''">

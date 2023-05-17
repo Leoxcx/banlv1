@@ -6,11 +6,11 @@
 <mapper namespace="com.banlv.independent.myDao.MyScenicZoneDao">
 
     <!--查询高级查询记录数-->
-    <select id="SearchTotalCountByCityId" resultType="int">
+    <select id="searchTotalCountByCityId"  parameterType="int" resultType="Integer">
         select count(*) from scenicZone
         where 1 = 1
 
-        <if test="city_id!=null">
+        <if test="city_id!=null and city_id != 0">
             and city_id=#{city_id}
         </if>
 
@@ -24,7 +24,7 @@
             and city_id=#{city_id}
         </if>
         <if test="scenicZone_name!=null and scenicZone_name!=''">
-            and scenicZone_name like %#{scenicZone_name}%
+            and scenicZone_name like CONCAT('%',#{scenicZone_name},'%')
         </if>
             limit 10;
         </select>

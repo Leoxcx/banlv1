@@ -1,6 +1,9 @@
 package com.banlv.web.servlet.DTO.scenicZonePage;
 
 import com.banlv.bean.ScenicZone;
+import com.banlv.independent.myService.myImpl.MyCityServiceImpl;
+import com.banlv.independent.myService.myImpl.MyScenicZoneServiceImpl;
+import com.banlv.service.impl.CityServiceImpl;
 import com.banlv.service.impl.ScenicZoneServiceImpl;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.util.bean.PageBean;
@@ -27,22 +30,52 @@ public class GetScenicZoneByScenicZoneTypeId extends HttpServlet {
         int scenicZoneType_id = Integer.parseInt(request.getParameter("scenicZoneType_id"));
         int currentPage = Integer.parseInt(request.getParameter("currentPage"));
 
+        map.put("msg", false);
+        map.put("scenicZoneList", null);
+
         List<ScenicZone> scenicZoneList = new ArrayList<>();
 
-        if(city_id != 0 && scenicZoneType_id != 0 && currentPage != 0) {
+        if(city_id != 0 && currentPage != 0) {
             ScenicZone scenicZone = new ScenicZone();
             scenicZone.setCity_id(city_id);
             scenicZone.setScenicZoneType_id(scenicZoneType_id);
 
             ScenicZoneServiceImpl scenicZoneService = new ScenicZoneServiceImpl();
-            PageBean<ScenicZone> scenicZonePageBean = scenicZoneService.searchAllByPage(currentPage, 10, scenicZone);
-            if(!scenicZonePageBean.getList().isEmpty()) {
+            Integer szNum = new MyScenicZoneServiceImpl().SearchTotalCountByCityId(city_id);
+            if (szNum >= currentPage * 10) {
+                PageBean<ScenicZone> scenicZonePageBean = scenicZoneService.searchAllByPage(currentPage, 10, scenicZone);
+                scenicZoneList.addAll(scenicZonePageBean.getList());
+
+            }else {
+                scenicZone.setCity_id(0);
+                PageBean<ScenicZone> scenicZonePageBean = scenicZoneService.searchAllByPage(currentPage - szNum % 10, 10, scenicZone);
                 scenicZoneList.addAll(scenicZonePageBean.getList());
             }
-            //ToDo 当前城市景区数量不够，查找下一个城市的景区
-            if(scenicZoneList.size() < 10 ) {
 
-            }
+//            PageBean<ScenicZone> scenicZonePageBean = scenicZoneService.searchAllByPage(currentPage, 10, scenicZone);
+//            if(!scenicZonePageBean.getList().isEmpty()) {
+//                scenicZoneList.addAll(scenicZonePageBean.getList());
+//            }
+            // 当前城市景区数量不够，查找下一个城市的景区
+            //查询所有城市数
+//            int totalCount = new MyCityServiceImpl().findTotalCount();
+//            while (scenicZoneList.size() < 10 ) {
+//
+//                if(city_id < totalCount ) {
+////                    不为最后一个城市，取下一个城市
+//                    city_id++;
+//                } else {
+////                    若为最后一个城市，则从第一个城市开始,1第一个北京市
+//                    city_id = 1;
+//                }
+//                scenicZone.setCity_id(city_id);
+//                scenicZonePageBean = scenicZoneService.searchAllByPage(currentPage, 10, scenicZone);
+//                if(!scenicZonePageBean.getList().isEmpty()) {
+//                    scenicZoneList.addAll(scenicZonePageBean.getList());
+//                }
+//            }
+            map.put("msg", true);
+            map.put("scenicZoneList", scenicZoneList);
         }
         ObjectMapper mapper = new ObjectMapper();
         mapper.writeValue(response.getWriter(),map);

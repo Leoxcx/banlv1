@@ -3,18 +3,18 @@ package com.banlv.bean;
 import java.io.Serializable;
 
 public class City implements Serializable {
-    private Integer city_id;
+    private int city_id;
     private String city_name;
     private String city_introduce;
     private String city_weather;
-    private Float city_temperature;
+    private float city_temperature;
     private String city_bg;
     private String city_province;
 
     public City() {
     }
 
-    public City(Integer city_id, String city_name, String city_introduce, String city_weather, Float city_temperature, String city_bg, String city_province) {
+    public City(int city_id, String city_name, String city_introduce, String city_weather, float city_temperature, String city_bg, String city_province) {
         this.city_id = city_id;
         this.city_name = city_name;
         this.city_introduce = city_introduce;
@@ -24,11 +24,12 @@ public class City implements Serializable {
         this.city_province = city_province;
     }
 
-    public Integer getCity_id() {
+
+    public int getCity_id() {
         return city_id;
     }
 
-    public void setCity_id(Integer city_id) {
+    public void setCity_id(int city_id) {
         this.city_id = city_id;
     }
 
@@ -56,11 +57,11 @@ public class City implements Serializable {
         this.city_weather = city_weather;
     }
 
-    public Float getCity_temperature() {
+    public float getCity_temperature() {
         return city_temperature;
     }
 
-    public void setCity_temperature(Float city_temperature) {
+    public void setCity_temperature(float city_temperature) {
         this.city_temperature = city_temperature;
     }
 

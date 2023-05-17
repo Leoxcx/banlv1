@@ -19,7 +19,7 @@
     <select id="searchAllByPage" resultType="agent">
         select * from agent
         where 1 = 1
-        <if test="arg1.agent_id !=null">
+        <if test="arg1.agent_id !=null and arg1.agent_id != 0">
             and agent_id=#{arg1.agent_id}
         </if>
         <if test="arg1.agent_name !=null and arg1.agent_name !=''">
@@ -38,7 +38,7 @@
     <select id="searchAll" resultType="agent">
         select * from agent
         where 1 = 1
-        <if test="agent_id !=null">
+        <if test="agent_id !=null and agent_id != 0">
             and agent_id=#{agent_id}
         </if>
         <if test="agent_name !=null and agent_name !=''">
@@ -61,16 +61,16 @@
     <select id="findSearchTotalCount" parameterType="agent" resultType="int">
         select count(*) from agent
         where 1 = 1
-        <if test="agent_id!=null">
+        <if test="agent_id!=null and agent_id != 0">
             and agent_id=#{agent_id}
         </if>
-        <if test="agent_name!=null and agent_name!=''">
+        <if test="agent_name!=null and agent_name !=''">
             and agent_name=#{agent_name}
         </if>
-        <if test="agent_password!=null and agent_password!=''">
+        <if test="agent_password!=null and agent_password !=''">
             and agent_password=#{agent_password}
         </if>
-        <if test="agent_phone!=null and agent_phone!=''">
+        <if test="agent_phone!=null and agent_phone !=''">
             and agent_phone=#{agent_phone}
         </if>
 	;    </select>

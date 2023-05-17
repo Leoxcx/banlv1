@@ -19,7 +19,7 @@
     <select id="searchAllByPage" resultType="city">
         select * from city
         where 1 = 1
-        <if test="arg1.city_id !=null">
+        <if test="arg1.city_id !=null and arg1.city_id != 0">
             and city_id=#{arg1.city_id}
         </if>
         <if test="arg1.city_name !=null and arg1.city_name !=''">
@@ -31,7 +31,7 @@
         <if test="arg1.city_weather !=null and arg1.city_weather !=''">
             and city_weather=#{arg1.city_weather}
         </if>
-        <if test="arg1.city_temperature !=null">
+        <if test="arg1.city_temperature !=null and arg1.city_temperature != ''">
             and city_temperature=#{arg1.city_temperature}
         </if>
         <if test="arg1.city_bg !=null and arg1.city_bg !=''">
@@ -47,7 +47,7 @@
     <select id="searchAll" resultType="city">
         select * from city
         where 1 = 1
-        <if test="city_id !=null">
+        <if test="city_id !=null and city_id != 0">
             and city_id=#{city_id}
         </if>
         <if test="city_name !=null and city_name !=''">
@@ -59,7 +59,7 @@
         <if test="city_weather !=null and city_weather !=''">
             and city_weather=#{city_weather}
         </if>
-        <if test="city_temperature !=null">
+        <if test="city_temperature !=null and city_temperature != ''">
             and city_temperature=#{city_temperature}
         </if>
         <if test="city_bg !=null and city_bg !=''">
@@ -79,25 +79,25 @@
     <select id="findSearchTotalCount" parameterType="city" resultType="int">
         select count(*) from city
         where 1 = 1
-        <if test="city_id!=null">
+        <if test="city_id!=null and city_id != 0">
             and city_id=#{city_id}
         </if>
-        <if test="city_name!=null and city_name!=''">
+        <if test="city_name!=null and city_name !=''">
             and city_name=#{city_name}
         </if>
-        <if test="city_introduce!=null and city_introduce!=''">
+        <if test="city_introduce!=null and city_introduce !=''">
             and city_introduce=#{city_introduce}
         </if>
-        <if test="city_weather!=null and city_weather!=''">
+        <if test="city_weather!=null and city_weather !=''">
             and city_weather=#{city_weather}
         </if>
-        <if test="city_temperature!=null">
+        <if test="city_temperature!=null and city_temperature != ''">
             and city_temperature=#{city_temperature}
         </if>
-        <if test="city_bg!=null and city_bg!=''">
+        <if test="city_bg!=null and city_bg !=''">
             and city_bg=#{city_bg}
         </if>
-        <if test="city_province!=null and city_province!=''">
+        <if test="city_province!=null and city_province !=''">
             and city_province=#{city_province}
         </if>
 	;    </select>
@@ -116,7 +116,7 @@
     <update id="updateCity" parameterType="city">
         update city
         <set>
-            <if test="city_id!=null">
+            <if test="city_id!=null and city_id != ''">
                 city_id=#{city_id},
             </if>
             <if test="city_name!=null and city_name!=''">

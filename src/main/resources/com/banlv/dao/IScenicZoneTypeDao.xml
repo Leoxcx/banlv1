@@ -19,7 +19,7 @@
     <select id="searchAllByPage" resultType="scenicZoneType">
         select * from scenicZoneType
         where 1 = 1
-        <if test="arg1.scenicZoneEntry_id !=null">
+        <if test="arg1.scenicZoneEntry_id !=null and arg1.scenicZoneEntry_id != 0">
             and scenicZoneEntry_id=#{arg1.scenicZoneEntry_id}
         </if>
         <if test="arg1.scenicZoneEntry_name !=null and arg1.scenicZoneEntry_name !=''">
@@ -32,7 +32,7 @@
     <select id="searchAll" resultType="scenicZoneType">
         select * from scenicZoneType
         where 1 = 1
-        <if test="scenicZoneEntry_id !=null">
+        <if test="scenicZoneEntry_id !=null and scenicZoneEntry_id != 0">
             and scenicZoneEntry_id=#{scenicZoneEntry_id}
         </if>
         <if test="scenicZoneEntry_name !=null and scenicZoneEntry_name !=''">
@@ -49,10 +49,10 @@
     <select id="findSearchTotalCount" parameterType="scenicZoneType" resultType="int">
         select count(*) from scenicZoneType
         where 1 = 1
-        <if test="scenicZoneEntry_id!=null">
+        <if test="scenicZoneEntry_id!=null and scenicZoneEntry_id != 0">
             and scenicZoneEntry_id=#{scenicZoneEntry_id}
         </if>
-        <if test="scenicZoneEntry_name!=null and scenicZoneEntry_name!=''">
+        <if test="scenicZoneEntry_name!=null and scenicZoneEntry_name !=''">
             and scenicZoneEntry_name=#{scenicZoneEntry_name}
         </if>
 	;    </select>
@@ -71,7 +71,7 @@
     <update id="updateScenicZoneType" parameterType="scenicZoneType">
         update scenicZoneType
         <set>
-            <if test="scenicZoneEntry_id!=null">
+            <if test="scenicZoneEntry_id!=null and scenicZoneEntry_id != ''">
                 scenicZoneEntry_id=#{scenicZoneEntry_id},
             </if>
             <if test="scenicZoneEntry_name!=null and scenicZoneEntry_name!=''">

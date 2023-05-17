@@ -19,10 +19,10 @@
     <select id="searchAllByPage" resultType="resource">
         select * from resource
         where 1 = 1
-        <if test="arg1.resource_id !=null">
+        <if test="arg1.resource_id !=null and arg1.resource_id != 0">
             and resource_id=#{arg1.resource_id}
         </if>
-        <if test="arg1.agent_id !=null">
+        <if test="arg1.agent_id !=null and arg1.agent_id != 0">
             and agent_id=#{arg1.agent_id}
         </if>
         <if test="arg1.resource_name !=null and arg1.resource_name !=''">
@@ -44,10 +44,10 @@
     <select id="searchAll" resultType="resource">
         select * from resource
         where 1 = 1
-        <if test="resource_id !=null">
+        <if test="resource_id !=null and resource_id != 0">
             and resource_id=#{resource_id}
         </if>
-        <if test="agent_id !=null">
+        <if test="agent_id !=null and agent_id != 0">
             and agent_id=#{agent_id}
         </if>
         <if test="resource_name !=null and resource_name !=''">
@@ -73,19 +73,19 @@
     <select id="findSearchTotalCount" parameterType="resource" resultType="int">
         select count(*) from resource
         where 1 = 1
-        <if test="resource_id!=null">
+        <if test="resource_id!=null and resource_id != 0">
             and resource_id=#{resource_id}
         </if>
-        <if test="agent_id!=null">
+        <if test="agent_id!=null and agent_id != 0">
             and agent_id=#{agent_id}
         </if>
-        <if test="resource_name!=null and resource_name!=''">
+        <if test="resource_name!=null and resource_name !=''">
             and resource_name=#{resource_name}
         </if>
-        <if test="resource_url!=null and resource_url!=''">
+        <if test="resource_url!=null and resource_url !=''">
             and resource_url=#{resource_url}
         </if>
-        <if test="resource_thumbnail!=null and resource_thumbnail!=''">
+        <if test="resource_thumbnail!=null and resource_thumbnail !=''">
             and resource_thumbnail=#{resource_thumbnail}
         </if>
         <if test="resource_points!=null and resource_points != ''">

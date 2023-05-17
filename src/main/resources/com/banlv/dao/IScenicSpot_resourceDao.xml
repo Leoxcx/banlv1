@@ -19,13 +19,13 @@
     <select id="searchAllByPage" resultType="scenicSpot_resource">
         select * from scenicSpot_resource
         where 1 = 1
-        <if test="arg1.scenicSpot_resource_id !=null">
+        <if test="arg1.scenicSpot_resource_id !=null and arg1.scenicSpot_resource_id != 0">
             and scenicSpot_resource_id=#{arg1.scenicSpot_resource_id}
         </if>
-        <if test="arg1.scenicSpot_id !=null">
+        <if test="arg1.scenicSpot_id !=null and arg1.scenicSpot_id != 0">
             and scenicSpot_id=#{arg1.scenicSpot_id}
         </if>
-        <if test="arg1.resource_id !=null">
+        <if test="arg1.resource_id !=null and arg1.resource_id != 0">
             and resource_id=#{arg1.resource_id}
         </if>
         <if test="arg1.scenicSpot_resource_use !=null and arg1.scenicSpot_resource_use != ''">
@@ -38,13 +38,13 @@
     <select id="searchAll" resultType="scenicSpot_resource">
         select * from scenicSpot_resource
         where 1 = 1
-        <if test="scenicSpot_resource_id !=null">
+        <if test="scenicSpot_resource_id !=null and scenicSpot_resource_id != 0">
             and scenicSpot_resource_id=#{scenicSpot_resource_id}
         </if>
-        <if test="scenicSpot_id !=null">
+        <if test="scenicSpot_id !=null and scenicSpot_id != 0">
             and scenicSpot_id=#{scenicSpot_id}
         </if>
-        <if test="resource_id !=null">
+        <if test="resource_id !=null and resource_id != 0">
             and resource_id=#{resource_id}
         </if>
         <if test="scenicSpot_resource_use !=null and scenicSpot_resource_use != ''">
@@ -61,13 +61,13 @@
     <select id="findSearchTotalCount" parameterType="scenicSpot_resource" resultType="int">
         select count(*) from scenicSpot_resource
         where 1 = 1
-        <if test="scenicSpot_resource_id!=null">
+        <if test="scenicSpot_resource_id!=null and scenicSpot_resource_id != 0">
             and scenicSpot_resource_id=#{scenicSpot_resource_id}
         </if>
-        <if test="scenicSpot_id!=null">
+        <if test="scenicSpot_id!=null and scenicSpot_id != 0">
             and scenicSpot_id=#{scenicSpot_id}
         </if>
-        <if test="resource_id!=null">
+        <if test="resource_id!=null and resource_id != 0">
             and resource_id=#{resource_id}
         </if>
         <if test="scenicSpot_resource_use!=null and scenicSpot_resource_use != ''">

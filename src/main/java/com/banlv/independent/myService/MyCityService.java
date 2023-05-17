@@ -20,6 +20,12 @@ public interface MyCityService {
      * @return
      */
 //    PageBean<City> searchAllByCityName(String city_name ,int currentPage, int rows);
-    City searchAllByCityName(String city_name);
+    City searchAllByCityName(String cityName);
+
+    /**
+     * 查询总记录数
+     * @return
+     */
+    int findTotalCount();
 
 }

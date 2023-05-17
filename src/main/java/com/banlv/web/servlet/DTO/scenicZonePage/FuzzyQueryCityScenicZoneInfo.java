@@ -59,24 +59,20 @@ public class FuzzyQueryCityScenicZoneInfo extends HttpServlet {
                 }
             }
             //若景区列表未满10个，通过city_id 查询最多10个景区，并添加到景区列表中，直到景区列表满10个
-            if(scenicZonesList.size() < 10) {
+            if (scenicZonesList.size() < 10) {
                 scenicZone.setScenicZone_name(null);
-
                 PageBean<ScenicZone> szs = scenicZoneService.searchAllByPage(1,10, scenicZone);
+                if(szs.getList().isEmpty()) {
+                    //若景区列表未满10个，查询所有景区查出最多10个景区，并添加到景区列表中，直到景区列表满10个
+                    scenicZone.setCity_id(0);
+                    szs = scenicZoneService.searchAllByPage(1,10, scenicZone);
+                }
                 for(int i = 0 ; scenicZonesList.size() < 10 || i < szs.getList().size() ; i++) {
                     scenicZonesList.add(szs.getList().get(i));
                 }
             }
-            //若景区列表未满10个，查询所有景区查出最多10个景区，并添加到景区列表中，直到景区列表满10个
-            if(scenicZonesList.size() < 10) {
 
-                scenicZone.setCity_id(null);
 
-                PageBean<ScenicZone> szs = scenicZoneService.searchAllByPage(1,10, scenicZone);
-                for(int i = 0 ; scenicZonesList.size() < 10 || i < szs.getList().size() ; i++) {
-                    scenicZonesList.add(szs.getList().get(i));
-                }
-            }
             map.put("msg", true);
             map.put("scenicZonesList", scenicZonesList);
 

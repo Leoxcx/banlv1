@@ -1,6 +1,7 @@
 package com.banlv.web.servlet.DTO.scenicZonePage;
 
 import com.banlv.bean.City;
+import com.banlv.independent.myService.MyCityService;
 import com.banlv.independent.myService.myImpl.MyCityServiceImpl;
 import com.banlv.independent.myService.myImpl.MyScenicZoneServiceImpl;
 import com.banlv.service.impl.CityServiceImpl;
@@ -43,13 +44,12 @@ public class FuzzyQueryCityInfo extends HttpServlet {
             city1.setCity_name(city_name);
 
             List<City> cityList1 = cityNameToCityInfo(city1);
-            city1 = cityList1.get(0);
-            if(null == city1){
+            if(cityList1.isEmpty()){
                 //不存在则调用模糊查询
-                MyCityServiceImpl myCityService = new MyCityServiceImpl();
+                MyCityService myCityService = new MyCityServiceImpl();
                 //模糊查询城市名，返回1个城市信息
                 city1 = myCityService.searchAllByCityName(city_name);
-                if(null == city1) {
+                if(city1 != null) {
                     //通过城市编号 city_id 获取当前城市包含的景区数
                     Integer city_id = city1.getCity_id();
                     MyScenicZoneServiceImpl myScenicZoneService = new MyScenicZoneServiceImpl();
@@ -61,7 +61,7 @@ public class FuzzyQueryCityInfo extends HttpServlet {
 
             } else {
                 //通过城市编号 city_id 获取当前城市包含的景区数
-                Integer city_id = city1.getCity_id();
+                Integer city_id = cityList1.get(0).getCity_id();
                 MyScenicZoneServiceImpl myScenicZoneService = new MyScenicZoneServiceImpl();
                 int count = myScenicZoneService.SearchTotalCountByCityId(city_id);
                 map.put("msg", true);

@@ -48,5 +48,6 @@
     <mappers>
         <package name="com.util.dao"></package>
         <package name="com.banlv.dao"></package>
+        <package name="com.banlv.independent.myDao"></package>
     </mappers>
 </configuration>

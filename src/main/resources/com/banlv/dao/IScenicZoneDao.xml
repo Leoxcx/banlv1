@@ -19,40 +19,40 @@
     <select id="searchAllByPage" resultType="scenicZone">
         select * from scenicZone
         where 1 = 1
-        <if test="arg1.scenicZone_id !=null">
+        <if test="arg1.scenicZone_id !=null and arg1.scenicZone_id != 0">
             and scenicZone_id=#{arg1.scenicZone_id}
         </if>
-        <if test="arg1.scenicManage_id !=null">
+        <if test="arg1.scenicManage_id !=null and arg1.scenicManage_id != 0">
             and scenicManage_id=#{arg1.scenicManage_id}
         </if>
         <if test="arg1.scenicZone_name !=null and arg1.scenicZone_name !=''">
             and scenicZone_name=#{arg1.scenicZone_name}
         </if>
-        <if test="arg1.city_id !=null">
+        <if test="arg1.city_id !=null and arg1.city_id != 0">
             and city_id=#{arg1.city_id}
         </if>
-        <if test="arg1.scenicZoneType_id !=null">
+        <if test="arg1.scenicZoneType_id !=null and arg1.scenicZoneType_id != 0">
             and scenicZoneType_id=#{arg1.scenicZoneType_id}
         </if>
-        <if test="arg1.scenicZone_score !=null">
+        <if test="arg1.scenicZone_score !=null and arg1.scenicZone_score != ''">
             and scenicZone_score=#{arg1.scenicZone_score}
         </if>
         <if test="arg1.scenicZone_grade !=null and arg1.scenicZone_grade !=''">
             and scenicZone_grade=#{arg1.scenicZone_grade}
         </if>
-        <if test="arg1.scenicZone_loaction !=null and arg1.scenicZone_loaction !=''">
-            and scenicZone_loaction=#{arg1.scenicZone_loaction}
+        <if test="arg1.scenicZone_location !=null and arg1.scenicZone_location !=''">
+            and scenicZone_location=#{arg1.scenicZone_location}
         </if>
         <if test="arg1.scenicZone_number !=null and arg1.scenicZone_number !=''">
             and scenicZone_number=#{arg1.scenicZone_number}
         </if>
-        <if test="arg1.scenicZone_longitude !=null">
+        <if test="arg1.scenicZone_longitude !=null and arg1.scenicZone_longitude != ''">
             and scenicZone_longitude=#{arg1.scenicZone_longitude}
         </if>
-        <if test="arg1.scenicZone_latitude !=null">
+        <if test="arg1.scenicZone_latitude !=null and arg1.scenicZone_latitude != ''">
             and scenicZone_latitude=#{arg1.scenicZone_latitude}
         </if>
-        <if test="arg1.scenicZone_hot !=null">
+        <if test="arg1.scenicZone_hot !=null and arg1.scenicZone_hot != ''">
             and scenicZone_hot=#{arg1.scenicZone_hot}
         </if>
         limit #{arg0.start},#{arg0.rows};
@@ -62,40 +62,40 @@
     <select id="searchAll" resultType="scenicZone">
         select * from scenicZone
         where 1 = 1
-        <if test="scenicZone_id !=null">
+        <if test="scenicZone_id !=null and scenicZone_id != 0">
             and scenicZone_id=#{scenicZone_id}
         </if>
-        <if test="scenicManage_id !=null">
+        <if test="scenicManage_id !=null and scenicManage_id != 0">
             and scenicManage_id=#{scenicManage_id}
         </if>
         <if test="scenicZone_name !=null and scenicZone_name !=''">
             and scenicZone_name=#{scenicZone_name}
         </if>
-        <if test="city_id !=null">
+        <if test="city_id !=null and city_id != 0">
             and city_id=#{city_id}
         </if>
-        <if test="scenicZoneType_id !=null">
+        <if test="scenicZoneType_id !=null and scenicZoneType_id != 0">
             and scenicZoneType_id=#{scenicZoneType_id}
         </if>
-        <if test="scenicZone_score !=null">
+        <if test="scenicZone_score !=null and scenicZone_score != ''">
             and scenicZone_score=#{scenicZone_score}
         </if>
         <if test="scenicZone_grade !=null and scenicZone_grade !=''">
             and scenicZone_grade=#{scenicZone_grade}
         </if>
-        <if test="scenicZone_loaction !=null and scenicZone_loaction !=''">
-            and scenicZone_loaction=#{scenicZone_loaction}
+        <if test="scenicZone_location !=null and scenicZone_location !=''">
+            and scenicZone_location=#{scenicZone_location}
         </if>
         <if test="scenicZone_number !=null and scenicZone_number !=''">
             and scenicZone_number=#{scenicZone_number}
         </if>
-        <if test="scenicZone_longitude !=null">
+        <if test="scenicZone_longitude !=null and scenicZone_longitude != ''">
             and scenicZone_longitude=#{scenicZone_longitude}
         </if>
-        <if test="scenicZone_latitude !=null">
+        <if test="scenicZone_latitude !=null and scenicZone_latitude != ''">
             and scenicZone_latitude=#{scenicZone_latitude}
         </if>
-        <if test="scenicZone_hot !=null">
+        <if test="scenicZone_hot !=null and scenicZone_hot != ''">
             and scenicZone_hot=#{scenicZone_hot}
         </if>
 	;    </select>
@@ -109,47 +109,47 @@
     <select id="findSearchTotalCount" parameterType="scenicZone" resultType="int">
         select count(*) from scenicZone
         where 1 = 1
-        <if test="scenicZone_id!=null">
+        <if test="scenicZone_id!=null and scenicZone_id != 0">
             and scenicZone_id=#{scenicZone_id}
         </if>
-        <if test="scenicManage_id!=null">
+        <if test="scenicManage_id!=null and scenicManage_id != 0">
             and scenicManage_id=#{scenicManage_id}
         </if>
-        <if test="scenicZone_name!=null and scenicZone_name!=''">
+        <if test="scenicZone_name!=null and scenicZone_name !=''">
             and scenicZone_name=#{scenicZone_name}
         </if>
-        <if test="city_id!=null">
+        <if test="city_id!=null and city_id != 0">
             and city_id=#{city_id}
         </if>
-        <if test="scenicZoneType_id!=null">
+        <if test="scenicZoneType_id!=null and scenicZoneType_id != 0">
             and scenicZoneType_id=#{scenicZoneType_id}
         </if>
-        <if test="scenicZone_score!=null">
+        <if test="scenicZone_score!=null and scenicZone_score != ''">
             and scenicZone_score=#{scenicZone_score}
         </if>
-        <if test="scenicZone_grade!=null and scenicZone_grade!=''">
+        <if test="scenicZone_grade!=null and scenicZone_grade !=''">
             and scenicZone_grade=#{scenicZone_grade}
         </if>
-        <if test="scenicZone_loaction!=null and scenicZone_loaction!=''">
-            and scenicZone_loaction=#{scenicZone_loaction}
+        <if test="scenicZone_location!=null and scenicZone_location !=''">
+            and scenicZone_location=#{scenicZone_location}
         </if>
-        <if test="scenicZone_number!=null and scenicZone_number!=''">
+        <if test="scenicZone_number!=null and scenicZone_number !=''">
             and scenicZone_number=#{scenicZone_number}
         </if>
-        <if test="scenicZone_longitude!=null">
+        <if test="scenicZone_longitude!=null and scenicZone_longitude != ''">
             and scenicZone_longitude=#{scenicZone_longitude}
         </if>
-        <if test="scenicZone_latitude!=null">
+        <if test="scenicZone_latitude!=null and scenicZone_latitude != ''">
             and scenicZone_latitude=#{scenicZone_latitude}
         </if>
-        <if test="scenicZone_hot!=null">
+        <if test="scenicZone_hot!=null and scenicZone_hot != ''">
             and scenicZone_hot=#{scenicZone_hot}
         </if>
 	;    </select>
 
     <!--新增-->
     <insert id="addScenicZone" parameterType="scenicZone">
-        insert into scenicZone values (null,#{scenicManage_id},#{scenicZone_name},#{city_id},#{scenicZoneType_id},#{scenicZone_score},#{scenicZone_grade},#{scenicZone_loaction},#{scenicZone_number},#{scenicZone_longitude},#{scenicZone_latitude},#{scenicZone_hot});
+        insert into scenicZone values (null,#{scenicManage_id},#{scenicZone_name},#{city_id},#{scenicZoneType_id},#{scenicZone_score},#{scenicZone_grade},#{scenicZone_location},#{scenicZone_number},#{scenicZone_longitude},#{scenicZone_latitude},#{scenicZone_hot});
     </insert>
 
     <!--删除-->
@@ -170,10 +170,10 @@
             <if test="scenicZone_name!=null and scenicZone_name!=''">
                 scenicZone_name=#{scenicZone_name},
             </if>
-            <if test="city_id!=null">
+            <if test="city_id!=null and city_id != ''">
                 city_id=#{city_id},
             </if>
-            <if test="scenicZoneType_id!=null">
+            <if test="scenicZoneType_id!=null and scenicZoneType_id != ''">
                 scenicZoneType_id=#{scenicZoneType_id},
             </if>
             <if test="scenicZone_score!=null">
@@ -182,16 +182,16 @@
             <if test="scenicZone_grade!=null and scenicZone_grade!=''">
                 scenicZone_grade=#{scenicZone_grade},
             </if>
-            <if test="scenicZone_loaction!=null and scenicZone_loaction!=''">
-                scenicZone_loaction=#{scenicZone_loaction},
+            <if test="scenicZone_location!=null and scenicZone_location!=''">
+                scenicZone_location=#{scenicZone_location},
             </if>
             <if test="scenicZone_number!=null and scenicZone_number!=''">
                 scenicZone_number=#{scenicZone_number},
             </if>
-            <if test="scenicZone_longitude!=null">
+            <if test="scenicZone_longitude!=null and scenicZone_longitude != ''">
                 scenicZone_longitude=#{scenicZone_longitude},
             </if>
-            <if test="scenicZone_latitude!=null">
+            <if test="scenicZone_latitude!=null and scenicZone_latitude != ''">
                 scenicZone_latitude=#{scenicZone_latitude},
             </if>
             <if test="scenicZone_hot!=null">

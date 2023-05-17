@@ -7,6 +7,7 @@ import com.banlv.independent.myService.MyCityService;
 import com.banlv.service.CityService;
 import com.util.bean.PageBean;
 import com.util.utils.GetSqlSession;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.HashMap;
 import java.util.List;
@@ -26,10 +27,13 @@ public class MyCityServiceImpl implements MyCityService {
     }
 
     @Override
-    public City searchAllByCityName(String city_name) {
+    public City searchAllByCityName(String cityName) {
+        return mapper.searchAllByCityName(cityName);
+    }
 
-        City city = mapper.searchAllByCityName(city_name);
-        return city;
+    @Override
+    public int findTotalCount() {
+        return mapper.findTotalCount();
     }
 
 }

@@ -19,16 +19,16 @@
     <select id="searchAllByPage" resultType="scenicManage">
         select * from scenicManage
         where 1 = 1
-        <if test="arg1.scenicManage_id !=null">
+        <if test="arg1.scenicManage_id !=null and arg1.scenicManage_id != 0">
             and scenicManage_id=#{arg1.scenicManage_id}
         </if>
-        <if test="arg1.scenicManage_name !=null">
+        <if test="arg1.scenicManage_name !=null and arg1.scenicManage_name != ''">
             and scenicManage_name=#{arg1.scenicManage_name}
         </if>
-        <if test="arg1.scenicManage_password !=null">
+        <if test="arg1.scenicManage_password !=null and arg1.scenicManage_password != ''">
             and scenicManage_password=#{arg1.scenicManage_password}
         </if>
-        <if test="arg1.scenicManage_phone !=null">
+        <if test="arg1.scenicManage_phone !=null and arg1.scenicManage_phone != ''">
             and scenicManage_phone=#{arg1.scenicManage_phone}
         </if>
         limit #{arg0.start},#{arg0.rows};
@@ -38,16 +38,16 @@
     <select id="searchAll" resultType="scenicManage">
         select * from scenicManage
         where 1 = 1
-        <if test="scenicManage_id !=null">
+        <if test="scenicManage_id !=null and scenicManage_id != 0">
             and scenicManage_id=#{scenicManage_id}
         </if>
-        <if test="scenicManage_name !=null">
+        <if test="scenicManage_name !=null and scenicManage_name != ''">
             and scenicManage_name=#{scenicManage_name}
         </if>
-        <if test="scenicManage_password !=null">
+        <if test="scenicManage_password !=null and scenicManage_password != ''">
             and scenicManage_password=#{scenicManage_password}
         </if>
-        <if test="scenicManage_phone !=null">
+        <if test="scenicManage_phone !=null and scenicManage_phone != ''">
             and scenicManage_phone=#{scenicManage_phone}
         </if>
 	;    </select>
@@ -61,16 +61,16 @@
     <select id="findSearchTotalCount" parameterType="scenicManage" resultType="int">
         select count(*) from scenicManage
         where 1 = 1
-        <if test="scenicManage_id!=null">
+        <if test="scenicManage_id!=null and scenicManage_id != 0">
             and scenicManage_id=#{scenicManage_id}
         </if>
-        <if test="scenicManage_name!=null">
+        <if test="scenicManage_name!=null and scenicManage_name != ''">
             and scenicManage_name=#{scenicManage_name}
         </if>
-        <if test="scenicManage_password!=null">
+        <if test="scenicManage_password!=null and scenicManage_password != ''">
             and scenicManage_password=#{scenicManage_password}
         </if>
-        <if test="scenicManage_phone!=null">
+        <if test="scenicManage_phone!=null and scenicManage_phone != ''">
             and scenicManage_phone=#{scenicManage_phone}
         </if>
 	;    </select>
