@@ -16,11 +16,13 @@
         <typeAlias type="com.util.bean.Attribute" alias="attribute"></typeAlias>
         <typeAlias type="com.banlv.bean.Agent" alias="agent"></typeAlias>
         <typeAlias type="com.banlv.bean.City" alias="city"></typeAlias>
+        <typeAlias type="com.banlv.bean.Picture" alias="picture"></typeAlias>
         <typeAlias type="com.banlv.bean.Resource" alias="resource"></typeAlias>
         <typeAlias type="com.banlv.bean.ScenicManage" alias="scenicManage"></typeAlias>
         <typeAlias type="com.banlv.bean.ScenicSpot" alias="scenicSpot"></typeAlias>
         <typeAlias type="com.banlv.bean.ScenicSpot_resource" alias="scenicSpot_resource"></typeAlias>
         <typeAlias type="com.banlv.bean.ScenicZone" alias="scenicZone"></typeAlias>
+        <typeAlias type="com.banlv.bean.ScenicZoneEntry" alias="scenicZoneEntry"></typeAlias>
         <typeAlias type="com.banlv.bean.ScenicZoneType" alias="scenicZoneType"></typeAlias>
         <typeAlias type="com.banlv.bean.ScenicZone_scenicSpot" alias="scenicZone_scenicSpot"></typeAlias>
         <typeAlias type="com.banlv.bean.ScenicZone_scenicZoneEntry" alias="scenicZone_scenicZoneEntry"></typeAlias>

@@ -36,4 +36,9 @@ public class MyCityServiceImpl implements MyCityService {
         return mapper.findTotalCount();
     }
 
+    @Override
+    public int searchIdByCityName(String cityName) {
+        return mapper.searchIdByCityName(cityName);
+    }
+
 }

@@ -19,11 +19,11 @@
     <select id="searchAllByPage" resultType="scenicZoneType">
         select * from scenicZoneType
         where 1 = 1
-        <if test="arg1.scenicZoneEntry_id !=null and arg1.scenicZoneEntry_id != 0">
-            and scenicZoneEntry_id=#{arg1.scenicZoneEntry_id}
+        <if test="arg1.scenicZoneType_id !=null and arg1.scenicZoneType_id != 0">
+            and scenicZoneType_id=#{arg1.scenicZoneType_id}
         </if>
-        <if test="arg1.scenicZoneEntry_name !=null and arg1.scenicZoneEntry_name !=''">
-            and scenicZoneEntry_name=#{arg1.scenicZoneEntry_name}
+        <if test="arg1.scenicZoneType_name !=null and arg1.scenicZoneType_name !=''">
+            and scenicZoneType_name=#{arg1.scenicZoneType_name}
         </if>
         limit #{arg0.start},#{arg0.rows};
     </select>
@@ -32,11 +32,11 @@
     <select id="searchAll" resultType="scenicZoneType">
         select * from scenicZoneType
         where 1 = 1
-        <if test="scenicZoneEntry_id !=null and scenicZoneEntry_id != 0">
-            and scenicZoneEntry_id=#{scenicZoneEntry_id}
+        <if test="scenicZoneType_id !=null and scenicZoneType_id != 0">
+            and scenicZoneType_id=#{scenicZoneType_id}
         </if>
-        <if test="scenicZoneEntry_name !=null and scenicZoneEntry_name !=''">
-            and scenicZoneEntry_name=#{scenicZoneEntry_name}
+        <if test="scenicZoneType_name !=null and scenicZoneType_name !=''">
+            and scenicZoneType_name=#{scenicZoneType_name}
         </if>
 	;    </select>
 
@@ -49,17 +49,17 @@
     <select id="findSearchTotalCount" parameterType="scenicZoneType" resultType="int">
         select count(*) from scenicZoneType
         where 1 = 1
-        <if test="scenicZoneEntry_id!=null and scenicZoneEntry_id != 0">
-            and scenicZoneEntry_id=#{scenicZoneEntry_id}
+        <if test="scenicZoneType_id!=null and scenicZoneType_id != 0">
+            and scenicZoneType_id=#{scenicZoneType_id}
         </if>
-        <if test="scenicZoneEntry_name!=null and scenicZoneEntry_name !=''">
-            and scenicZoneEntry_name=#{scenicZoneEntry_name}
+        <if test="scenicZoneType_name!=null and scenicZoneType_name !=''">
+            and scenicZoneType_name=#{scenicZoneType_name}
         </if>
 	;    </select>
 
     <!--新增-->
     <insert id="addScenicZoneType" parameterType="scenicZoneType">
-        insert into scenicZoneType values (null,#{scenicZoneEntry_id},#{scenicZoneEntry_name});
+        insert into scenicZoneType values (null,#{scenicZoneType_name});
     </insert>
 
     <!--删除-->
@@ -71,11 +71,11 @@
     <update id="updateScenicZoneType" parameterType="scenicZoneType">
         update scenicZoneType
         <set>
-            <if test="scenicZoneEntry_id!=null and scenicZoneEntry_id != ''">
-                scenicZoneEntry_id=#{scenicZoneEntry_id},
+            <if test="scenicZoneType_id!=null and scenicZoneType_id != ''">
+                scenicZoneType_id=#{scenicZoneType_id},
             </if>
-            <if test="scenicZoneEntry_name!=null and scenicZoneEntry_name!=''">
-                scenicZoneEntry_name=#{scenicZoneEntry_name},
+            <if test="scenicZoneType_name!=null and scenicZoneType_name!=''">
+                scenicZoneType_name=#{scenicZoneType_name},
             </if>
         </set>
         where scenicZoneType_id=#{scenicZoneType_id};

@@ -27,7 +27,11 @@ public class GetScenicZoneByScenicZoneTypeId extends HttpServlet {
         response.setContentType("application/json;charset=utf-8");
         Map<String,Object> map = new HashMap<>();
         int city_id = Integer.parseInt(request.getParameter("city_id"));
-        int scenicZoneType_id = Integer.parseInt(request.getParameter("scenicZoneType_id"));
+        String scenicZoneTypeId =  request.getParameter("scenicZoneType_id");
+        int scenicZoneType_id = 0;
+        if(scenicZoneTypeId != null){
+            scenicZoneType_id = Integer.parseInt(scenicZoneTypeId);
+        }
         int currentPage = Integer.parseInt(request.getParameter("currentPage"));
 
         map.put("msg", false);

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--mapper约束-->
+<mapper namespace="com.banlv.dao.IPictureDao">
+
+    <!--配置查询所有-->
+    <select id="findAll" resultType="picture">
+        select * from picture;
+    </select>
+
+    <!--配置通过页面查询所有-->
+    <select id="findAllByPage" parameterType="map" resultType="picture">
+        select * from picture limit #{start},#{rows};
+    </select>
+
+    <!--通过页面和查询条件查询所有-->
+    <select id="searchAllByPage" resultType="picture">
+        select * from picture
+        where 1 = 1
+        <if test="arg1.picture_id !=null and arg1.picture_id != 0">
+            and picture_id=#{arg1.picture_id}
+        </if>
+        <if test="arg1.picture_name !=null and arg1.picture_name !=''">
+            and picture_name=#{arg1.picture_name}
+        </if>
+        <if test="arg1.picture_url !=null and arg1.picture_url !=''">
+            and picture_url=#{arg1.picture_url}
+        </if>
+        <if test="arg1.picture_thumbnail !=null and arg1.picture_thumbnail !=''">
+            and picture_thumbnail=#{arg1.picture_thumbnail}
+        </if>
+        <if test="arg1.picture_use !=null">
+            and picture_use=#{arg1.picture_use}
+        </if>
+        <if test="arg1.picture_remark !=null and arg1.picture_remark !=''">
+            and picture_remark=#{arg1.picture_remark}
+        </if>
+        limit #{arg0.start},#{arg0.rows};
+    </select>
+
+    <!--通过查询条件查询所有-->
+    <select id="searchAll" resultType="picture">
+        select * from picture
+        where 1 = 1
+        <if test="picture_id !=null and picture_id != 0">
+            and picture_id=#{picture_id}
+        </if>
+        <if test="picture_name !=null and picture_name !=''">
+            and picture_name=#{picture_name}
+        </if>
+        <if test="picture_url !=null and picture_url !=''">
+            and picture_url=#{picture_url}
+        </if>
+        <if test="picture_thumbnail !=null and picture_thumbnail !=''">
+            and picture_thumbnail=#{picture_thumbnail}
+        </if>
+        <if test="picture_use !=null">
+            and picture_use=#{picture_use}
+        </if>
+        <if test="picture_remark !=null and picture_remark !=''">
+            and picture_remark=#{picture_remark}
+        </if>
+	;    </select>
+
+    <!--查询总记录数-->
+    <select id="findTotalCount" resultType="int">
+        select count(*) from picture;
+    </select>
+
+    <!--查询高级查询记录数-->
+    <select id="findSearchTotalCount" parameterType="picture" resultType="int">
+        select count(*) from picture
+        where 1 = 1
+        <if test="picture_id!=null and picture_id != 0">
+            and picture_id=#{picture_id}
+        </if>
+        <if test="picture_name!=null and picture_name !=''">
+            and picture_name=#{picture_name}
+        </if>
+        <if test="picture_url!=null and picture_url !=''">
+            and picture_url=#{picture_url}
+        </if>
+        <if test="picture_thumbnail!=null and picture_thumbnail !=''">
+            and picture_thumbnail=#{picture_thumbnail}
+        </if>
+        <if test="picture_use!=null">
+            and picture_use=#{picture_use}
+        </if>
+        <if test="picture_remark!=null and picture_remark !=''">
+            and picture_remark=#{picture_remark}
+        </if>
+	;    </select>
+
+    <!--新增-->
+    <insert id="addPicture" parameterType="picture">
+        insert into picture values (null,#{picture_name},#{picture_url},#{picture_thumbnail},#{picture_use},#{picture_remark});
+    </insert>
+
+    <!--删除-->
+    <delete id="deleteByPictureId">
+        delete from picture where picture_id = #{picture_id};
+    </delete>
+
+    <!--更新-->
+    <update id="updatePicture" parameterType="picture">
+        update picture
+        <set>
+            <if test="picture_id!=null">
+                picture_id=#{picture_id},
+            </if>
+            <if test="picture_name!=null and picture_name!=''">
+                picture_name=#{picture_name},
+            </if>
+            <if test="picture_url!=null and picture_url!=''">
+                picture_url=#{picture_url},
+            </if>
+            <if test="picture_thumbnail!=null and picture_thumbnail!=''">
+                picture_thumbnail=#{picture_thumbnail},
+            </if>
+            <if test="picture_use!=null">
+                picture_use=#{picture_use},
+            </if>
+            <if test="picture_remark!=null and picture_remark!=''">
+                picture_remark=#{picture_remark},
+            </if>
+        </set>
+        where picture_id=#{picture_id};
+    </update>
+</mapper>

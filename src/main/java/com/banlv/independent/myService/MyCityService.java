@@ -2,6 +2,7 @@ package com.banlv.independent.myService;
 
 import com.banlv.bean.City;
 import com.util.bean.PageBean;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -27,5 +28,11 @@ public interface MyCityService {
      * @return
      */
     int findTotalCount();
+
+    /**
+     * 通过city_name查询city_id
+     * @return
+     */
+    int searchIdByCityName(String cityName);
 
 }

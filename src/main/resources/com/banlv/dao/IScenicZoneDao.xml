@@ -28,6 +28,9 @@
         <if test="arg1.scenicZone_name !=null and arg1.scenicZone_name !=''">
             and scenicZone_name=#{arg1.scenicZone_name}
         </if>
+        <if test="arg1.scenicZone_introduce !=null and arg1.scenicZone_introduce !=''">
+            and scenicZone_introduce=#{arg1.scenicZone_introduce}
+        </if>
         <if test="arg1.city_id !=null and arg1.city_id != 0">
             and city_id=#{arg1.city_id}
         </if>
@@ -55,6 +58,9 @@
         <if test="arg1.scenicZone_hot !=null and arg1.scenicZone_hot != ''">
             and scenicZone_hot=#{arg1.scenicZone_hot}
         </if>
+        <if test="arg1.scenicZone_bg !=null and arg1.scenicZone_bg !=''">
+            and scenicZone_bg=#{arg1.scenicZone_bg}
+        </if>
         limit #{arg0.start},#{arg0.rows};
     </select>
 
@@ -70,6 +76,9 @@
         </if>
         <if test="scenicZone_name !=null and scenicZone_name !=''">
             and scenicZone_name=#{scenicZone_name}
+        </if>
+        <if test="scenicZone_introduce !=null and scenicZone_introduce !=''">
+            and scenicZone_introduce=#{scenicZone_introduce}
         </if>
         <if test="city_id !=null and city_id != 0">
             and city_id=#{city_id}
@@ -98,6 +107,9 @@
         <if test="scenicZone_hot !=null and scenicZone_hot != ''">
             and scenicZone_hot=#{scenicZone_hot}
         </if>
+        <if test="scenicZone_bg !=null and scenicZone_bg !=''">
+            and scenicZone_bg=#{scenicZone_bg}
+        </if>
 	;    </select>
 
     <!--查询总记录数-->
@@ -117,6 +129,9 @@
         </if>
         <if test="scenicZone_name!=null and scenicZone_name !=''">
             and scenicZone_name=#{scenicZone_name}
+        </if>
+        <if test="scenicZone_introduce!=null and scenicZone_introduce !=''">
+            and scenicZone_introduce=#{scenicZone_introduce}
         </if>
         <if test="city_id!=null and city_id != 0">
             and city_id=#{city_id}
@@ -145,11 +160,14 @@
         <if test="scenicZone_hot!=null and scenicZone_hot != ''">
             and scenicZone_hot=#{scenicZone_hot}
         </if>
+        <if test="scenicZone_bg!=null and scenicZone_bg !=''">
+            and scenicZone_bg=#{scenicZone_bg}
+        </if>
 	;    </select>
 
     <!--新增-->
     <insert id="addScenicZone" parameterType="scenicZone">
-        insert into scenicZone values (null,#{scenicManage_id},#{scenicZone_name},#{city_id},#{scenicZoneType_id},#{scenicZone_score},#{scenicZone_grade},#{scenicZone_location},#{scenicZone_number},#{scenicZone_longitude},#{scenicZone_latitude},#{scenicZone_hot});
+        insert into scenicZone values (null,#{scenicManage_id},#{scenicZone_name},#{scenicZone_introduce},#{city_id},#{scenicZoneType_id},#{scenicZone_score},#{scenicZone_grade},#{scenicZone_location},#{scenicZone_number},#{scenicZone_longitude},#{scenicZone_latitude},#{scenicZone_hot},#{scenicZone_bg});
     </insert>
 
     <!--删除-->
@@ -169,6 +187,9 @@
             </if>
             <if test="scenicZone_name!=null and scenicZone_name!=''">
                 scenicZone_name=#{scenicZone_name},
+            </if>
+            <if test="scenicZone_introduce!=null and scenicZone_introduce!=''">
+                scenicZone_introduce=#{scenicZone_introduce},
             </if>
             <if test="city_id!=null and city_id != ''">
                 city_id=#{city_id},
@@ -196,6 +217,9 @@
             </if>
             <if test="scenicZone_hot!=null">
                 scenicZone_hot=#{scenicZone_hot},
+            </if>
+            <if test="scenicZone_bg!=null and scenicZone_bg!=''">
+                scenicZone_bg=#{scenicZone_bg},
             </if>
         </set>
         where scenicZone_id=#{scenicZone_id};

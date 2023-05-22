@@ -49,7 +49,7 @@ public class CreateJava {
         // 初始化bean中的类
         List<String> beanList = getBeanList();
         for (String s : beanList) {
-//            if (s.equals("city")){
+            if (s.equals("scenicZoneType")){
                 createDao(s);
                 createDaoMapper(s);
                 createService(s);
@@ -59,9 +59,9 @@ public class CreateJava {
                 createAttributeSql(s);
 //                createHtmlDoor(s);
 //                createJSDoor(s);
-//            }
+            }
         }
-//        createTypeAliases();
+        createTypeAliases();
     }
 
     /**

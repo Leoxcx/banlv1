@@ -27,4 +27,16 @@
         select count(*) from city;
     </select>
 
+    <!--通过页面和查询条件查询所有-->
+    <select id="searchIdByCityName" parameterType="String" resultType="int">
+        select city_id from city
+        where 1 = 1
+
+        <if test="cityName !=null and cityName !=''">
+            and city_name = #{cityName}
+        </if>
+        limit 1
+        ;
+    </select>
+
 </mapper>

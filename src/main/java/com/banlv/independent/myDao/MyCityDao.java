@@ -20,4 +20,9 @@ public interface MyCityDao {
     int findTotalCount();
 
     City searchAllByCityName(@Param(value="cityName")  String cityName);
+    /**
+     * 通过city_name查询city_id
+     * @return
+     */
+    int searchIdByCityName(@Param(value="cityName")  String cityName);
 }
