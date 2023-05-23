@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-
+//前端上传
 @WebServlet("/upload")
 public class Upload extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -27,10 +27,11 @@ public class Upload extends HttpServlet {
         String secretKey = "0m2-9F0UNicAZePqlAMZHVl7xgVRcOVn6in8MKke";
 
         // 要上传的空间
-        String bucket = "banlv1";
+        String bucket = "banlvserver";
 
         //七牛云域名
-        String domain = "http://rsorarkap.hd-bkt.clouddn.com/";
+//        String domain = "http://rsorarkap.hd-bkt.clouddn.com/";
+        String domain = "http://cdn.uemodel.com/";
         try {
             //验证七牛云身份是否通过
             Auth auth = Auth.create(accessKey, secretKey);
@@ -58,6 +59,7 @@ public class Upload extends HttpServlet {
             map.put("imgUrl", randomFileName);
             map.put("success", 1);
         } catch (Exception e) {
+            map.put("msg", false);
 
         } finally {
 
