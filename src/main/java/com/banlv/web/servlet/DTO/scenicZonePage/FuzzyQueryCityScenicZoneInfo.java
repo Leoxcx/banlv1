@@ -22,7 +22,7 @@ import java.util.Map;
 
 import static com.util.bean.transTool.TransTool.cityNameToCityInfo;
 
-
+//通过传入的city_id和scenicZone_name模糊查询获取景区信息
 @WebServlet("/fuzzyquerysceniczoneinfo")
 public class FuzzyQueryCityScenicZoneInfo extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

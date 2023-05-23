@@ -22,7 +22,7 @@ import java.util.Map;
 import static com.util.bean.transTool.TransTool.*;
 
 
-
+//通过传入的city_name模糊查询获取城市信息
 @WebServlet("/fuzzyquerycityinfo")
 public class FuzzyQueryCityInfo extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -19,7 +19,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
+//通过当前城市city_id和景区分类scenicZoneType_id（自然风景区、展馆、博物馆、公园）获取当前城市景区列表
 @WebServlet("/getsceniczonebysceniczonetypeid")
 public class GetScenicZoneByScenicZoneTypeId extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

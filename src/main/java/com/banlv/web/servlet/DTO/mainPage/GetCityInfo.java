@@ -16,6 +16,7 @@ import java.util.Map;
 
 import static com.util.bean.transTool.TransTool.*;
 
+//通过城市名称获取城市信息
 @WebServlet("/getcityinfo")
 public class GetCityInfo extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
