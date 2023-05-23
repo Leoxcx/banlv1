@@ -36,13 +36,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4789afa5-2117-470d-96aa-0f6305956f8e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/GetResourcesByScenicSpotId.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/GetSceincZoneEntriesByScenicZoneId.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/upload/QiniuTool.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/util/utils/GetAddress.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/upload/QiniuCloudUpload.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/upload/QiniuCloudUpload.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/upload/Upload.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/upload/Upload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/util/utils/GetAddress.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -297,7 +291,7 @@
       <workItem from="1684372040921" duration="1002000" />
       <workItem from="1684463593981" duration="5917000" />
       <workItem from="1684717717948" duration="21222000" />
-      <workItem from="1684803837110" duration="12906000" />
+      <workItem from="1684803837110" duration="13248000" />
     </task>
     <task id="LOCAL-00001" summary="新版">
       <created>1683789209552</created>
@@ -355,7 +349,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684751827862</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="新增七牛云上传本地图片代码，&#10;新增通过景区Id获取所有的景区词条，通过景点id获取对应景点资源列表">
+      <created>1684836717168</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1684836717168</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -383,7 +384,8 @@
     <MESSAGE value="写到 通过景区分类（自然风景区、展馆、博物馆、公园）获取当前城市景区列表" />
     <MESSAGE value="1. 通过城市名称获取城市信息（ 城市主键、城市名称、城市简介、城市当前天气、城市当前温度、城市背景图片URL）&#10;2. 获取热门城市信息（城市主键、城市名称）&#10;3. 获取热门景区信息（景区主键、景区名称、景区评分、景区评级（e.g. 5A、4A）、词条、地址、累计观看人数、经度、纬度、热度） &#10;4. 模糊查询获取城市信息（城市主键、城市名、景区数）&#10;5. 模糊查询获取景区信息（当前城市的排在最前面、景区词条）&#10;6. 通过景区分类（自然风景区、展馆、博物馆、公园）获取当前城市景区列表 &#10;修改测试完成" />
     <MESSAGE value="修改添加数据库字段，" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改添加数据库字段，" />
+    <MESSAGE value="新增七牛云上传本地图片代码，&#10;新增通过景区Id获取所有的景区词条，通过景点id获取对应景点资源列表" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增七牛云上传本地图片代码，&#10;新增通过景区Id获取所有的景区词条，通过景点id获取对应景点资源列表" />
   </component>
   <component name="WindowStateProjectService">
     <state x="435" y="103" key="#banlv" timestamp="1683801038293">
@@ -410,10 +412,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="682" y="157" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable/0.0.1920.1040@0.0.1920.1040" timestamp="1683801027896" />
-    <state x="558" y="40" key="CommitChangelistDialog2" timestamp="1684751823107">
+    <state x="558" y="40" key="CommitChangelistDialog2" timestamp="1684836711505">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="558" y="40" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1684751823107" />
+    <state x="558" y="40" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1684836711505" />
     <state width="448" height="466" key="DebuggerActiveHint" timestamp="1684745122637">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -514,10 +516,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="239" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1684751835438" />
-    <state x="753" y="432" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1684836517200">
+    <state x="753" y="432" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1684836556991">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="753" y="432" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1684836517200" />
+    <state x="753" y="432" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1684836556991" />
     <state x="690" y="279" key="extract.method.dialog" timestamp="1684302031366">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
