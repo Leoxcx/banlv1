@@ -20,15 +20,15 @@ import java.util.List;
 import java.util.Map;
 
 //通过景区词条中间表的景区id查询当前景区的所有词条
-@WebServlet("/getsceinczoneentriesbysceniczoneid")
-public class GetSceincZoneEntriesByScenicZoneId extends HttpServlet {
+@WebServlet("/getsceniczoneentriesbysceniczoneid")
+public class GetScenicZoneEntriesByScenicZoneId extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         response.setContentType("application/json;charset=utf-8");
         Map<String,Object> map = new HashMap<>();
 
         map.put("msg",false);
-        map.put("sceincZoneEntries",null);
+        map.put("scenicZoneEntries",null);
 
         String scenicZone_id = request.getParameter("scenicZone_id");
         if(!scenicZone_id.isEmpty()) {
@@ -50,7 +50,7 @@ public class GetSceincZoneEntriesByScenicZoneId extends HttpServlet {
                 }
                 if (!scenicZoneEntryList.isEmpty()){
                     map.put("msg",true);
-                    map.put("sceincZoneEntries",scenicZoneEntryList);
+                    map.put("scenicZoneEntries",scenicZoneEntryList);
                 }
             }
         }

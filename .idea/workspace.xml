@@ -36,29 +36,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4789afa5-2117-470d-96aa-0f6305956f8e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/util/bean/timer/TomcatTimer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/banlv_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/banlv_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/banlv.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/banlv.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_servlet_api_2_5.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banlv/bean/Resource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banlv/bean/Resource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banlv/bean/ScenicSpot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banlv/bean/ScenicSpot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banlv/bean/ScenicSpot_resource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banlv/bean/ScenicSpot_resource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banlv/bean/ScenicZone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banlv/bean/ScenicZone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banlv/model/CoordinateRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banlv/model/CoordinateRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banlv/model/PlayNum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banlv/model/PlayNum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/footmarkPage/GetScenicZoneInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/footmarkPage/GetScenicZoneInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/GetResourcesByScenicSpotId.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/GetResourcesByScenicSpotId.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/GetSceincZoneEntriesByScenicZoneId.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/GetSceincZoneEntriesByScenicZoneId.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/util/bean/transTool/TransTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/util/bean/transTool/TransTool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/util/tools/CreateJava.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/util/tools/CreateJava.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/banlv/dao/IResourceDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/banlv/dao/IResourceDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/banlv/dao/IScenicSpotDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/banlv/dao/IScenicSpotDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/banlv/dao/IScenicSpot_resourceDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/banlv/dao/IScenicSpot_resourceDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/banlv/dao/IScenicZoneDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/banlv/dao/IScenicZoneDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/GetSceincZoneEntriesByScenicZoneId.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/GetScenicZoneEntriesByScenicZoneId.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,16 +92,16 @@
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\L\banlv\src\main\java\com\banlv\web\servlet\DTO\mainPage" />
-      <recent name="D:\L\banlv\src\main\resources\com\banlv" />
-      <recent name="D:\L\banlv\src\main\resources\com\banlv\dao\independent" />
-      <recent name="D:\L\banlv\src\main\java\com\util\utils" />
-      <recent name="D:\L\banlv\src\main\java\com\banlv\web\servlet\DTO" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.banlv" />
       <recent name="com" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\L\banlv\src\main\resources\com\banlv\myDao" />
+      <recent name="D:\L\banlv\src\main\java\com\banlv\web\servlet\DTO" />
+      <recent name="D:\xiangmu\huagongchang\server\banlv\src\main\webapp\build" />
+      <recent name="D:\xiangmu\huagongchang\server\banlv\src\main\java\com\util" />
+      <recent name="D:\xiangmu\huagongchang\server\banlv\src\main\java\com\sgz\util\bean" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.banlv.web.servlet.DTO.scenicZonePage" />
@@ -131,12 +110,12 @@
       <recent name="com.banlv.independent.myDao" />
       <recent name="com.util.bean.dto" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\L\banlv\src\main\resources\com\banlv\myDao" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\L\banlv\src\main\java\com\banlv\web\servlet\DTO\mainPage" />
+      <recent name="D:\L\banlv\src\main\resources\com\banlv" />
+      <recent name="D:\L\banlv\src\main\resources\com\banlv\dao\independent" />
+      <recent name="D:\L\banlv\src\main\java\com\util\utils" />
       <recent name="D:\L\banlv\src\main\java\com\banlv\web\servlet\DTO" />
-      <recent name="D:\xiangmu\huagongchang\server\banlv\src\main\webapp\build" />
-      <recent name="D:\xiangmu\huagongchang\server\banlv\src\main\java\com\util" />
-      <recent name="D:\xiangmu\huagongchang\server\banlv\src\main\java\com\sgz\util\bean" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.banlv">
@@ -317,7 +296,7 @@
       <workItem from="1684906693207" duration="15185000" />
       <workItem from="1684977867890" duration="9803000" />
       <workItem from="1685064896510" duration="3903000" />
-      <workItem from="1685088168654" duration="1677000" />
+      <workItem from="1685088168654" duration="4060000" />
     </task>
     <task id="LOCAL-00001" summary="新版">
       <created>1683789209552</created>
@@ -396,7 +375,21 @@
       <option name="project" value="LOCAL" />
       <updated>1684838022000</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="通过景区Id获取所有的景区词条，通过景点id获取对应景点资源列表">
+      <created>1685091725462</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1685091725462</updated>
+    </task>
+    <task id="LOCAL-00013" summary="修改通过景区词条中间表的景区id查询当前景区的所有词条">
+      <created>1685093150096</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1685093150096</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -427,7 +420,9 @@
     <MESSAGE value="新增七牛云上传本地图片代码，&#10;新增通过景区Id获取所有的景区词条，通过景点id获取对应景点资源列表" />
     <MESSAGE value="删除getaddress" />
     <MESSAGE value="些许注释" />
-    <option name="LAST_COMMIT_MESSAGE" value="些许注释" />
+    <MESSAGE value="通过景区Id获取所有的景区词条，通过景点id获取对应景点资源列表" />
+    <MESSAGE value="修改通过景区词条中间表的景区id查询当前景区的所有词条" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改通过景区词条中间表的景区id查询当前景区的所有词条" />
   </component>
   <component name="WindowStateProjectService">
     <state x="435" y="103" key="#banlv" timestamp="1683801038293">
@@ -454,10 +449,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="682" y="157" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable/0.0.1920.1040@0.0.1920.1040" timestamp="1683801027896" />
-    <state x="558" y="40" key="CommitChangelistDialog2" timestamp="1684838020895">
+    <state x="351" y="40" width="1042" height="868" key="CommitChangelistDialog2" timestamp="1685093149069">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="558" y="40" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1684838020895" />
+    <state x="351" y="40" width="1042" height="868" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1685093149069" />
     <state width="448" height="466" key="DebuggerActiveHint" timestamp="1684745122637">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -554,10 +549,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1684917111371" />
-    <state x="552" y="239" key="Vcs.Push.Dialog.v2" timestamp="1684838023713">
+    <state x="552" y="239" key="Vcs.Push.Dialog.v2" timestamp="1685093151541">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="239" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1684838023713" />
+    <state x="552" y="239" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1685093151541" />
     <state x="69" y="264" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1684984963738">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -645,11 +640,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/upload/QiniuCloudUpload.java</url>
           <line>39</line>
           <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/GetSceincZoneEntriesByScenicZoneId.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
