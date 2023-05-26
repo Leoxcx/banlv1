@@ -1,7 +1,10 @@
 package com.banlv.web.servlet.DTO.mainPage;
 
 import com.banlv.bean.ScenicZone;
+import com.banlv.bean.ScenicZoneEntry;
 import com.banlv.bean.ScenicZone_scenicZoneEntry;
+import com.banlv.service.ScenicZoneEntryService;
+import com.banlv.service.impl.ScenicZoneEntryServiceImpl;
 import com.banlv.service.impl.ScenicZone_scenicZoneEntryServiceImpl;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -26,8 +29,6 @@ public class GetSceincZoneEntriesByScenicZoneId extends HttpServlet {
 
         map.put("msg",false);
         map.put("sceincZoneEntries",null);
-        List<ScenicZone_scenicZoneEntry> scenicZone_sceincZoneEntries = new ArrayList<>();
-
 
         String scenicZone_id = request.getParameter("scenicZone_id");
         if(!scenicZone_id.isEmpty()) {
@@ -35,18 +36,22 @@ public class GetSceincZoneEntriesByScenicZoneId extends HttpServlet {
             ScenicZone_scenicZoneEntry scenicZone_scenicZoneEntry = new ScenicZone_scenicZoneEntry();
             scenicZone_scenicZoneEntry.setScenicZone_id(l);
             scenicZone_scenicZoneEntry.setScenicZone_scenicSpot_use(true);
-            List<ScenicZone_scenicZoneEntry> szszEntries = new ScenicZone_scenicZoneEntryServiceImpl().searchAll(scenicZone_scenicZoneEntry);
-            if(!szszEntries.isEmpty()) {
-                for (ScenicZone_scenicZoneEntry sze : szszEntries) {
-                    if(sze.isScenicZone_scenicSpot_use()) {
-                        scenicZone_sceincZoneEntries.add(sze);
+            List<ScenicZone_scenicZoneEntry> scenicZone_sceincZoneEntries = new ScenicZone_scenicZoneEntryServiceImpl().searchAll(scenicZone_scenicZoneEntry);
+            if(!scenicZone_sceincZoneEntries.isEmpty()) {
+                ScenicZoneEntryService scenicZoneEntryService = new ScenicZoneEntryServiceImpl();
+                List scenicZoneEntryList = new ArrayList<>();
+                for (ScenicZone_scenicZoneEntry scenicZone_sceincZoneEntry : scenicZone_sceincZoneEntries) {
+                    ScenicZoneEntry searchScenicZoneEntry = new ScenicZoneEntry();
+                    searchScenicZoneEntry.setScenicZoneEntry_id(scenicZone_sceincZoneEntry.getScenicZoneEntry_id());
+                    List<ScenicZoneEntry> scenicZoneEntries = scenicZoneEntryService.searchAll(searchScenicZoneEntry);
+                    if (!scenicZoneEntries.isEmpty()){
+                        scenicZoneEntryList.add(scenicZoneEntries.get(0));
                     }
                 }
-                if(!scenicZone_sceincZoneEntries.isEmpty()) {
+                if (!scenicZoneEntryList.isEmpty()){
                     map.put("msg",true);
-                    map.put("sceincZoneEntries",scenicZone_sceincZoneEntries);
+                    map.put("sceincZoneEntries",scenicZoneEntryList);
                 }
-
             }
         }
 
