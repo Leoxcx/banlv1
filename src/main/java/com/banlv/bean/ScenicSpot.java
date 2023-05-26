@@ -8,16 +8,18 @@ public class ScenicSpot implements Serializable {
     private long scenicSpot_longitude;
     private long scenicSpot_latitude;
     private long scenicSpot_range;
+    private int scenicSpot_num;
 
     public ScenicSpot() {
     }
 
-    public ScenicSpot(long scenicSpot_id, String scenicSpot_name, long scenicSpot_longitude, long scenicSpot_latitude, long scenicSpot_range) {
+    public ScenicSpot(long scenicSpot_id, String scenicSpot_name, long scenicSpot_longitude, long scenicSpot_latitude, long scenicSpot_range, int scenicSpot_num) {
         this.scenicSpot_id = scenicSpot_id;
         this.scenicSpot_name = scenicSpot_name;
         this.scenicSpot_longitude = scenicSpot_longitude;
         this.scenicSpot_latitude = scenicSpot_latitude;
         this.scenicSpot_range = scenicSpot_range;
+        this.scenicSpot_num = scenicSpot_num;
     }
 
     public long getScenicSpot_id() {
@@ -60,6 +62,14 @@ public class ScenicSpot implements Serializable {
         this.scenicSpot_range = scenicSpot_range;
     }
 
+    public int getScenicSpot_num() {
+        return scenicSpot_num;
+    }
+
+    public void setScenicSpot_num(int scenicSpot_num) {
+        this.scenicSpot_num = scenicSpot_num;
+    }
+
     @Override
     public String toString() {
         return "ScenicSpot{" +
@@ -68,6 +78,7 @@ public class ScenicSpot implements Serializable {
                 ", scenicSpot_longitude=" + scenicSpot_longitude +
                 ", scenicSpot_latitude=" + scenicSpot_latitude +
                 ", scenicSpot_range=" + scenicSpot_range +
+                ", scenicSpot_num=" + scenicSpot_num +
                 '}';
     }
 }

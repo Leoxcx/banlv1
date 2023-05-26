@@ -35,7 +35,7 @@ public class TransTool {
         //景点资源中间表
         ScenicSpot_resource scenicSpot_resource = new ScenicSpot_resource();
         scenicSpot_resource.setScenicSpot_id(spotId);
-        scenicSpot_resource.setScenicSpot_resource_use(1);
+        scenicSpot_resource.setScenicSpot_resource_use(true);
 
         List<Resource> resources = new ArrayList<>();
 
@@ -61,6 +61,7 @@ public class TransTool {
         //通过景点资源中间表，获取scenicSpotId景点id
         ScenicSpot_resource scenicSpot_resource = new ScenicSpot_resource();
         scenicSpot_resource.setResource_id(resourceId);
+        scenicSpot_resource.setScenicSpot_resource_use(true);
         ScenicSpot_resourceService spotResource = new ScenicSpot_resourceServiceImpl();
         List<ScenicSpot_resource> scenicSpot_resources = spotResource.searchAll(scenicSpot_resource);
 
@@ -82,6 +83,7 @@ public class TransTool {
     public static List<ScenicZone> scenicSpotToScenicZone(long scenicSpotId) {
         ScenicZone_scenicSpot scenicZone_scenicSpot = new ScenicZone_scenicSpot();
         scenicZone_scenicSpot.setScenicSpot_id(scenicSpotId);
+        scenicZone_scenicSpot.setScenicZone_scenicSpot_use(true);
         ScenicZone_scenicSpotServiceImpl scenicZoneScenicSpot = new ScenicZone_scenicSpotServiceImpl();
         List<ScenicZone_scenicSpot> scenicZone_scenicSpots = scenicZoneScenicSpot.searchAll(scenicZone_scenicSpot);
 
@@ -102,6 +104,7 @@ public class TransTool {
     public static List<ScenicSpot> scenicZoneSpotToScenic(long scenicZoneId) {
         ScenicZone_scenicSpot scenicZoneScenicSpot = new ScenicZone_scenicSpot();
         scenicZoneScenicSpot.setScenicZone_id(scenicZoneId);
+        scenicZoneScenicSpot.setScenicZone_scenicSpot_use(true);
         ScenicZone_scenicSpotServiceImpl scenicZone_ScenicSpot = new ScenicZone_scenicSpotServiceImpl();
         List<ScenicZone_scenicSpot> scenicZone_scenicSpots = scenicZone_ScenicSpot.searchAll(scenicZoneScenicSpot);
         List<ScenicSpot> scenicSpots = new ArrayList<>();

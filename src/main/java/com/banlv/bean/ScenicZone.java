@@ -12,7 +12,7 @@ public class ScenicZone implements Serializable {
     private float scenicZone_score;
     private String scenicZone_grade;
     private String scenicZone_location;
-    private String scenicZone_number;
+    private int scenicZone_number;
     private double scenicZone_longitude;
     private double scenicZone_latitude;
     private float scenicZone_hot;
@@ -21,7 +21,7 @@ public class ScenicZone implements Serializable {
     public ScenicZone() {
     }
 
-    public ScenicZone(long scenicZone_id, long scenicManage_id, String scenicZone_name, String scenicZone_introduce, int city_id, int scenicZoneType_id, float scenicZone_score, String scenicZone_grade, String scenicZone_location, String scenicZone_number, double scenicZone_longitude, double scenicZone_latitude, float scenicZone_hot, String scenicZone_bg) {
+    public ScenicZone(long scenicZone_id, long scenicManage_id, String scenicZone_name, String scenicZone_introduce, int city_id, int scenicZoneType_id, float scenicZone_score, String scenicZone_grade, String scenicZone_location, int scenicZone_number, double scenicZone_longitude, double scenicZone_latitude, float scenicZone_hot, String scenicZone_bg) {
         this.scenicZone_id = scenicZone_id;
         this.scenicManage_id = scenicManage_id;
         this.scenicZone_name = scenicZone_name;
@@ -110,11 +110,11 @@ public class ScenicZone implements Serializable {
         this.scenicZone_location = scenicZone_location;
     }
 
-    public String getScenicZone_number() {
+    public int getScenicZone_number() {
         return scenicZone_number;
     }
 
-    public void setScenicZone_number(String scenicZone_number) {
+    public void setScenicZone_number(int scenicZone_number) {
         this.scenicZone_number = scenicZone_number;
     }
 

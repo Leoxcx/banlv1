@@ -34,6 +34,9 @@
         <if test="arg1.scenicSpot_range !=null and arg1.scenicSpot_range != ''">
             and scenicSpot_range=#{arg1.scenicSpot_range}
         </if>
+        <if test="arg1.scenicSpot_num !=null and arg1.scenicSpot_num != ''">
+            and scenicSpot_num=#{arg1.scenicSpot_num}
+        </if>
         limit #{arg0.start},#{arg0.rows};
     </select>
 
@@ -55,6 +58,9 @@
         </if>
         <if test="scenicSpot_range !=null and scenicSpot_range != ''">
             and scenicSpot_range=#{scenicSpot_range}
+        </if>
+        <if test="scenicSpot_num !=null and scenicSpot_num != ''">
+            and scenicSpot_num=#{scenicSpot_num}
         </if>
 	;    </select>
 
@@ -82,11 +88,14 @@
         <if test="scenicSpot_range!=null and scenicSpot_range != ''">
             and scenicSpot_range=#{scenicSpot_range}
         </if>
+        <if test="scenicSpot_num!=null and scenicSpot_num != ''">
+            and scenicSpot_num=#{scenicSpot_num}
+        </if>
 	;    </select>
 
     <!--新增-->
     <insert id="addScenicSpot" parameterType="scenicSpot">
-        insert into scenicSpot values (null,#{scenicSpot_name},#{scenicSpot_longitude},#{scenicSpot_latitude},#{scenicSpot_range});
+        insert into scenicSpot values (null,#{scenicSpot_name},#{scenicSpot_longitude},#{scenicSpot_latitude},#{scenicSpot_range},#{scenicSpot_num});
     </insert>
 
     <!--删除-->
@@ -112,6 +121,9 @@
             </if>
             <if test="scenicSpot_range!=null">
                 scenicSpot_range=#{scenicSpot_range},
+            </if>
+            <if test="scenicSpot_num!=null and scenicSpot_num != ''">
+                scenicSpot_num=#{scenicSpot_num},
             </if>
         </set>
         where scenicSpot_id=#{scenicSpot_id};

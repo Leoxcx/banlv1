@@ -9,19 +9,22 @@ public class Resource implements Serializable {
     private String resource_url;
     private String resource_thumbnail;
     private int resource_points;
+    private int resource_type;
+    private int resource_num;
 
     public Resource() {
     }
 
-    public Resource(long resource_id, long agent_id, String resource_name, String resource_url, String resource_thumbnail, int resource_points) {
+    public Resource(long resource_id, long agent_id, String resource_name, String resource_url, String resource_thumbnail, int resource_points, int resource_type, int resource_num) {
         this.resource_id = resource_id;
         this.agent_id = agent_id;
         this.resource_name = resource_name;
         this.resource_url = resource_url;
         this.resource_thumbnail = resource_thumbnail;
         this.resource_points = resource_points;
+        this.resource_type = resource_type;
+        this.resource_num = resource_num;
     }
-
 
     public long getResource_id() {
         return resource_id;
@@ -71,6 +74,22 @@ public class Resource implements Serializable {
         this.resource_points = resource_points;
     }
 
+    public int getResource_type() {
+        return resource_type;
+    }
+
+    public void setResource_type(int resource_type) {
+        this.resource_type = resource_type;
+    }
+
+    public int getResource_num() {
+        return resource_num;
+    }
+
+    public void setResource_num(int resource_num) {
+        this.resource_num = resource_num;
+    }
+
     @Override
     public String toString() {
         return "Resource{" +
@@ -80,6 +99,8 @@ public class Resource implements Serializable {
                 ", resource_url='" + resource_url + '\'' +
                 ", resource_thumbnail='" + resource_thumbnail + '\'' +
                 ", resource_points=" + resource_points +
+                ", resource_type=" + resource_type +
+                ", resource_num=" + resource_num +
                 '}';
     }
 }

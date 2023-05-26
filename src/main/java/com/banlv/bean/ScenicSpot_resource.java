@@ -6,12 +6,12 @@ public class ScenicSpot_resource implements Serializable {
     private long scenicSpot_resource_id;
     private long scenicSpot_id;
     private long resource_id;
-    private int scenicSpot_resource_use;
+    private boolean scenicSpot_resource_use;
 
     public ScenicSpot_resource() {
     }
 
-    public ScenicSpot_resource(long scenicSpot_resource_id, long scenicSpot_id, long resource_id, int scenicSpot_resource_use) {
+    public ScenicSpot_resource(long scenicSpot_resource_id, long scenicSpot_id, long resource_id, boolean scenicSpot_resource_use) {
         this.scenicSpot_resource_id = scenicSpot_resource_id;
         this.scenicSpot_id = scenicSpot_id;
         this.resource_id = resource_id;
@@ -42,11 +42,11 @@ public class ScenicSpot_resource implements Serializable {
         this.resource_id = resource_id;
     }
 
-    public int getScenicSpot_resource_use() {
+    public boolean isScenicSpot_resource_use() {
         return scenicSpot_resource_use;
     }
 
-    public void setScenicSpot_resource_use(int scenicSpot_resource_use) {
+    public void setScenicSpot_resource_use(boolean scenicSpot_resource_use) {
         this.scenicSpot_resource_use = scenicSpot_resource_use;
     }
 

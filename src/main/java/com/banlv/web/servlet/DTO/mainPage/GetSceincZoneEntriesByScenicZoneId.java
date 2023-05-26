@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -25,6 +26,7 @@ public class GetSceincZoneEntriesByScenicZoneId extends HttpServlet {
 
         map.put("msg",false);
         map.put("sceincZoneEntries",null);
+        List<ScenicZone_scenicZoneEntry> scenicZone_sceincZoneEntries = new ArrayList<>();
 
 
         String scenicZone_id = request.getParameter("scenicZone_id");
@@ -32,10 +34,19 @@ public class GetSceincZoneEntriesByScenicZoneId extends HttpServlet {
             long l = Long.parseLong(scenicZone_id);
             ScenicZone_scenicZoneEntry scenicZone_scenicZoneEntry = new ScenicZone_scenicZoneEntry();
             scenicZone_scenicZoneEntry.setScenicZone_id(l);
-            List<ScenicZone_scenicZoneEntry> scenicZone_sceincZoneEntries = new ScenicZone_scenicZoneEntryServiceImpl().searchAll(scenicZone_scenicZoneEntry);
-            if(!scenicZone_sceincZoneEntries.isEmpty()) {
-                map.put("msg",true);
-                map.put("sceincZoneEntries",scenicZone_sceincZoneEntries);
+            scenicZone_scenicZoneEntry.setScenicZone_scenicSpot_use(true);
+            List<ScenicZone_scenicZoneEntry> szszEntries = new ScenicZone_scenicZoneEntryServiceImpl().searchAll(scenicZone_scenicZoneEntry);
+            if(!szszEntries.isEmpty()) {
+                for (ScenicZone_scenicZoneEntry sze : szszEntries) {
+                    if(sze.isScenicZone_scenicSpot_use()) {
+                        scenicZone_sceincZoneEntries.add(sze);
+                    }
+                }
+                if(!scenicZone_sceincZoneEntries.isEmpty()) {
+                    map.put("msg",true);
+                    map.put("sceincZoneEntries",scenicZone_sceincZoneEntries);
+                }
+
             }
         }
 

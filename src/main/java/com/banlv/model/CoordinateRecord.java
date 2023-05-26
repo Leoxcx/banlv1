@@ -4,6 +4,7 @@ import com.util.bean.dto.CoordinateInfoDto;
 
 import java.util.*;
 
+//定位坐标记录
 public class CoordinateRecord {
     public static Map<Long, List<CoordinateInfoDto>> recordMap;
     // 单例

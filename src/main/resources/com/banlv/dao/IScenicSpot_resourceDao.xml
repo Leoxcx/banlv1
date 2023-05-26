@@ -28,7 +28,7 @@
         <if test="arg1.resource_id !=null and arg1.resource_id != 0">
             and resource_id=#{arg1.resource_id}
         </if>
-        <if test="arg1.scenicSpot_resource_use !=null and arg1.scenicSpot_resource_use != ''">
+        <if test="arg1.scenicSpot_resource_use !=null">
             and scenicSpot_resource_use=#{arg1.scenicSpot_resource_use}
         </if>
         limit #{arg0.start},#{arg0.rows};
@@ -47,7 +47,7 @@
         <if test="resource_id !=null and resource_id != 0">
             and resource_id=#{resource_id}
         </if>
-        <if test="scenicSpot_resource_use !=null and scenicSpot_resource_use != ''">
+        <if test="scenicSpot_resource_use !=null">
             and scenicSpot_resource_use=#{scenicSpot_resource_use}
         </if>
 	;    </select>
@@ -70,7 +70,7 @@
         <if test="resource_id!=null and resource_id != 0">
             and resource_id=#{resource_id}
         </if>
-        <if test="scenicSpot_resource_use!=null and scenicSpot_resource_use != ''">
+        <if test="scenicSpot_resource_use!=null">
             and scenicSpot_resource_use=#{scenicSpot_resource_use}
         </if>
 	;    </select>
@@ -98,7 +98,7 @@
             <if test="resource_id!=null">
                 resource_id=#{resource_id},
             </if>
-            <if test="scenicSpot_resource_use!=null and scenicSpot_resource_use != ''">
+            <if test="scenicSpot_resource_use!=null">
                 scenicSpot_resource_use=#{scenicSpot_resource_use},
             </if>
         </set>

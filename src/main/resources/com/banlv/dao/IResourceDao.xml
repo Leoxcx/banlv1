@@ -37,6 +37,12 @@
         <if test="arg1.resource_points !=null and arg1.resource_points != ''">
             and resource_points=#{arg1.resource_points}
         </if>
+        <if test="arg1.resource_type !=null and arg1.resource_type != ''">
+            and resource_type=#{arg1.resource_type}
+        </if>
+        <if test="arg1.resource_num !=null and arg1.resource_num != ''">
+            and resource_num=#{arg1.resource_num}
+        </if>
         limit #{arg0.start},#{arg0.rows};
     </select>
 
@@ -61,6 +67,12 @@
         </if>
         <if test="resource_points !=null and resource_points != ''">
             and resource_points=#{resource_points}
+        </if>
+        <if test="resource_type !=null and resource_type != ''">
+            and resource_type=#{resource_type}
+        </if>
+        <if test="resource_num !=null and resource_num != ''">
+            and resource_num=#{resource_num}
         </if>
 	;    </select>
 
@@ -91,11 +103,17 @@
         <if test="resource_points!=null and resource_points != ''">
             and resource_points=#{resource_points}
         </if>
+        <if test="resource_type!=null and resource_type != ''">
+            and resource_type=#{resource_type}
+        </if>
+        <if test="resource_num!=null and resource_num != ''">
+            and resource_num=#{resource_num}
+        </if>
 	;    </select>
 
     <!--新增-->
     <insert id="addResource" parameterType="resource">
-        insert into resource values (null,#{agent_id},#{resource_name},#{resource_url},#{resource_thumbnail},#{resource_points});
+        insert into resource values (null,#{agent_id},#{resource_name},#{resource_url},#{resource_thumbnail},#{resource_points},#{resource_type},#{resource_num});
     </insert>
 
     <!--删除-->
@@ -124,6 +142,12 @@
             </if>
             <if test="resource_points!=null and resource_points != ''">
                 resource_points=#{resource_points},
+            </if>
+            <if test="resource_type!=null and resource_type != ''">
+                resource_type=#{resource_type},
+            </if>
+            <if test="resource_num!=null and resource_num != ''">
+                resource_num=#{resource_num},
             </if>
         </set>
         where resource_id=#{resource_id};

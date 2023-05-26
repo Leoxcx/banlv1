@@ -46,6 +46,7 @@ public class GetScenicZoneInfo extends HttpServlet {
             for (ScenicZone sz: scenicZones) {
 
                 scenicZone_scenicSpot.setScenicZone_id(sz.getScenicZone_id());
+                scenicZone_scenicSpot.setScenicZone_scenicSpot_use(true);
 
                 List<ScenicZone_scenicSpot> scenicZone_scenicSpots = scenicZone_scenicSpotService.searchAll(scenicZone_scenicSpot);
 

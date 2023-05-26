@@ -47,6 +47,7 @@ public class GetResourcesByScenicSpotId extends HttpServlet {
             ScenicSpot_resourceService scenicSpot_resourceService = new ScenicSpot_resourceServiceImpl();
             ScenicSpot_resource searchscenicSpot_resource = new ScenicSpot_resource();
             searchscenicSpot_resource.setScenicSpot_id(Long.valueOf(scenicSpot_id));
+            searchscenicSpot_resource.setScenicSpot_resource_use(true);
             List<ScenicSpot_resource> scenicSpot_resources = scenicSpot_resourceService.searchAll(searchscenicSpot_resource);
             if (scenicSpot_resources.size() == 0){
                 map.put("msg", false);
