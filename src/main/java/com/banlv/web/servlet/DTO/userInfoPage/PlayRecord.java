@@ -2,9 +2,6 @@ package com.banlv.web.servlet.DTO.userInfoPage;
 
 import com.banlv.bean.User;
 import com.banlv.bean.UserPlay;
-import com.banlv.service.UserService;
-import com.banlv.service.impl.UserPlayServiceImpl;
-import com.banlv.service.impl.UserServiceImpl;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.lang.StringUtils;
 
@@ -18,8 +15,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.util.bean.transTool.TransTool.openIdToUserInfo;
-import static com.util.bean.transTool.TransTool.userIdToUserPlay;
+import static com.util.utils.transTool.TransTool.openIdToUserInfo;
+import static com.util.utils.transTool.TransTool.userIdToUserPlay;
 
 //通过用户id  user_openid 获取播放记录
 @WebServlet("/playrecord")

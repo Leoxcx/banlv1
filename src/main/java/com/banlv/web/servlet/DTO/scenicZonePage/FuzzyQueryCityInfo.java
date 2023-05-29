@@ -4,9 +4,7 @@ import com.banlv.bean.City;
 import com.banlv.independent.myService.MyCityService;
 import com.banlv.independent.myService.myImpl.MyCityServiceImpl;
 import com.banlv.independent.myService.myImpl.MyScenicZoneServiceImpl;
-import com.banlv.service.impl.CityServiceImpl;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.util.bean.PageBean;
 import org.apache.commons.lang.StringUtils;
 
 import javax.servlet.ServletException;
@@ -19,7 +17,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.util.bean.transTool.TransTool.*;
+import static com.util.utils.transTool.TransTool.*;
 
 
 //通过传入的city_name模糊查询获取城市信息

@@ -2,10 +2,6 @@ package com.banlv.web.servlet.DTO.footmarkPage;
 
 import com.banlv.bean.Resource;
 import com.banlv.bean.ScenicSpot;
-import com.banlv.bean.ScenicZone;
-import com.banlv.bean.ScenicZone_scenicSpot;
-import com.banlv.service.impl.ScenicSpotServiceImpl;
-import com.banlv.service.impl.ScenicZone_scenicSpotServiceImpl;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.util.bean.dto.ScenicSpotInfoDto;
 import org.apache.commons.lang.StringUtils;
@@ -21,8 +17,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.util.bean.transTool.TransTool.scenicZoneSpotToScenic;
-import static com.util.bean.transTool.TransTool.spotToResource;
+import static com.util.utils.transTool.TransTool.scenicZoneSpotToScenic;
+import static com.util.utils.transTool.TransTool.spotToResource;
 
 //查看所有景点信息，以及景点内的资源
 @WebServlet("/getscenicspotinfobyzoneid")

@@ -1,11 +1,6 @@
 package com.banlv.web.servlet.DTO.mainPage;
 
 import com.banlv.bean.Resource;
-import com.banlv.bean.ScenicSpot_resource;
-import com.banlv.service.ResourceService;
-import com.banlv.service.ScenicSpot_resourceService;
-import com.banlv.service.impl.ResourceServiceImpl;
-import com.banlv.service.impl.ScenicSpot_resourceServiceImpl;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.lang.StringUtils;
 
@@ -15,12 +10,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.util.bean.transTool.TransTool.spotToResource;
+import static com.util.utils.transTool.TransTool.spotToResource;
 
 //景点scenicSpot_id获取资源（前十个）
 @WebServlet("/spotrecommendservlet")

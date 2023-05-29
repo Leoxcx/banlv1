@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.util.bean.transTool.TransTool.*;
+import static com.util.utils.transTool.TransTool.*;
 
 //通过经纬度获取当前景点的所有资源，并为用户添加到用户已解锁资源
 @WebServlet("/getcurrentscenicspotresource")

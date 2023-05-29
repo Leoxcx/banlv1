@@ -1,17 +1,12 @@
 package com.banlv.web.servlet.DTO.mainPage;
 
-import com.banlv.bean.City;
 import com.banlv.bean.Resource;
-import com.banlv.bean.ScenicSpot;
 import com.banlv.bean.ScenicSpot_resource;
 import com.banlv.service.ResourceService;
 import com.banlv.service.ScenicSpot_resourceService;
-import com.banlv.service.impl.CityServiceImpl;
 import com.banlv.service.impl.ResourceServiceImpl;
 import com.banlv.service.impl.ScenicSpot_resourceServiceImpl;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.util.bean.PageBean;
-import org.apache.commons.lang.StringUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,8 +18,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import static com.util.bean.transTool.TransTool.cityNameToCityInfo;
 
 
 //通过景点id获取对应景点资源列表

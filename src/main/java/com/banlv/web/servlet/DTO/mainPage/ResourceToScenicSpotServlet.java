@@ -1,9 +1,6 @@
 package com.banlv.web.servlet.DTO.mainPage;
 
 import com.banlv.bean.ScenicSpot;
-import com.banlv.bean.ScenicSpot_resource;
-import com.banlv.service.ScenicSpot_resourceService;
-import com.banlv.service.impl.ScenicSpot_resourceServiceImpl;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.lang.StringUtils;
 
@@ -17,7 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.util.bean.transTool.TransTool.resourceToScenicSpot;
+import static com.util.utils.transTool.TransTool.resourceToScenicSpot;
 
 //资源resource_id获取景点信息
 @WebServlet("/resourcetoscenicspotservlet")

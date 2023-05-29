@@ -1,13 +1,8 @@
 package com.banlv.web.servlet.DTO.mainPage;
 
 import com.banlv.bean.ScenicSpot;
-import com.banlv.bean.ScenicSpot_resource;
 import com.banlv.bean.ScenicZone;
-import com.banlv.bean.ScenicZone_scenicSpot;
 import com.banlv.model.PlayNum;
-import com.banlv.service.ScenicSpot_resourceService;
-import com.banlv.service.impl.ScenicSpot_resourceServiceImpl;
-import com.banlv.service.impl.ScenicZone_scenicSpotServiceImpl;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.lang.StringUtils;
 
@@ -21,8 +16,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.util.bean.transTool.TransTool.resourceToScenicSpot;
-import static com.util.bean.transTool.TransTool.scenicSpotToScenicZone;
+import static com.util.utils.transTool.TransTool.resourceToScenicSpot;
+import static com.util.utils.transTool.TransTool.scenicSpotToScenicZone;
 
 //保存播放记录
 @WebServlet("/saveplayrecord")

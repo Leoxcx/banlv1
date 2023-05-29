@@ -4,7 +4,6 @@ import com.banlv.bean.City;
 import com.banlv.service.impl.CityServiceImpl;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.util.bean.PageBean;
-import org.apache.commons.lang.StringUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,8 +14,6 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import static com.util.bean.transTool.TransTool.cityNameToCityInfo;
 
 
 //获取热门城市信息

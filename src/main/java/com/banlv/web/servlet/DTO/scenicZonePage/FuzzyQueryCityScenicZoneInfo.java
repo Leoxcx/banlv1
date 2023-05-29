@@ -1,8 +1,6 @@
 package com.banlv.web.servlet.DTO.scenicZonePage;
 
-import com.banlv.bean.City;
 import com.banlv.bean.ScenicZone;
-import com.banlv.independent.myService.myImpl.MyCityServiceImpl;
 import com.banlv.independent.myService.myImpl.MyScenicZoneServiceImpl;
 import com.banlv.service.impl.ScenicZoneServiceImpl;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -19,8 +17,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import static com.util.bean.transTool.TransTool.cityNameToCityInfo;
 
 //通过传入的city_id和scenicZone_name模糊查询获取景区信息
 @WebServlet("/fuzzyquerysceniczoneinfo")

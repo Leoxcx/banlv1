@@ -37,7 +37,23 @@
   <component name="ChangeListManager">
     <list default="true" id="4789afa5-2117-470d-96aa-0f6305956f8e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/GetSceincZoneEntriesByScenicZoneId.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/GetScenicZoneEntriesByScenicZoneId.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/footmarkPage/GetScenicSpotInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/footmarkPage/GetScenicSpotInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/footmarkPage/GetScenicSpotInfoByZoneId.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/footmarkPage/GetScenicSpotInfoByZoneId.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/GetCityInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/GetCityInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/GetCurrentScenicSpotResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/GetCurrentScenicSpotResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/GetPopularCities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/GetPopularCities.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/GetResourcesByScenicSpotId.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/GetResourcesByScenicSpotId.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/IsAbleToPlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/IsAbleToPlay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/ResourceToScenicSpotServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/ResourceToScenicSpotServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/SavePlayRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/SavePlayRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/ScenicSpotRecommendServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/ScenicSpotRecommendServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/scenicZonePage/FuzzyQueryCityInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/scenicZonePage/FuzzyQueryCityInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/scenicZonePage/FuzzyQueryCityScenicZoneInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/scenicZonePage/FuzzyQueryCityScenicZoneInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/userInfoPage/GetUserArrive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/userInfoPage/GetUserArrive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/userInfoPage/PlayRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/userInfoPage/PlayRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/util/bean/transTool/DataTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/util/utils/transTool/DataTool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/util/bean/transTool/TransTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/util/utils/transTool/TransTool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/SqlMapconfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/SqlMapconfig.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -296,7 +312,8 @@
       <workItem from="1684906693207" duration="15185000" />
       <workItem from="1684977867890" duration="9803000" />
       <workItem from="1685064896510" duration="3903000" />
-      <workItem from="1685088168654" duration="4060000" />
+      <workItem from="1685088168654" duration="5508000" />
+      <workItem from="1685322620475" duration="1262000" />
     </task>
     <task id="LOCAL-00001" summary="新版">
       <created>1683789209552</created>
@@ -389,7 +406,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685093150096</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="修改scenicZone名字">
+      <created>1685094945616</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1685094945616</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -422,7 +446,8 @@
     <MESSAGE value="些许注释" />
     <MESSAGE value="通过景区Id获取所有的景区词条，通过景点id获取对应景点资源列表" />
     <MESSAGE value="修改通过景区词条中间表的景区id查询当前景区的所有词条" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改通过景区词条中间表的景区id查询当前景区的所有词条" />
+    <MESSAGE value="修改scenicZone名字" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改scenicZone名字" />
   </component>
   <component name="WindowStateProjectService">
     <state x="435" y="103" key="#banlv" timestamp="1683801038293">
@@ -449,10 +474,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="682" y="157" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable/0.0.1920.1040@0.0.1920.1040" timestamp="1683801027896" />
-    <state x="351" y="40" width="1042" height="868" key="CommitChangelistDialog2" timestamp="1685093149069">
+    <state x="351" y="40" width="1042" height="868" key="CommitChangelistDialog2" timestamp="1685094944495">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="351" y="40" width="1042" height="868" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1685093149069" />
+    <state x="351" y="40" width="1042" height="868" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1685094944495" />
     <state width="448" height="466" key="DebuggerActiveHint" timestamp="1684745122637">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -461,70 +486,70 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-12" y="201" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1684305295177" />
-    <state width="1636" height="388" key="GridCell.Tab.0.bottom" timestamp="1685091536831">
+    <state width="1636" height="388" key="GridCell.Tab.0.bottom" timestamp="1685097396467">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1636" height="388" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1685091536831" />
-    <state width="1636" height="388" key="GridCell.Tab.0.center" timestamp="1685091536831">
+    <state width="1636" height="388" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1685097396467" />
+    <state width="1636" height="388" key="GridCell.Tab.0.center" timestamp="1685097396467">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1636" height="388" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1685091536831" />
-    <state width="1636" height="388" key="GridCell.Tab.0.left" timestamp="1685091536831">
+    <state width="1636" height="388" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1685097396467" />
+    <state width="1636" height="388" key="GridCell.Tab.0.left" timestamp="1685097396467">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1636" height="388" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1685091536831" />
-    <state width="1636" height="388" key="GridCell.Tab.0.right" timestamp="1685091536831">
+    <state width="1636" height="388" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1685097396467" />
+    <state width="1636" height="388" key="GridCell.Tab.0.right" timestamp="1685097396467">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1636" height="388" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1685091536831" />
-    <state width="1636" height="388" key="GridCell.Tab.1.bottom" timestamp="1685091536831">
+    <state width="1636" height="388" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1685097396467" />
+    <state width="1636" height="388" key="GridCell.Tab.1.bottom" timestamp="1685097396468">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1636" height="388" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1685091536831" />
-    <state width="1636" height="388" key="GridCell.Tab.1.center" timestamp="1685091536831">
+    <state width="1636" height="388" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1685097396468" />
+    <state width="1636" height="388" key="GridCell.Tab.1.center" timestamp="1685097396468">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1636" height="388" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1685091536831" />
-    <state width="1636" height="388" key="GridCell.Tab.1.left" timestamp="1685091536831">
+    <state width="1636" height="388" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1685097396468" />
+    <state width="1636" height="388" key="GridCell.Tab.1.left" timestamp="1685097396468">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1636" height="388" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1685091536831" />
-    <state width="1636" height="388" key="GridCell.Tab.1.right" timestamp="1685091536831">
+    <state width="1636" height="388" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1685097396468" />
+    <state width="1636" height="388" key="GridCell.Tab.1.right" timestamp="1685097396468">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1636" height="388" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1685091536831" />
-    <state width="1636" height="388" key="GridCell.Tab.2.bottom" timestamp="1685091536831">
+    <state width="1636" height="388" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1685097396468" />
+    <state width="1636" height="388" key="GridCell.Tab.2.bottom" timestamp="1685097396468">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1636" height="388" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1685091536831" />
-    <state width="1636" height="388" key="GridCell.Tab.2.center" timestamp="1685091536831">
+    <state width="1636" height="388" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1685097396468" />
+    <state width="1636" height="388" key="GridCell.Tab.2.center" timestamp="1685097396468">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1636" height="388" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1685091536831" />
-    <state width="1636" height="388" key="GridCell.Tab.2.left" timestamp="1685091536831">
+    <state width="1636" height="388" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1685097396468" />
+    <state width="1636" height="388" key="GridCell.Tab.2.left" timestamp="1685097396468">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1636" height="388" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1685091536831" />
-    <state width="1636" height="388" key="GridCell.Tab.2.right" timestamp="1685091536831">
+    <state width="1636" height="388" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1685097396468" />
+    <state width="1636" height="388" key="GridCell.Tab.2.right" timestamp="1685097396468">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1636" height="388" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1685091536831" />
-    <state width="1636" height="388" key="GridCell.Tab.3.bottom" timestamp="1685091536831">
+    <state width="1636" height="388" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1685097396468" />
+    <state width="1636" height="388" key="GridCell.Tab.3.bottom" timestamp="1685097396468">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1636" height="388" key="GridCell.Tab.3.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1685091536831" />
-    <state width="1636" height="388" key="GridCell.Tab.3.center" timestamp="1685091536831">
+    <state width="1636" height="388" key="GridCell.Tab.3.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1685097396468" />
+    <state width="1636" height="388" key="GridCell.Tab.3.center" timestamp="1685097396468">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1636" height="388" key="GridCell.Tab.3.center/0.0.1920.1040@0.0.1920.1040" timestamp="1685091536831" />
-    <state width="1636" height="388" key="GridCell.Tab.3.left" timestamp="1685091536831">
+    <state width="1636" height="388" key="GridCell.Tab.3.center/0.0.1920.1040@0.0.1920.1040" timestamp="1685097396468" />
+    <state width="1636" height="388" key="GridCell.Tab.3.left" timestamp="1685097396468">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1636" height="388" key="GridCell.Tab.3.left/0.0.1920.1040@0.0.1920.1040" timestamp="1685091536831" />
-    <state width="1636" height="388" key="GridCell.Tab.3.right" timestamp="1685091536831">
+    <state width="1636" height="388" key="GridCell.Tab.3.left/0.0.1920.1040@0.0.1920.1040" timestamp="1685097396468" />
+    <state width="1636" height="388" key="GridCell.Tab.3.right" timestamp="1685097396468">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1636" height="388" key="GridCell.Tab.3.right/0.0.1920.1040@0.0.1920.1040" timestamp="1685091536831" />
+    <state width="1636" height="388" key="GridCell.Tab.3.right/0.0.1920.1040@0.0.1920.1040" timestamp="1685097396468" />
     <state width="1636" height="497" key="GridCell.Tab.4.bottom" timestamp="1684812634677">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -549,10 +574,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1684917111371" />
-    <state x="552" y="239" key="Vcs.Push.Dialog.v2" timestamp="1685093151541">
+    <state x="552" y="239" key="Vcs.Push.Dialog.v2" timestamp="1685094954440">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="239" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1685093151541" />
+    <state x="552" y="239" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1685094954440" />
     <state x="69" y="264" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1684984963738">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -603,17 +628,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/scenicZonePage/FuzzyQueryCityInfo.java</url>
-          <line>29</line>
+          <line>27</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/scenicZonePage/FuzzyQueryCityInfo.java</url>
-          <line>50</line>
+          <line>48</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/scenicZonePage/FuzzyQueryCityScenicZoneInfo.java</url>
-          <line>32</line>
+          <line>28</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.util.bean.transTool.TransTool.*;
+import static com.util.utils.transTool.TransTool.*;
 
 //通过城市名称获取城市信息
 @WebServlet("/getcityinfo")

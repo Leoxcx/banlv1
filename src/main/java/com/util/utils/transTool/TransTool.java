@@ -1,7 +1,6 @@
-package com.util.bean.transTool;
+package com.util.utils.transTool;
 
 import com.banlv.bean.*;
-import com.banlv.model.PlayNum;
 import com.banlv.service.CityService;
 import com.banlv.service.ResourceService;
 import com.banlv.service.ScenicSpot_resourceService;

@@ -2,9 +2,7 @@ package com.banlv.web.servlet.DTO.mainPage;
 
 import com.banlv.bean.User;
 import com.banlv.bean.User_resource;
-import com.banlv.service.UserService;
 import com.banlv.service.User_resourceService;
-import com.banlv.service.impl.UserServiceImpl;
 import com.banlv.service.impl.User_resourceServiceImpl;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.lang.StringUtils;
@@ -19,7 +17,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.util.bean.transTool.TransTool.openIdToUserInfo;
+import static com.util.utils.transTool.TransTool.openIdToUserInfo;
 
 //通过resource_id和用户的openid返回用户是否有权限播放
 @WebServlet("/isabletoplay")

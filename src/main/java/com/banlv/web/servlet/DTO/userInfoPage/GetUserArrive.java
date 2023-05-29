@@ -2,9 +2,7 @@ package com.banlv.web.servlet.DTO.userInfoPage;
 
 import com.banlv.bean.User;
 import com.banlv.bean.UserArrive;
-import com.banlv.service.UserService;
 import com.banlv.service.impl.UserArriveServiceImpl;
-import com.banlv.service.impl.UserServiceImpl;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.lang.StringUtils;
 
@@ -18,7 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.util.bean.transTool.TransTool.openIdToUserInfo;
+import static com.util.utils.transTool.TransTool.openIdToUserInfo;
 
 //通过用户openid获取用户所有的打开信息（useArrive）表 获取用户打卡记录
 @WebServlet("/getuserarrive")
