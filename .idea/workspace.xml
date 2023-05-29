@@ -37,23 +37,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4789afa5-2117-470d-96aa-0f6305956f8e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/footmarkPage/GetScenicSpotInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/footmarkPage/GetScenicSpotInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/footmarkPage/GetScenicSpotInfoByZoneId.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/footmarkPage/GetScenicSpotInfoByZoneId.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/GetCityInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/GetCityInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/GetCurrentScenicSpotResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/GetCurrentScenicSpotResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/GetPopularCities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/GetPopularCities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/GetResourcesByScenicSpotId.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/GetResourcesByScenicSpotId.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/IsAbleToPlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/IsAbleToPlay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/ResourceToScenicSpotServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/ResourceToScenicSpotServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/SavePlayRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/SavePlayRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/ScenicSpotRecommendServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/mainPage/ScenicSpotRecommendServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/scenicZonePage/FuzzyQueryCityInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/scenicZonePage/FuzzyQueryCityInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/scenicZonePage/FuzzyQueryCityScenicZoneInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/scenicZonePage/FuzzyQueryCityScenicZoneInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/userInfoPage/GetUserArrive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/userInfoPage/GetUserArrive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/userInfoPage/PlayRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banlv/web/servlet/DTO/userInfoPage/PlayRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/util/bean/transTool/DataTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/util/utils/transTool/DataTool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/util/bean/transTool/TransTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/util/utils/transTool/TransTool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SqlMapconfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/SqlMapconfig.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -313,7 +296,7 @@
       <workItem from="1684977867890" duration="9803000" />
       <workItem from="1685064896510" duration="3903000" />
       <workItem from="1685088168654" duration="5508000" />
-      <workItem from="1685322620475" duration="1262000" />
+      <workItem from="1685322620475" duration="2413000" />
     </task>
     <task id="LOCAL-00001" summary="新版">
       <created>1683789209552</created>
@@ -413,7 +396,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685094945616</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="修改数据库链接配置">
+      <created>1685324544333</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1685324544333</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -447,7 +437,8 @@
     <MESSAGE value="通过景区Id获取所有的景区词条，通过景点id获取对应景点资源列表" />
     <MESSAGE value="修改通过景区词条中间表的景区id查询当前景区的所有词条" />
     <MESSAGE value="修改scenicZone名字" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改scenicZone名字" />
+    <MESSAGE value="修改数据库链接配置" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改数据库链接配置" />
   </component>
   <component name="WindowStateProjectService">
     <state x="435" y="103" key="#banlv" timestamp="1683801038293">
@@ -474,10 +465,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="682" y="157" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable/0.0.1920.1040@0.0.1920.1040" timestamp="1683801027896" />
-    <state x="351" y="40" width="1042" height="868" key="CommitChangelistDialog2" timestamp="1685094944495">
+    <state x="351" y="40" width="1042" height="868" key="CommitChangelistDialog2" timestamp="1685324539212">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="351" y="40" width="1042" height="868" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1685094944495" />
+    <state x="351" y="40" width="1042" height="868" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1685324539212" />
     <state width="448" height="466" key="DebuggerActiveHint" timestamp="1684745122637">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -574,18 +565,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1684917111371" />
-    <state x="552" y="239" key="Vcs.Push.Dialog.v2" timestamp="1685094954440">
+    <state x="552" y="239" key="Vcs.Push.Dialog.v2" timestamp="1685324546735">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="239" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1685094954440" />
+    <state x="552" y="239" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1685324546735" />
     <state x="69" y="264" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1684984963738">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="69" y="264" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1684984963738" />
-    <state x="753" y="432" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1685091543504">
+    <state x="753" y="432" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1685324475053">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="753" y="432" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1685091543504" />
+    <state x="753" y="432" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1685324475053" />
     <state x="690" y="279" key="extract.method.dialog" timestamp="1684302031366">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

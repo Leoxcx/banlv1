@@ -5,15 +5,15 @@ import java.io.Serializable;
 public class ScenicSpot implements Serializable {
     private long scenicSpot_id;
     private String scenicSpot_name;
-    private long scenicSpot_longitude;
-    private long scenicSpot_latitude;
+    private double scenicSpot_longitude;
+    private double scenicSpot_latitude;
     private long scenicSpot_range;
     private int scenicSpot_num;
 
     public ScenicSpot() {
     }
 
-    public ScenicSpot(long scenicSpot_id, String scenicSpot_name, long scenicSpot_longitude, long scenicSpot_latitude, long scenicSpot_range, int scenicSpot_num) {
+    public ScenicSpot(long scenicSpot_id, String scenicSpot_name, double scenicSpot_longitude, double scenicSpot_latitude, long scenicSpot_range, int scenicSpot_num) {
         this.scenicSpot_id = scenicSpot_id;
         this.scenicSpot_name = scenicSpot_name;
         this.scenicSpot_longitude = scenicSpot_longitude;
@@ -38,19 +38,19 @@ public class ScenicSpot implements Serializable {
         this.scenicSpot_name = scenicSpot_name;
     }
 
-    public long getScenicSpot_longitude() {
+    public double getScenicSpot_longitude() {
         return scenicSpot_longitude;
     }
 
-    public void setScenicSpot_longitude(long scenicSpot_longitude) {
+    public void setScenicSpot_longitude(double scenicSpot_longitude) {
         this.scenicSpot_longitude = scenicSpot_longitude;
     }
 
-    public long getScenicSpot_latitude() {
+    public double getScenicSpot_latitude() {
         return scenicSpot_latitude;
     }
 
-    public void setScenicSpot_latitude(long scenicSpot_latitude) {
+    public void setScenicSpot_latitude(double scenicSpot_latitude) {
         this.scenicSpot_latitude = scenicSpot_latitude;
     }
 
